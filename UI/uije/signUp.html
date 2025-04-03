@@ -100,30 +100,65 @@
         <div class="row">
             <div class="col"></div>
             <div class="col-6" style="min-width: 400px;">
-                <h1 class="display-6 text-nowrap text-center">mypage</h1>
-                <div>
-                    <img class="mx-auto d-block rounded-circle img-thumbnail mt-3" style="width: 20vh;" src="img1.png" alt="logo">
-                    <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
-                </div>
+                <h1 class="display-6 text-nowrap text-center">SignUp</h1>
+                <a href="#!">
+                    <img class="mx-auto d-block mt-3" style="width: 20vh;" src="img1.png" alt="logo">
+                </a>
+
                 <div class="input-group mt-3">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">사번</span>
-                    <input type="text" class="form-control" value="01" readonly>
-                </div>
-                <div class="input-group mt-3">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">Email</span>
-                    <input type="text" class="form-control" value="email@domain.com" readonly>
+                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">🌏</span>
+                    <input id="email" name="email" type="text" class="form-control" placeholder="Email" required>
                 </div>
 
-                <!-- 수정 중일 때만 보이는 입력칸과 버튼 -->
+                <!-- 메일인증 버튼을 누르면 위의 이메일 주소로 인증 코드가 전송 됨. (2차) -->
+                <div class="d-flex mt-3">
+                    <button id="codeReqButton" name="codeReqButton" type="button" class="btn btn-outline-primary flex-fill">인증코드 보내기</button>
+                </div>
+                <!-- 인증코드 보내기를 누르고 나면 다시보내기 버튼으로 변경됨. 인증 오류로 다시 보내야하는 경우에 필요  -->
+                <div class="d-flex mt-3">
+                    <button id="reReqButton" name="reReqButton" type="button" class="btn btn-outline-primary flex-fill">다시 보내기</button>
+                </div>
+
+                <!-- 메인인증 버튼을 누르기 전에는 display: none;, 버튼을 누르고 난 뒤 보임 -->
+                <!-- 확인 버튼을 눌러 보낸 인증코드와 기입된 인증코드가 일치하는지 확인 -->
                 <div class="input-group mt-3">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">P/W</span>
-                    <input id="pw" name="pw" type="password" class="form-control" placeholder="비밀번호 입력">
+                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">🔣</span>
+                        <input id="code" name="code" type="text" class="form-control input-group" placeholder="본인인증코드">
+                        <button id="codeChk" name="codeChk" type="button" class="btn btn-outline-primary" style="width: 75px;">확인</button>
+                </div>
+
+                <!-- 메일인증 버튼을 누르기 전에는 display: none;(기본값), 버튼을 누르고 난 뒤 보이는 경고문 -->
+                <!-- 메일인증코드 유효시간이 표시되는 경고창 -->
+                <!-- 인증확인이 완료되면 사라짐 -->
+                <!-- 다시보내기를 누르면 남은시간 초기화. -->
+                <div class="mt-1">
+                    <div class="alert alert-secondary " style="display: block;">
+                        <span id="codeTime" name="codeTime" class="spinner-border spinner-border-sm me-2"></span>남은시간
+                    </div>
+                </div>
+
+                <!-- 확인 버튼을 누르고 난 뒤 메일인증이 정상적으로 처리 되었을 때 보이는 경고문-->
+                <div class="mt-1">
+                    <div id="codePer" name="codePer" class="alert alert-info" style="display: block;">
+                    인증코드 확인 완료
+                    </div>
+                </div>
+                <!-- 확인 버튼을 누르고 난 뒤 코드가 불일치 하거나 정상적으로 처리되지 않았을 때 보이는 경고문 -->
+                <!-- 인증확인이 완료되면 사라짐 -->
+                <div class="mt-1">
+                    <div id="codeError" name="codeError" class="alert alert-danger" style="display: block;">
+                    다시 인증 해주세요.
+                    </div>
+                </div>
+
+                <div class="input-group mt-3">
+                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">🔒</span>
+                    <input id="pw" name="pw" type="password" class="form-control input-group" placeholder="Password">
                 </div>
                 <div class="input-group mt-1">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">P/W Check</span>
-                    <input id="pwChk" name="pwChk" type="password" class="form-control" placeholder="비밀번호 확인">
+                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">☑️</span>
+                    <input id="pwChk" name="pwChk" type="password" class="form-control input-group" placeholder="Password check">
                 </div>
-                               
                 <!-- 비밀번호 input창에서 포커스 아웃되었을 때 비밀번호와 비밀번호 확인에 입력된 값이 다를 때 보이는 경고문 -->
                 <div class="mt-1">
                     <div id="diffPw" name="diffPw" class="alert alert-warning" style="display: block;">
@@ -132,19 +167,18 @@
                 </div>
 
                 <div class="input-group mt-3">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">이름</span>
-                    <input type="text" class="form-control" value="성이름" readonly>
+                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">👤</span>
+                    <input id="name" name="name" type="text" class="form-control" id="email" placeholder="NAME" required>
                 </div>
+
                 <div class="d-flex btn-group mt-3 mb-2">
-                    <!-- 조회 중일 때 보이는 버튼 : 수정 -->
-                    <!-- 수정 중일 때 보이는 버튼 : 저장, 취소 -->
-                    <button type="button" class="btn btn-outline-primary" href="#!">수정</button>
-                    <button type="button" class="btn btn-outline-primary" href="#!">저장</button>
+                    <button type="button" class="btn btn-outline-primary">가입</button>
                     <a type="button" class="btn btn-outline-danger" href="#!">취소</a>
                 </div>
             </div>
             <div class="col"></div>
         </div>
+       
     </section>
     <footer class="py-2">
       <hr class="border-secondary">
