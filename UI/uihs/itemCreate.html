@@ -39,17 +39,21 @@
                 background-color: #001f3f;
                 text-align: center;
             }
+            @media (max-width: 300px) {
+                header.navbar .navbar-nav {
+                    display: none !important;
+                }
+            }
         </style>
     </head>
 
     <body>
-        <header class="navbar navbar-expand-sm">
+        <header class="navbar">
             <div class="container">
-                <div class="navbar-nav d-flex align-items-center ms-auto">
-                        <a class="nav-item nav-link" href="#!">마이페이지</a>
-                        <a class="nav-item nav-link" href="#!" id="login">로그인</a>
-                        <a class="nav-item nav-link" href="#!" id="logout">로그아웃</a>
-                    </li>
+                <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
+                    <a class="nav-item nav-link me-3" href="#!">마이페이지</a>
+                    <a class="nav-item nav-link" href="#!" id="login">로그인</a>
+                    <a class="nav-item nav-link" href="#!" id="logout">로그아웃</a>
                 </div>
             </div>
         </header>
@@ -58,7 +62,7 @@
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
                     <a class="me-5" href="#!">
-                        <img src="logo_oneteam.png" alt="cafe logo" height="20px">
+                        <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
                     </a>
                 </div>
         
@@ -97,49 +101,57 @@
             </div>
         </nav>
 
-    <section class="container" style="min-height: 50vh;">
-        <div>
-            <img class="mx-auto d-block img-thumbnail mt-3" style="width: 30vh;" src="empty_img.jpg" alt="logo">
-            <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
-        </div>
-        <div class="input-group mt-3">
-            <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">품목명</span>
-            <input type="text" class="form-control">
-        </div>
-        <div class="input-group mt-3">
-            <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">단가</span>
-            <input type="text" class="form-control">
-        </div>
-        <div class="d-flex btn-group mt-3 mb-2">
-            <button type="button" class="btn btn-outline-primary" href="#!">저장</button>
-            <a type="button" class="btn btn-outline-danger" href="#!">취소</a>
-        </div>
-    </section>
-
-    <footer class="py-2">
-        <hr class="border-secondary">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
+        <section class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <div>
+                        <img class="mx-auto d-block img-thumbnail mt-3" style="width: 30vh;" src="empty_img.jpg" alt="logo">
+                        <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">품목명</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">단가</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">생산단위</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="d-flex mt-3 mb-2 gap-2">
+                        <a type="button" class="btn btn-outline-primary" href="#!">저장</a>
+                        <a type="button" class="btn btn-outline-danger" href="#!">취소</a>
+                    </div>
                 </div>
-                <div class="col text-center">
-                    <p class="mb-0">Copyright © STEP THREE 2025</p>
-                </div>
-                    <!-- <div class="col text-end">
-                    <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        팀원
-                    </button>
-                    <ul class="dropdown-menu" id="dropdown">
-                        <li>함효신 mail@mail.com</li>
-                        <li>이경일 mail@mail.com</li>
-                        <li>강승우 mail@mail.com</li>
-                        <li>임지은 mail@mail.com</li>
-                    </ul>
-                </div> -->
             </div>
-        </div>
-    </footer>
-</body>
+        </section>
+
+        <footer class="py-2">
+            <hr class="border-secondary">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
+                    </div>
+                    <div class="col text-center">
+                        <p class="mb-0">Copyright © STEP THREE 2025</p>
+                    </div>
+                        <!-- <div class="col text-end">
+                        <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            팀원
+                        </button>
+                        <ul class="dropdown-menu" id="dropdown">
+                            <li>함효신 mail@mail.com</li>
+                            <li>이경일 mail@mail.com</li>
+                            <li>강승우 mail@mail.com</li>
+                            <li>임지은 mail@mail.com</li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </footer>
+    </body>
 
 </html>
