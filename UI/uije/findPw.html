@@ -39,91 +39,98 @@
                 background-color: #001f3f;
                 text-align: center;
             }
+            @media (max-width: 300px) {
+                header.navbar .navbar-nav {
+                    display: none !important;
+                }
+            }
         </style>
     </head>
 
     <body>
-      <header class="navbar navbar-expand-sm">
-          <div class="container">
-              <div class="navbar-nav d-flex align-items-center ms-auto">
-                      <a class="nav-item nav-link" href="#!">마이페이지</a>
-                      <a class="nav-item nav-link" href="#!" id="login">로그인</a>
-                      <a class="nav-item nav-link" href="#!" id="logout">로그아웃</a>
-                  </li>
-              </div>
-          </div>
-      </header>
+        <header class="navbar">
+            <div class="container">
+                <!-- flex-row와 flex-nowrap 클래스로 한 줄로 배치 -->
+                <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
+                    <a class="nav-item nav-link me-3" href="#!">마이페이지</a>
+                    <a class="nav-item nav-link" href="#!" id="login">로그인</a>
+                    <a class="nav-item nav-link" href="#!" id="logout">로그아웃</a>
+                </div>
+            </div>
+        </header>
         
-      <nav class="navbar navbar-expand-md bg-light">
-        <div class="container">
-            <div class="navbar-brand d-flex align-items-center">
-                <a class="me-5" href="#!">
-                    <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
-                </a>
+        <nav class="navbar navbar-expand-md bg-light sticky-top">
+            <div class="container">
+                <div class="navbar-brand d-flex align-items-center">
+                    <a class="me-5" href="#!">
+                        <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
+                    </a>
+                </div>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-fill gap-3 fs-5">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">인사</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">직원관리</a></li>
+                                <li><a class="dropdown-item" href="#">부서관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">품목관리</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">재고관리</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">발주</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">발주목록</a></li>
+                                <li><a class="dropdown-item" href="#">발주신청</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">운송목록</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav nav-fill gap-3 fs-5">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">인사</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">직원관리</a></li>
-                            <li><a class="dropdown-item" href="#">부서관리</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">품목관리</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">재고관리</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">발주</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">발주목록</a></li>
-                            <li><a class="dropdown-item" href="#">발주신청</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">운송목록</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>    
-      <section class="container" style="min-height: 50vh;">
+        </nav>    
+        <section class="container" style="min-height: 50vh;">
         <div class="row">
             <div class="col"></div>
             <div class="col-6" style="min-width: 400px;">
-                <h1 class="display-6 text-nowrap text-center">findPw</h1>
                 <a href="#!">
-                    <img class="mx-auto d-block mt-3" style="width: 20vh;" src="img1.png" alt="logo">
+                    <img class="mx-auto d-block mt-3" src="/UI/temp_logo.png" alt="logo">
                 </a>
-                <div class="input-group mt-3">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">🌏</span>
-                    <input id="email" name="email" type="text" class="form-control" placeholder="Email">
+                <p class="text-nowrap mt-3">findPw</p>
+                <div class="form-floating mt-3">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                    <label for="email">Email</label>
                 </div>
 
                 <!-- 메일인증 버튼을 누르면 위의 이메일 주소로 인증 코드가 전송 됨. (2차) -->
                 <div class="d-flex mt-3">
-                    <button id="codeReqButton" name="codeReqButton" type="button" class="btn btn-outline-primary flex-fill">인증코드 보내기</button>
+                    <button id="codeReqButton" name="codeReqButton" type="button" class="btn btn-outline-primary flex-fill">본인인증코드 전송</button>
                 </div>
                 <!-- 인증코드 보내기를 누르고 나면 다시보내기 버튼으로 변경됨. 인증 오류로 다시 보내야하는 경우에 필요  -->
                 <div class="d-flex mt-3">
-                    <button id="reReqButton" name="reReqButton" type="button" class="btn btn-outline-primary flex-fill">다시 보내기</button>
+                    <button id="reReqButton" name="reReqButton" type="button" class="btn btn-outline-primary flex-fill">재전송</button>
                 </div>
 
                 <!-- 메인인증 버튼을 누르기 전에는 display: none;, 버튼을 누르고 난 뒤 보임 -->
                 <!-- 확인 버튼을 눌러 보낸 인증코드와 기입된 인증코드가 일치하는지 확인 -->
                 <div class="input-group mt-3">
-                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">🔣</span>
-                        <input id="code" name="code" type="text" class="form-control input-group" placeholder="본인인증코드">
-                        <button id="codeChk" name="codeChk" type="button" class="btn btn-outline-primary" style="width: 75px;">확인</button>
+                    <div class="form-floating flex-grow-1">
+                      <input type="text" class="form-control" id="code" name="code" placeholder="본인인증코드">
+                      <label for="code">본인인증코드</label>
+                    </div>
+                    <button id="codeChk" name="codeChk" type="button" class="btn btn-outline-primary" style="width: 75px;">확인</button>
                 </div>
 
                 <!-- 메일인증 버튼을 누르기 전에는 display: none;(기본값), 버튼을 누르고 난 뒤 보이는 경고문 -->
@@ -151,13 +158,13 @@
                     </div>
                 </div>
 
-                <div class="input-group mt-3">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">🔒</span>
-                    <input id="pw" name="pw" type="password" class="form-control input-group" placeholder="Password">
+                <div class="form-floating mt-3">
+                    <input type="password" class="form-control" id="pw" name="pw" type="password" placeholder="Password">
+                    <label for="email">Password</label>
                 </div>
-                <div class="input-group mt-1">
-                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 50px;">☑️</span>
-                    <input id="pwChk" name="pwChk" type="password" class="form-control input-group" placeholder="Password check">
+                <div class="form-floating mt-1">
+                    <input type="password" class="form-control" id="pwChk" name="pwChk" placeholder="Password check">
+                    <label for="email">Password Check</label>
                 </div>
 
                 <!-- 인증코드가 정상적으로 처리 되었을 때만 작동 될 수 있음 -->
@@ -184,26 +191,17 @@
       <footer class="py-2">
         <hr class="border-secondary">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
-                </div>
-                <div class="col text-center">
-                    <p class="mb-0">Copyright © STEP THREE 2025</p>
-                </div>
-                  <!-- <div class="col text-end">
-                    <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        팀원
-                    </button>
-                    <ul class="dropdown-menu" id="dropdown">
-                        <li>함효신 mail@mail.com</li>
-                        <li>이경일 mail@mail.com</li>
-                        <li>강승우 mail@mail.com</li>
-                        <li>임지은 mail@mail.com</li>
+            <div class="row">
+                <div class="col-3">
+                    <ul>
+                        <li>
+                            <h5></h5>
+                        </li>
                     </ul>
-                  </div> -->
-              </div>
-          </div>
+                </div>
+                <div class="col-9"></div>
+            </div>
+        </div>
       </footer>
     </body>
 </html>
