@@ -123,29 +123,25 @@
             </div>
         </div>
     </nav>
-<nav class="navbar navbar-expand-md bg-light" id="stickyNavbar">
-  <div class="container">
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#orderNav"
-    aria-controls="orderNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="orderNav">
-    
-    <ul class="navbar-nav nav-fill gap-3 ">
-      <li class="nav-item"><a class="nav-link text-dark" href="#section1">발주상세</a></li>
-      <li class="nav-item"><a class="nav-link text-dark" href="#section2">출고요청</a></li>
-      <li class="nav-item"><a class="nav-link text-dark" href="#section3">입출고 현황</a></li>
-      <li class="nav-item"><a class="nav-link text-dark" href="#section4">배차</a></li>
-      <li class="nav-item"><a class="nav-link text-dark" href="#section5">입출고 처리</a></li>
-    </ul>
 
-    <button type="button" class="btn btn-success">목록으로 돌아가기</button>
-  </div>
-</div>
-</nav>
-    
+
     <main class="container">
-        <h3 class="mt-3" id="section1">발주 상세</h3>
+        <h2 class="mt-4 mb-4">발주 상세</h2>
+
+        <div class="mb-2">
+          <form class="form">
+              <div class="d-flex justify-content-center gap-2">
+                  <select class="form-select w-25">
+                      <option value="1">발주번호</option>
+                      <option value="2">발주요청일</option>
+                      <option value="3">입고완료일</option>
+                  </select>
+                  <input type="text" class="form-control w-50">
+                  <button type="submit" class="btn btn-success">요청</button>
+              </div>
+          </form>
+      </div>
+
         <div>
             <table>
                 <thead>
@@ -153,15 +149,15 @@
                         <th>발주번호</th>
                         <th>발주상태</th>
                         <th>발주요청일</th>
-                        <th>발주완료일/취소일</th>
+                        <th>입고완료/취소일</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>PO001</td>
-                        <td>발주 승인</td>
-                        <td>2025-03-20</td>
-                        <td>2025-03-21</td>
+                        <td>5</td>
+                        <td>발주승인</td>
+                        <td>2025-05-30</td>
+                        <td>2025-06-13</td>
                       </tr>
                 </tbody>
             </table>
@@ -173,73 +169,118 @@
                         <th>품목코드</th>
                         <th>발주수량</th>
                         <th>출고수량</th>
+                        <th>입고수량</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>PC001</td>
+                        <td>1</td>
                         <td>100</td>
+                        <td>80</td>
                         <td>80</td>
                       </tr>
                       <tr>
-                        <td>PC002</td>
+                        <td>2</td>
                         <td>150</td>
                         <td>120</td>
+                        <td>100</td>
                       </tr>
                       <tr>
-                        <td>PC003</td>
+                        <td>3</td>
                         <td>200</td>
                         <td>180</td>
+                        <td>150</td>
                       </tr>
                       <tr>
-                        <td>PC004</td>
+                        <td>4</td>
                         <td>180</td>
                         <td>160</td>
-                      </tr>
-                      <tr>
-                        <td>PC005</td>
-                        <td>120</td>
-                        <td>110</td>
-                      </tr>
-                      <tr>
-                        <td>PC006</td>
-                        <td>90</td>
-                        <td>85</td>
-                      </tr>
-                      <tr>
-                        <td>PC007</td>
-                        <td>60</td>
-                        <td>50</td>
-                      </tr>
-                      <tr>
-                        <td>PC008</td>
-                        <td>150</td>
                         <td>140</td>
                       </tr>
                       <tr>
-                        <td>PC009</td>
+                        <td>5</td>
+                        <td>120</td>
+                        <td>110</td>
+                        <td>10</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>90</td>
+                        <td>85</td>
+                        <td>85</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>60</td>
+                        <td>60</td>
+                        <td>60</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>150</td>
+                        <td>120</td>
+                        <td>100</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
                         <td>80</td>
+                        <td>70</td>
                         <td>70</td>
                       </tr>
                       <tr>
-                        <td>PC010</td>
+                        <td>10</td>
+                        <td>130</td>
                         <td>130</td>
                         <td>130</td>
                       </tr>
                 </tbody>
             </table>
         </div>
-        <div class="d-flex justify-content-end gap-2">
+        <div class="d-flex justify-content-end gap-2 mt-2">
             <button type="button" class="btn btn-secondary">발주취소</button>
         </div>
+        <div class="d-flex justify-content-center mt-3">
+          <div aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="First">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&lsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&rsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Last">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
         <!--발주상세끝-->
-        <h3 id="section2">출고 요청</h3>
+        <div class="d-flex justify-content-center gap-2 mt-4 mb-2 border rounded p-1">
+            <button type="button" class="btn btn-success">출고요청</button>
+            <button type="button" class="btn btn-success">배차</button>
+            <button type="button" class="btn btn-success">입출고관리</button>
+        </div>
+
+        <h2 class="mt-4 mb-4">출고 요청</h2>
         <div>
             <table>
                 <thead>
                     <tr>
                         <th>품목코드</th>
-                        <th>품목명</th>
                         <th>발주수량</th>
                         <th>남은수량</th>
                         <th>출고수량</th>
@@ -248,71 +289,61 @@
                 <tbody>
                     <tr>
                       <!--  style="width: 100%;" 는 실제로 만들때 style에 넣어서 하면 더 보기 좋을것임. -->
-                        <td>P001</td>
-                        <td>전자제품</td>
+                        <td>1</td>
                         <td>150</td>
                         <td>150</td>
                         <td><input type="text" name="출고수량1" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P002</td>
-                        <td>의자</td>
+                        <td>2</td>
                         <td>200</td>
                         <td>180</td>
                         <td><input type="text" name="출고수량2" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P003</td>
-                        <td>책상</td>
+                        <td>3</td>
                         <td>120</td>
                         <td>110</td>
                         <td><input type="text" name="출고수량3" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P004</td>
-                        <td>램프</td>
+                        <td>4</td>
                         <td>80</td>
                         <td>60</td>
                         <td><input type="text" name="출고수량4" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P005</td>
-                        <td>커튼</td>
+                        <td>5</td>
                         <td>50</td>
                         <td>30</td>
                         <td><input type="text" name="출고수량5" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P006</td>
-                        <td>컴퓨터</td>
+                        <td>6</td>
                         <td>30</td>
                         <td>25</td>
                         <td><input type="text" name="출고수량6" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P007</td>
-                        <td>노트북</td>
+                        <td>7</td>
                         <td>75</td>
                         <td>60</td>
                         <td><input type="text" name="출고수량7" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P008</td>
-                        <td>키보드</td>
+                        <td>8</td>
                         <td>300</td>
                         <td>280</td>
                         <td><input type="text" name="출고수량8" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P009</td>
-                        <td>마우스</td>
+                        <td>9</td>
                         <td>500</td>
                         <td>450</td>
                         <td><input type="text" name="출고수량9" value="" style="width: 100%;"></td>
                       </tr>
                       <tr>
-                        <td>P010</td>
-                        <td>헤드폰</td>
+                        <td>10</td>
                         <td>120</td>
                         <td>100</td>
                         <td><input type="text" name="출고수량10" value="" style="width: 100%;"></td>
@@ -320,217 +351,145 @@
                 </tbody>
             </table>
         </div>
-        <div class="d-flex justify-content-end gap-2">
+        <div class="d-flex justify-content-end gap-2 mt-2">
             <button type="button" class="btn  btn-success">출고요청</button>
         </div>
+        <div class="d-flex justify-content-center mt-3">
+          <div aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="First">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&lsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&rsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Last">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
         <!--출고요청끝-->
-        <h3 id="section3">입출고 현황</h3>
+
+        <h2 class="mt-4 mb-4">배차</h2>
         <div>
             <table>
                 <thead>
                     <tr>
-                        <th>출고번호</th>
-                        <th>운송번호</th>
-                        <th>품목코드</th>
-                        <th>품목명</th>
-                        <th>출고일자</th>
-                        <th>입고일자</th>
-                        <th>수량</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>OUT001</td>
-                        <td>TRS001</td>
-                        <td>P001</td>
-                        <td>전자제품</td>
-                        <td>2025-03-01</td>
-                        <td>2025-03-03</td>
-                        <td>50</td>
-                      </tr>
-                      <tr>
-                        <td>OUT002</td>
-                        <td></td>
-                        <td>P002</td>
-                        <td>의자</td>
-                        <td>2025-03-02</td>
-                        <td>2025-03-04</td>
-                        <td>100</td>
-                      </tr>
-                      <tr>
-                        <td>OUT003</td>
-                        <td></td>
-                        <td>P003</td>
-                        <td>책상</td>
-                        <td>2025-03-03</td>
-                        <td>2025-03-05</td>
-                        <td>75</td>
-                      </tr>
-                      <tr>
-                        <td>OUT004</td>
-                        <td>TRS004</td>
-                        <td>P004</td>
-                        <td>램프</td>
-                        <td>2025-03-04</td>
-                        <td>2025-03-06</td>
-                        <td>60</td>
-                      </tr>
-                      <tr>
-                        <td>OUT005</td>
-                        <td>TRS005</td>
-                        <td>P005</td>
-                        <td>커튼</td>
-                        <td>2025-03-05</td>
-                        <td>2025-03-07</td>
-                        <td>30</td>
-                      </tr>
-                      <tr>
-                        <td>OUT006</td>
-                        <td></td>
-                        <td>P006</td>
-                        <td>컴퓨터</td>
-                        <td>2025-03-06</td>
-                        <td>2025-03-08</td>
-                        <td>20</td>
-                      </tr>
-                      <tr>
-                        <td>OUT007</td>
-                        <td>TRS007</td>
-                        <td>P007</td>
-                        <td>노트북</td>
-                        <td>2025-03-07</td>
-                        <td>2025-03-09</td>
-                        <td>50</td>
-                      </tr>
-                      <tr>
-                        <td>OUT008</td>
-                        <td>TRS008</td>
-                        <td>P008</td>
-                        <td>키보드</td>
-                        <td>2025-03-08</td>
-                        <td>2025-03-10</td>
-                        <td>200</td>
-                      </tr>
-                      <tr>
-                        <td>OUT009</td>
-                        <td>TRS009</td>
-                        <td>P009</td>
-                        <td>마우스</td>
-                        <td>2025-03-09</td>
-                        <td>2025-03-11</td>
-                        <td>150</td>
-                      </tr>
-                      <tr>
-                        <td>OUT010</td>
-                        <td>TRS010</td>
-                        <td>P010</td>
-                        <td>헤드폰</td>
-                        <td>2025-03-10</td>
-                        <td>2025-03-12</td>
-                        <td>100</td>
-                      </tr>
-                </tbody>
-            </table>
-        </div>
-        <!--입출고현황끝-->
-        <h3 id="section4">배차</h3>
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th><input type="checkbox" id="checkAll"></th>
                         <th class="text-nowrap">출고번호</th>
                         <th class="text-nowrap">품목코드</th>
-                        <th class="text-nowrap">품목명</th>
                         <th class="text-nowrap">수량</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT001</td>
-                        <td>P001</td>
-                        <td>전자제품</td>
+                        <td>1</td>
+                        <td>1</td>
                         <td>50</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT002</td>
-                        <td>P002</td>
-                        <td>의자</td>
+                        <td>2</td>
+                        <td>2</td>
                         <td>100</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT003</td>
-                        <td>P003</td>
-                        <td>책상</td>
+                        <td>3</td>
+                        <td>3</td>
                         <td>75</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT004</td>
-                        <td>P004</td>
-                        <td>램프</td>
+                        <td>4</td>
+                        <td>4</td>
                         <td>60</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT005</td>
-                        <td>P005</td>
-                        <td>커튼</td>
+                        <td>5</td>
+                        <td>5</td>
                         <td>30</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT006</td>
-                        <td>P006</td>
-                        <td>컴퓨터</td>
+                        <td>6</td>
+                        <td>6</td>
                         <td>20</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT007</td>
-                        <td>P007</td>
-                        <td>노트북</td>
+                        <td>7</td>
+                        <td>7</td>
                         <td>50</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT008</td>
-                        <td>P008</td>
-                        <td>키보드</td>
+                        <td>8</td>
+                        <td>8</td>
                         <td>200</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT009</td>
-                        <td>P009</td>
-                        <td>마우스</td>
+                        <td>9</td>
+                        <td>9</td>
                         <td>150</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>OUT010</td>
-                        <td>P010</td>
-                        <td>헤드폰</td>
+                        <td>10</td>
+                        <td>10</td>
                         <td>100</td>
                       </tr>
                 </tbody>
             </table>
         </div>
-        <div class="container my-3 d-flex gap-2 justify-content-end">
+        <div class="mt-2 d-flex gap-2 justify-content-end">
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#transpModal">운송기사
                 배정</button>
                 <button type="button" class="btn btn-secondary">물품선택 초기화</button>
         </div>
+        <div class="d-flex justify-content-center mt-3">
+          <div aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="First">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&lsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&rsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Last">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
         <!--배차끝-->
-        <p id="section5"><h3>입출고 처리</h3></p>
+
+        <p class="mt-4 mb-4"><h2>입출고 관리</h2></p>
         <div>
             <table>
                 <thead>
                     <tr>
-                        <th><input type="checkbox" id="checkAll"></th>
                         <th>운송번호</th>
                         <th>출고일자</th>
                         <th>입고일자</th>
@@ -538,97 +497,183 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS001</td>
+                        <td>1</td>
                         <td>2025-03-01</td>
                         <td>2025-03-03</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS002</td>
+                        <td>2</td>
                         <td>2025-03-02</td>
                         <td>2025-03-04</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS003</td>
+                        <td>3</td>
                         <td>2025-03-03</td>
                         <td>2025-03-05</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS004</td>
+                        <td>4</td>
                         <td>2025-03-04</td>
                         <td>2025-03-06</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS005</td>
+                        <td>5</td>
                         <td>2025-03-05</td>
                         <td>2025-03-07</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS006</td>
+                        <td>6</td>
                         <td>2025-03-06</td>
                         <td>2025-03-08</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS007</td>
+                        <td>7</td>
                         <td>2025-03-07</td>
                         <td>2025-03-09</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS008</td>
+                        <td>8</td>
                         <td>2025-03-08</td>
                         <td>2025-03-10</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS009</td>
+                        <td>9</td>
                         <td>2025-03-09</td>
                         <td>2025-03-11</td>
                       </tr>
                       <tr>
-                        <td><input type="checkbox" class="item-checkbox"></td>
-                        <td>TRS010</td>
+                        <td>10</td>
                         <td>2025-03-10</td>
                         <td>2025-03-12</td>
                       </tr>
                 </tbody>
             </table>
         </div>        
-        <div class="d-flex justify-content-end gap-2">
+        <div class="d-flex justify-content-end gap-2 mt-2 mb-2">
             <button type="button" class="btn btn-success">출고 완료</button>
             <button type="button" class="btn btn-secondary">입고 완료</button>
-        </div>
+        </div> 
+        <div class="d-flex justify-content-center mt-3">
+          <div aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="First">
+                          <span aria-hidden="true">&laquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&lsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&rsaquo;</span>
+                      </a>
+                  </li>
+                  <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Last">
+                          <span aria-hidden="true">&raquo;</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
     </main>
-    <footer class="py-2">
-        <hr class="border-secondary">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
-                </div>
-                <div class="col text-center">
-                    <p class="mb-0">Copyright © STEP THREE 2025</p>
-                </div>
-                <!-- <div class="col text-end">
-                    <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        팀원
-                    </button>
-                    <ul class="dropdown-menu" id="dropdown">
-                        <li>함효신 mail@mail.com</li>
-                        <li>이경일 mail@mail.com</li>
-                        <li>강승우 mail@mail.com</li>
-                        <li>임지은 mail@mail.com</li>
-                    </ul>
-                  </div> -->
-            </div>
-        </div>
-    </footer>
+<!--/* layout footer */-->
+<footer class="text-light py-4" style="background-color: #001f3f;">
+  <div class="container">
+      <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
+          <!-- 왼쪽: 제목 및 팀원 정보 -->
+          <div class="col-8 d-flex flex-column">
+              <!-- 제목: 왼쪽 정렬 -->
+              <h5 class="text-center">Oneteam 3차 Project ERP_System</h5>
+              <!-- 팀원 정보: mt-auto로 아래쪽 끝으로 이동 -->
+              <div class="mt-auto">
+                  <div class="row text-center">
+                      <!-- 팀원 1 -->
+                      <div class="col-6 col-md-3 mb-3 text-start">
+                          <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">함효신</h6>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="mailto:hamhs0802@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">hamhs0802@gmail.com</a>
+                          </small>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="https://github.com/HelenHam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                          </small>
+                      </div>
+                      <!-- 팀원 2 -->
+                      <div class="col-6 col-md-3 mb-3 text-start">
+                          <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">임지은</h6>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="mailto:j.lim9304@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">j.lim9304@gmail.com</a>
+                          </small>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="https://github.com/GGobung-of-Simba" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                          </small>
+                      </div>
+                      <!-- 팀원 3 -->
+                      <div class="col-6 col-md-3 mb-3 text-start">
+                          <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">강승우</h6>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="mailto:swparabellum@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">swparabellum@gmail.com</a>
+                          </small>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="https://github.com/swparabellum" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                          </small>
+                      </div>
+                      <!-- 팀원 4 -->
+                      <div class="col-6 col-md-3 mb-3 text-start">
+                          <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">이경일</h6>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="mailto:dlruddlf120914@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">dlruddlf120914@gmail.com</a>
+                          </small>
+                          <small style="font-size: 0.7rem; display: block;">
+                              <a href="https://github.com/KY129" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                          </small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- 오른쪽: GitHub 링크 -->
+          <div class="col-4 d-flex justify-content-end">
+              <div class="text-start">
+                  <!-- GitHub 로고와 제목을 한 줄로 정렬 -->
+                  <div class="d-flex align-items-center">
+                      <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">GitHub</h4>
+                  </div>
+                  <ul class="list-unstyled" style="font-size: 0.7rem; line-height: 1.6;">
+                      <li>
+                          <a href="https://github.com/0neteam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">0neteam</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/0neteam/Project1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">1차 Project</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/0neteam/app1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app1</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/0neteam/app2" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app2</a>
+                      </li>
+                      <li>
+                          <a href="https://github.com/0neteam/ERP_System" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">3차 Project/ERP_System</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <hr class="bg-light">
+
+      <!-- 로고와 저작권 영역 -->
+      <div class="d-flex flex-nowrap justify-content-between align-items-center">
+          <p class="mb-0">Copyright © STEP THREE 2025</p>
+          <img src="../temp_logo.png" width="120" height="40" alt="Logo" class="flex-shrink-0">
+      </div>
+  </div>
+</footer>
     <!-- modal -->
     <div class="modal" id="transpModal">
         <div class="modal-dialog modal-xl">
@@ -652,7 +697,7 @@
                                     <tr>
                                         <th></th>
                                         <th>이름</th>
-                                        <th>연락처</th>
+                                        <th>연락처</th><!--/* layout footer */-->
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -670,7 +715,7 @@
                             </table>
                         </div>
 
-                        <div class="d-flex justify-content-end gap-2">
+                        <div class="d-flex justify-content-end gap-2 mt-2">
                             <button type="button" class="btn btn-success">배정</button>
                         </div>
                     </div>
