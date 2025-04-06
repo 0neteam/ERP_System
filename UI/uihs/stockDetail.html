@@ -44,6 +44,89 @@
                     display: none !important;
                 }
             }
+            body {
+                background: #f5f5f5
+            }
+            section {
+                padding:1.5em;
+            }
+
+            table {
+                border: 1px #222222 solid;
+                font-size: .9em;
+                box-shadow: 0 2px 5px rgba(0,0,0,.25);
+                width: 100%;
+                border-collapse: collapse;
+                border-radius: 5px;
+                overflow: hidden;
+            }
+
+            th {
+                text-align: left;
+            }
+            
+            thead {
+                font-weight: bold;
+                color: #fff;
+                background: #222222;
+            }
+            
+            td, th {
+                padding: 1em .5em;
+                vertical-align: middle;
+            }
+            
+            td {
+                border-bottom: 1px solid rgba(0,0,0,.1);
+                background: #fff;
+            }
+
+            a {
+                color: #222222;
+            }
+            
+            @media all and (max-width: 768px) {
+                
+                table, thead, tbody, th, td, tr {
+                    display: block;
+                }
+            
+                th {
+                    text-align: right;
+                }
+            
+                table {
+                    position: relative; 
+                    padding-bottom: 0;
+                    border: none;
+                    box-shadow: 0 0 10px rgba(0,0,0,.2);
+                }
+                
+                thead {
+                    float: left;
+                    white-space: nowrap;
+                }
+                
+                tbody {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    position: relative;
+                    white-space: nowrap;
+                }
+                
+                tr {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                
+                th {
+                    border-bottom: 1px solid #222;
+                }
+                
+                td {
+                    border-bottom: 1px solid #e5e5e5;
+                }
+            }
         </style>
     </head>
 
@@ -62,7 +145,7 @@
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
                     <a class="me-5" href="#!">
-                        <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
+                        <img src="/temp_logo.png" alt="logo" width="120px" height="40px">
                     </a>
                 </div>
         
@@ -101,14 +184,15 @@
             </div>
         </nav>
 
-        <section class="container mb-2 p-3" style="min-height: 70vh;">
-            <div class="p-3">
-                <h2>재고 상세</h2>
+        <section class="container" style="min-height: 70vh;">
+            <div class="d-flex align-items-center mb-4">
+              <h2 class="mb-0">재고 상세</h2>
+              <a class="btn btn-outline-secondary ms-auto" href="/uihs/stock.html">목록으로</a>
             </div>
             <div class="mb-2">
-                <table class="table table-striped table-bordered">
-                    <thead class="table-dark">
-                        <tr class="text-center">
+                <table>
+                    <thead>
+                        <tr>
                             <th>품목번호</th>
                             <th>품목명</th>
                             <th>재고수량</th>
@@ -117,107 +201,85 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="text-center">1</td>
+                            <td>1</td>
                             <td>제품 A</td>
-                            <td class="text-center">10</td>
-                            <td class="text-center">2024-03-01</td>
+                            <td>10</td>
+                            <td>2024-03-01</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="mb-2">
-                <table class="table table-striped table-bordered">
-                    <thead class="table-dark">
-                        <tr class="text-center">
-                            <th>발주번호</th>
+                <table>
+                    <thead>
+                        <tr>
                             <th>입출고번호</th>
-                            <th>운송번호</th>
                             <th>수량</th>
                             <th>출발일시</th>
                             <th>도착일시</th>
                         </tr>
                     </thead>
-                    <tbody class="text-center">
+                    <tbody>
                         <tr>
-                            <td >1</td>
                             <td>5</td>
-                            <td>10</td>
                             <td>10</td>
                             <td>2024-03-01</td>
                             <td>2024-03-16</td>
                         </tr>
                         <tr>
-                            <td >1</td>
                             <td>15</td>
-                            <td>30</td>
+                            <td>10</td>
+                            <td>2024-04-01</td>
+                            <td>2024-04-16</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
                             <td>30</td>
                             <td>2024-04-01</td>
                             <td>2024-04-16</td>
                         </tr>
                         <tr>
-                            <td >1</td>
-                            <td>15</td>
-                            <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
+                            <td>20</td>
+                            <td>50</td>
+                            <td>2024-05-01</td>
+                            <td>2024-05-16</td>
                         </tr>
                         <tr>
-                            <td >1</td>
-                            <td>15</td>
                             <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
+                            <td>80</td>
+                            <td>2024-06-01</td>
+                            <td>2024-06-16</td>
                         </tr>
                         <tr>
-                            <td >1</td>
-                            <td>15</td>
+                            <td>35</td>
                             <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
+                            <td>2024-06-03</td>
+                            <td>2024-06-17</td>
                         </tr>
                         <tr>
-                            <td >1</td>
-                            <td>15</td>
-                            <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
+                            <td>37</td>
+                            <td>100</td>
+                            <td>2024-07-01</td>
+                            <td>2024-07-10</td>
                         </tr>
                         <tr>
-                            <td >1</td>
-                            <td>15</td>
-                            <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
+                            <td>40</td>
+                            <td>40</td>
+                            <td>2024-08-01</td>
+                            <td>2024-08-16</td>
                         </tr>
                         <tr>
-                            <td >1</td>
-                            <td>15</td>
-                            <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
+                            <td>80</td>
+                            <td>70</td>
+                            <td>2024-09-01</td>
+                            <td>2024-09-14</td>
                         </tr>
                         <tr>
-                            <td >1</td>
-                            <td>15</td>
+                            <td>90</td>
                             <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
-                        </tr>
-                        <tr>
-                            <td >1</td>
-                            <td>15</td>
-                            <td>30</td>
-                            <td>30</td>
-                            <td>2024-04-01</td>
-                            <td>2024-04-16</td>
+                            <td>2024-09-01</td>
+                            <td>2024-09-16</td>
                         </tr>
 
                     </tbody>
@@ -251,27 +313,94 @@
                 </ul>
             </div>
         </section>
-        <footer class="py-2">
-            <hr class="border-secondary">
+        
+        <footer class="text-light py-4" style="background-color: #001f3f;">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-auto">
-                        <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
+                <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
+                    <!-- 왼쪽: 제목 및 팀원 정보 -->
+                    <div class="col-8 d-flex flex-column">
+                        <!-- 제목: 왼쪽 정렬 -->
+                        <h5 class="text-center">Oneteam 3차 Project ERP_System</h5>
+                        <!-- 팀원 정보: mt-auto로 아래쪽 끝으로 이동 -->
+                        <div class="mt-auto">
+                            <div class="row text-center">
+                                <!-- 팀원 1 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">함효신</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:hamhs0802@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">hamhs0802@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/HelenHam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 2 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">임지은</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:j.lim9304@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">j.lim9304@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/GGobung-of-Simba" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 3 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">강승우</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:swparabellum@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">swparabellum@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/swparabellum" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 4 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">이경일</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:dlruddlf120914@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">dlruddlf120914@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/KY129" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        <p class="mb-0">Copyright © STEP THREE 2025</p>
+                    <!-- 오른쪽: GitHub 링크 -->
+                    <div class="col-4 d-flex justify-content-end">
+                        <div class="text-start">
+                            <!-- GitHub 로고와 제목을 한 줄로 정렬 -->
+                            <div class="d-flex align-items-center">
+                                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">GitHub</h4>
+                            </div>
+                            <ul class="list-unstyled" style="font-size: 0.7rem; line-height: 1.6;">
+                                <li>
+                                    <a href="https://github.com/0neteam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">0neteam</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/Project1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">1차 Project</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/app1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app1</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/app2" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app2</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/ERP_System" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">3차 Project/ERP_System</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <!-- <div class="col text-end">
-                        <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            팀원
-                        </button>
-                        <ul class="dropdown-menu" id="dropdown">
-                            <li>함효신 mail@mail.com</li>
-                            <li>이경일 mail@mail.com</li>
-                            <li>강승우 mail@mail.com</li>
-                            <li>임지은 mail@mail.com</li>
-                        </ul>
-                    </div> -->
+                </div>
+        
+                <hr class="bg-light">
+        
+                <!-- 로고와 저작권 영역 -->
+                <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                    <p class="mb-0">Copyright © STEP THREE 2025</p>
+                    <img src="../temp_logo.png" width="120" height="40" alt="Logo" class="flex-shrink-0">
                 </div>
             </div>
         </footer>
