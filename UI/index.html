@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>index</title>
+  <style>
+    body {
+      background: #f5f5f5;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    main {
+      padding: 2rem 1rem;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-width: 800px;
+        justify-items: center;
+        margin: 0 auto; 
+        padding: 1rem 1rem;
+    }
+
+    .card {
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 1.5rem;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+      border-bottom: 2px solid #222;
+      padding-bottom: 0.5rem;
+      color: #222;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .card li {
+      margin-bottom: 0.5rem;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: #222;
+      transition: color 0.2s;
+    }
+
+    .card a:hover {
+      color: #007acc;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+        grid-template-columns: 1fr;
+        }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h2>index</h2>
+    <div class="container">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <h3>uisw</h3>
+        <ul>
+          <li><a href="/uisw/orderCreate.html">발주 신청</a></li>
+          <li><a href="/uisw/orderList.html">발주 목록</a></li>
+          <li><a href="/uisw/orderDetail.html">발주 상세</a></li>
+        </ul>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <h3>uiky</h3>
+        <ul>
+          <li><a href="/uiky/main.html">메인</a></li>
+          <li><a href="/uiky/transpList.html">운송 목록</a></li>
+          <li><a href="/uiky/transpList.html">운송 상세</a></li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <h3>uije</h3>
+        <ul>
+          <li><a href="/uije/signUp.html">회원가입</a></li>
+          <li><a href="/uije/signIn.html">로그인</a></li>
+          <li><a href="/uije/findPw.html">비밀번호 찾기</a></li>
+          <li><a href="/uije/mypage.html">마이페이지</a></li>
+        </ul>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <h3>uihs</h3>
+        <ul>
+          <li><a href="/uihs/deptMang.html">부서 관리</a></li>
+          <li><a href="/uihs/userMang.html">직원 관리</a></li>
+          <li><a href="/uihs/item.html">품목 관리</a></li>
+          <li><a href="/uihs/itemCreate.html">품목 추가</a></li>
+          <li><a href="/uihs/stock.html">재고 관리</a></li>
+          <li><a href="/uihs/stockDetail.html">재고 상세</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

@@ -45,4 +45,11 @@
       display: none !important;
     }
   }
+
+body {
+    background: #f5f5f5
+}
+section {
+    padding:1.5em;
+}
   
