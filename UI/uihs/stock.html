@@ -39,12 +39,16 @@
                 background-color: #001f3f;
                 text-align: center;
             }
+
             body {
-                padding:1.5em;
                 background: #f5f5f5
             }
+            section {
+                padding:1.5em;
+            }
+
             table {
-                border: 1px #313131 solid;
+                border: 1px #222222 solid;
                 font-size: .9em;
                 box-shadow: 0 2px 5px rgba(0,0,0,.25);
                 width: 100%;
@@ -52,14 +56,17 @@
                 border-radius: 5px;
                 overflow: hidden;
             }
+
             th {
                 text-align: left;
             }
+            
             thead {
                 font-weight: bold;
                 color: #fff;
-                background: #313131;
+                background: #222222;
             }
+            
             td, th {
                 padding: 1em .5em;
                 vertical-align: middle;
@@ -71,39 +78,47 @@
             }
 
             a {
-                color: #73685d;
+                color: #222222;
             }
             
             @media all and (max-width: 768px) {
+                
                 table, thead, tbody, th, td, tr {
                     display: block;
                 }
+            
                 th {
                     text-align: right;
                 }
+            
                 table {
                     position: relative; 
                     padding-bottom: 0;
                     border: none;
                     box-shadow: 0 0 10px rgba(0,0,0,.2);
                 }
+                
                 thead {
                     float: left;
                     white-space: nowrap;
                 }
+                
                 tbody {
                     overflow-x: auto;
                     overflow-y: hidden;
                     position: relative;
                     white-space: nowrap;
                 }
+                
                 tr {
                     display: inline-block;
                     vertical-align: top;
                 }
+                
                 th {
-                    border-bottom: 1px solid #a39485;
+                    border-bottom: 1px solid #222;
                 }
+                
                 td {
                     border-bottom: 1px solid #e5e5e5;
                 }
@@ -126,7 +141,7 @@
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
                     <a class="me-5" href="#!">
-                        <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
+                        <img src="/temp_logo.png" alt="logo" width="120px" height="40px">
                     </a>
                 </div>
         
@@ -186,7 +201,7 @@
                 </form>
             </div>
             <div>
-                <table>
+                <table class="mb-2">
                     <thead>
                     <tr>
                         <th>First Name</th>
