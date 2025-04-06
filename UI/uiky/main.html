@@ -9,14 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         /* 웹폰트 적용 */
-        @font-face {
-          font-family: 'KakaoSmallSans-Light';
-          src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoSmallSans-Light.woff2') format('woff2');
-          font-weight: 400;
-          font-style: normal;
-        }
+        @import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
         body {
-          font-family: 'KakaoSmallSans-Light', sans-serif;
+            background: #f5f5f5;
+            font-family: 'notosanskr', sans-serif;
         }
         /* 헤더 및 네비게이션 */
         .nav-item.dropdown:hover .dropdown-menu {
@@ -165,39 +161,6 @@
     </div>
 </section>
 
-<!-- 대시보드 섹션: 주요 지표 -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">주요 지표</h2>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="dashboard-card">
-                    <h3>1,250</h3>
-                    <p>총 주문 수</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dashboard-card">
-                    <h3>8,750</h3>
-                    <p>재고 수량</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dashboard-card">
-                    <h3>320</h3>
-                    <p>출고 완료</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="dashboard-card">
-                    <h3>150</h3>
-                    <p>발주 대기</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- 서비스 섹션: 발주 서비스 -->
 <section class="py-5 bg-light" id="stg">
     <div class="container">
@@ -252,17 +215,94 @@
     </div>
 </section>
 
-<!-- 푸터 -->
-<footer class="py-2">
-    <hr class="border-secondary">
+<!--/* layout footer */-->
+<footer class="text-light py-4" style="background-color: #001f3f;">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-auto">
-                <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
+        <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
+            <!-- 왼쪽: 제목 및 팀원 정보 -->
+            <div class="col-8 d-flex flex-column">
+                <!-- 제목: 왼쪽 정렬 -->
+                <h5 class="text-center">Oneteam 3차 Project ERP_System</h5>
+                <!-- 팀원 정보: mt-auto로 아래쪽 끝으로 이동 -->
+                <div class="mt-auto">
+                    <div class="row text-center">
+                        <!-- 팀원 1 -->
+                        <div class="col-6 col-md-3 mb-3 text-start">
+                            <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">함효신</h6>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="mailto:hamhs0802@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">hamhs0802@gmail.com</a>
+                            </small>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="https://github.com/HelenHam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                            </small>
+                        </div>
+                        <!-- 팀원 2 -->
+                        <div class="col-6 col-md-3 mb-3 text-start">
+                            <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">임지은</h6>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="mailto:j.lim9304@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">j.lim9304@gmail.com</a>
+                            </small>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="https://github.com/GGobung-of-Simba" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                            </small>
+                        </div>
+                        <!-- 팀원 3 -->
+                        <div class="col-6 col-md-3 mb-3 text-start">
+                            <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">강승우</h6>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="mailto:swparabellum@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">swparabellum@gmail.com</a>
+                            </small>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="https://github.com/swparabellum" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                            </small>
+                        </div>
+                        <!-- 팀원 4 -->
+                        <div class="col-6 col-md-3 mb-3 text-start">
+                            <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">이경일</h6>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="mailto:dlruddlf120914@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">dlruddlf120914@gmail.com</a>
+                            </small>
+                            <small style="font-size: 0.7rem; display: block;">
+                                <a href="https://github.com/KY129" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col text-center">
-                <p class="mb-0">Copyright © STEP THREE 2025</p>
+            <!-- 오른쪽: GitHub 링크 -->
+            <div class="col-4 d-flex justify-content-end">
+                <div class="text-start">
+                    <!-- GitHub 로고와 제목을 한 줄로 정렬 -->
+                    <div class="d-flex align-items-center">
+                        <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">GitHub</h4>
+                    </div>
+                    <ul class="list-unstyled" style="font-size: 0.7rem; line-height: 1.6;">
+                        <li>
+                            <a href="https://github.com/0neteam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">0neteam</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/0neteam/Project1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">1차 Project</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/0neteam/app1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app1</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/0neteam/app2" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app2</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/0neteam/ERP_System" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">3차 Project/ERP_System</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+
+        <hr class="bg-light">
+
+        <!-- 로고와 저작권 영역 -->
+        <div class="d-flex flex-nowrap justify-content-between align-items-center">
+            <p class="mb-0">Copyright © STEP THREE 2025</p>
+            <img src="../temp_logo.png" width="120" height="40" alt="Logo" class="flex-shrink-0">
         </div>
     </div>
 </footer>
