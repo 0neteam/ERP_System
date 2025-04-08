@@ -4,14 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transpCreate</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+
+        /* 웹폰트 적용 */
+        @font-face {
+            font-family: 'KakaoSmallSans-Light';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoSmallSans-Light.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+        }
+        body {
+        font-family: 'KakaoSmallSans-Light', sans-serif;
+        }
+
+        /* layout */
+        .nav-item.dropdown:hover .dropdown-menu {
+          display: block;
+        }
+        header.navbar {
+            background-color: white !important;
+        }
+        header.navbar .nav-link {
+            color: black !important;
+        }
+        .navbar {
+            background-color: #001f3f !important;
+        }
+        .navbar .nav-link,
+        .navbar .navbar-brand a{
+            color: white !important;
+        }
+        .navbar .dropdown-menu  a{
+            color: black !important;
+        }
+        .navbar .dropdown-menu {
+            background-color: white !important;
+        }
+        .navbar-toggler {
+            border-color: white !important;
+        }
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+        .navbar-collapse.show .dropdown-menu {
+            background-color: #001f3f;
+            text-align: center;
+        }
+
+    </style>
 
 </head>
 <body>
+
+<!--/* layout header, nav */-->
+<header class="navbar navbar-expand-sm">
+    <div class="container">
+        <div class="navbar-nav d-flex align-items-center ms-auto">
+            <a class="nav-item nav-link" href="#!">마이페이지</a>
+            <a class="nav-item nav-link" href="#!" id="login">로그인</a>
+            <a class="nav-item nav-link" href="#!" id="logout">로그아웃</a>
+            </li>
+        </div>
+    </div>
+</header>
+
+<nav class="navbar navbar-expand-md bg-light">
+    <div class="container">
+        <div class="navbar-brand d-flex align-items-center">
+            <a class="me-5" href="#!">
+                <img src="../temp_logo.png" alt="cafe logo" height="20px">
+            </a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav nav-fill gap-3 fs-5">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">인사</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">직원관리</a></li>
+                        <li><a class="dropdown-item" href="#">부서관리</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">품목관리</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">재고관리</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">발주</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">발주목록</a></li>
+                        <li><a class="dropdown-item" href="#">발주신청</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">운송목록</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
     <div class="container my-3">
     <p>입출고 리스트</p>
@@ -29,26 +130,90 @@
         <tbody>
         <tr>
             <td><input type="checkbox"></td>
-            <td>출고번호1</td>
-            <td>발주번호1</td>
-            <td>품목코드1</td>
-            <td>품목명1</td>
+            <td>101</td>
+            <td>501</td>
+            <td>301</td>
+            <td>연필</td>
             <td>10</td>
         </tr>
         <tr>
             <td><input type="checkbox"></td>
-            <td>출고번호2</td>
-            <td>발주번호2</td>
-            <td>품목코드2</td>
-            <td>품목명2</td>
-            <td>5</td>
+            <td>102</td>
+            <td>502</td>
+            <td>302</td>
+            <td>지우개</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>103</td>
+            <td>503</td>
+            <td>303</td>
+            <td>볼펜</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>104</td>
+            <td>504</td>
+            <td>304</td>
+            <td>자</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>105</td>
+            <td>505</td>
+            <td>305</td>
+            <td>노트</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>106</td>
+            <td>506</td>
+            <td>306</td>
+            <td>마커</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>107</td>
+            <td>507</td>
+            <td>307</td>
+            <td>색연필</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>108</td>
+            <td>508</td>
+            <td>308</td>
+            <td>테이프</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>109</td>
+            <td>509</td>
+            <td>309</td>
+            <td>수첩</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>110</td>
+            <td>510</td>
+            <td>310</td>
+            <td>스테이플러</td>
+            <td>40</td>
         </tr>
         </tbody>
     </table>
 
     <div class="container my-3 d-flex gap-2 justify-content-end">
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#productModal">운송기사 배정</button>
-        <button type="button" class="btn btn-success">취소</button>
+        <button type="button" class="btn btn-secondary">취소</button>
     </div>
     </div>
 
@@ -89,6 +254,16 @@
                                     <td>구월</td>
                                     <td>september@gmail.com</td>
                                 </tr>
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>야옹</td>
+                                    <td>yaong@naver.com</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="radio"></td>
+                                    <td>제니</td>
+                                    <td>dlwpsgml@gmail.com</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -105,6 +280,32 @@
         </div>
     </div>
     <!-- modal -->
+
+<!--/* layout footer */-->
+<footer class="py-2">
+    <hr class="border-secondary">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
+            </div>
+            <div class="col text-center">
+                <p class="mb-0">Copyright © STEP THREE 2025</p>
+            </div>
+            <!-- <div class="col text-end">
+              <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  팀원
+              </button>
+              <ul class="dropdown-menu" id="dropdown">
+                  <li>함효신 mail@mail.com</li>
+                  <li>이경일 mail@mail.com</li>
+                  <li>강승우 mail@mail.com</li>
+                  <li>임지은 mail@mail.com</li>
+              </ul>
+            </div> -->
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

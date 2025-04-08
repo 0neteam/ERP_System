@@ -39,26 +39,30 @@
                 background-color: #001f3f;
                 text-align: center;
             }
+            @media (max-width: 300px) {
+                header.navbar .navbar-nav {
+                    display: none !important;
+                }
+            }
         </style>
     </head>
 
     <body>
-        <header class="navbar navbar-expand-sm">
+        <header class="navbar">
             <div class="container">
-                <div class="navbar-nav d-flex align-items-center ms-auto">
-                        <a class="nav-item nav-link" href="#!">마이페이지</a>
-                        <a class="nav-item nav-link" href="#!" id="login">로그인</a>
-                        <a class="nav-item nav-link" href="#!" id="logout">로그아웃</a>
-                    </li>
+                <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
+                    <a class="nav-item nav-link me-3" href="/UI/uije/mypage.html">마이페이지</a>
+                    <a class="nav-item nav-link" href="/UI/uije/signIn.html" id="login">로그인</a>
+                    <a class="nav-item nav-link" href="/UI/uiky/main.html" id="logout">로그아웃</a>
                 </div>
             </div>
         </header>
-          
+        
         <nav class="navbar navbar-expand-md bg-light">
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
-                    <a class="me-5" href="#!">
-                        <img src="logo_oneteam.png" alt="cafe logo" height="20px">
+                    <a class="me-5" href="/UI/uiky/main.html">
+                        <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
                     </a>
                 </div>
         
@@ -70,76 +74,150 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav nav-fill gap-3 fs-5">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">인사</a>
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">인사</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">직원관리</a></li>
-                                <li><a class="dropdown-item" href="#">부서관리</a></li>
+                                <li><a class="dropdown-item" href="/UI/uihs/userMang.html">직원관리</a></li>
+                                <li><a class="dropdown-item" href="/UI/uihs/deptMang.html">부서관리</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">품목관리</a>
+                            <a class="nav-link text-dark" href="/UI/uihs/item.html">품목관리</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">재고관리</a>
+                            <a class="nav-link text-dark" href="/UI/uihs/stock.html">재고관리</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">발주</a>
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">발주</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">발주목록</a></li>
-                                <li><a class="dropdown-item" href="#">발주신청</a></li>
+                                <li><a class="dropdown-item" href="/UI/uisw/orderList.html">발주목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">운송목록</a>
+                            <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송목록</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-    <section class="container" style="min-height: 50vh;">
-        <div>
-            <img class="mx-auto d-block img-thumbnail mt-3" style="width: 30vh;" src="empty_img.jpg" alt="logo">
-            <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
-        </div>
-        <div class="input-group mt-3">
-            <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">품목명</span>
-            <input type="text" class="form-control">
-        </div>
-        <div class="input-group mt-3">
-            <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">단가</span>
-            <input type="text" class="form-control">
-        </div>
-        <div class="d-flex btn-group mt-3 mb-2">
-            <button type="button" class="btn btn-outline-primary" href="#!">저장</button>
-            <a type="button" class="btn btn-outline-danger" href="#!">취소</a>
-        </div>
-    </section>
-
-    <footer class="py-2">
-        <hr class="border-secondary">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
+        <section class="container d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <div>
+                        <img class="mx-auto d-block img-thumbnail mt-3" style="width: 30vh;" src="empty_img.jpg" alt="logo">
+                        <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">품목명</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">단가</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="input-group mt-3">
+                        <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">생산단위</span>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="d-flex mt-3 mb-2 gap-2">
+                        <a type="button" class="btn btn-outline-primary" href="/UI/uihs/item.html">저장</a>
+                        <a type="button" class="btn btn-outline-danger" href="/UI/uihs/item.html">취소</a>
+                    </div>
                 </div>
-                <div class="col text-center">
-                    <p class="mb-0">Copyright © STEP THREE 2025</p>
-                </div>
-                    <!-- <div class="col text-end">
-                    <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        팀원
-                    </button>
-                    <ul class="dropdown-menu" id="dropdown">
-                        <li>함효신 mail@mail.com</li>
-                        <li>이경일 mail@mail.com</li>
-                        <li>강승우 mail@mail.com</li>
-                        <li>임지은 mail@mail.com</li>
-                    </ul>
-                </div> -->
             </div>
-        </div>
-    </footer>
-</body>
+        </section>
+
+        <footer class="text-light py-4" style="background-color: #001f3f;">
+            <div class="container">
+                <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
+                    <!-- 왼쪽: 제목 및 팀원 정보 -->
+                    <div class="col-8 d-flex flex-column">
+                        <!-- 제목: 왼쪽 정렬 -->
+                        <h5 class="text-center">Oneteam 3차 Project ERP_System</h5>
+                        <!-- 팀원 정보: mt-auto로 아래쪽 끝으로 이동 -->
+                        <div class="mt-auto">
+                            <div class="row text-center">
+                                <!-- 팀원 1 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">함효신</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:hamhs0802@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">hamhs0802@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/HelenHam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 2 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">임지은</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:j.lim9304@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">j.lim9304@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/GGobung-of-Simba" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 3 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">강승우</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:swparabellum@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">swparabellum@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/swparabellum" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 4 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">이경일</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:dlruddlf120914@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">dlruddlf120914@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/KY129" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 오른쪽: GitHub 링크 -->
+                    <div class="col-4 d-flex justify-content-end">
+                        <div class="text-start">
+                            <!-- GitHub 로고와 제목을 한 줄로 정렬 -->
+                            <div class="d-flex align-items-center">
+                                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">GitHub</h4>
+                            </div>
+                            <ul class="list-unstyled" style="font-size: 0.7rem; line-height: 1.6;">
+                                <li>
+                                    <a href="https://github.com/0neteam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">0neteam</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/Project1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">1차 Project</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/app1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app1</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/app2" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app2</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/ERP_System" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">3차 Project/ERP_System</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <hr class="bg-light">
+        
+                <!-- 로고와 저작권 영역 -->
+                <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                    <p class="mb-0">Copyright © STEP THREE 2025</p>
+                    <img src="../temp_logo.png" width="120" height="40" alt="Logo" class="flex-shrink-0">
+                </div>
+            </div>
+        </footer>
+    </body>
 
 </html>

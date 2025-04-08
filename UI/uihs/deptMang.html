@@ -1,107 +1,473 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>deptMang</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>deptMang</title>
+        <style>
+            .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            }
+            header.navbar {
+                background-color: white !important;
+            }
+            header.navbar .nav-link {
+                color: black !important;
+            }
+            .navbar {
+                background-color: #001f3f !important;
+            }
+            .navbar .nav-link,
+            .navbar .navbar-brand a{
+                color: white !important;
+            }
+            .navbar .dropdown-menu  a{
+                color: black !important;
+            }
+            .navbar .dropdown-menu {
+                background-color: white !important;
+            }
+            .navbar-toggler {
+                border-color: white !important;
+            }
+            .navbar-toggler-icon {
+                filter: invert(1);
+            }
+            .navbar-collapse.show .dropdown-menu {
+                background-color: #001f3f;
+                text-align: center;
+            }
+            @media (max-width: 300px) {
+                header.navbar .navbar-nav {
+                    display: none !important;
+                }
+            }
+            body {
+                background: #f5f5f5
+            }
+            section {
+                padding:1.5em;
+            }
 
-<body>
-    <div class="container mb-2">
-        <div class="mb-2">
-            <p>부서 관리</p>
-        </div>
+            table {
+                border: 1px #222222 solid;
+                font-size: .9em;
+                box-shadow: 0 2px 5px rgba(0,0,0,.25);
+                width: 100%;
+                border-collapse: collapse;
+                border-radius: 5px;
+                overflow: hidden;
+            }
 
-        <div class="row mb-2">
-            <!-- 좌측 영역 -->
-            <div class="col-12 col-md-3 mb-2">
-                <div class="section-box d-flex flex-column justify-content-between h-100">
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
-                            창고
+            th {
+                text-align: left;
+            }
+            
+            thead {
+                font-weight: bold;
+                color: #fff;
+                background: #222222;
+            }
+            
+            td, th {
+                padding: 1em .5em;
+                vertical-align: middle;
+            }
+            
+            td {
+                border-bottom: 1px solid rgba(0,0,0,.1);
+                background: #fff;
+            }
+
+            a {
+                color: #222222;
+            }
+            
+            @media all and (max-width: 768px) {
+                
+                table, thead, tbody, th, td, tr {
+                    display: block;
+                }
+            
+                th {
+                    text-align: right;
+                }
+            
+                table {
+                    position: relative; 
+                    padding-bottom: 0;
+                    border: none;
+                    box-shadow: 0 0 10px rgba(0,0,0,.2);
+                }
+                
+                thead {
+                    float: left;
+                    white-space: nowrap;
+                }
+                
+                tbody {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    position: relative;
+                    white-space: nowrap;
+                }
+                
+                tr {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                
+                th {
+                    border-bottom: 1px solid #222;
+                }
+                
+                td {
+                    border-bottom: 1px solid #e5e5e5;
+                }
+            }
+            .section-box {
+                background-color: #ffffff;
+                border-radius: 12px;
+                padding: 16px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            }
+            .list-group-item {
+                border: none;
+                padding: 12px 16px;
+                margin-bottom: 6px;
+                border-radius: 8px;
+                background-color: #f1f3f5;
+                transition: all 0.2s ease-in-out;
+                color: #343a40;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            .list-group-item:hover {
+                background-color: #e9ecef;
+                cursor: pointer;
+                transform: translateX(4px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="navbar">
+            <div class="container">
+                <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
+                    <a class="nav-item nav-link me-3" href="/UI/uije/mypage.html">마이페이지</a>
+                    <a class="nav-item nav-link" href="/UI/uije/signIn.html" id="login">로그인</a>
+                    <a class="nav-item nav-link" href="/UI/uiky/main.html" id="logout">로그아웃</a>
+                </div>
+            </div>
+        </header>
+        
+        <nav class="navbar navbar-expand-md bg-light">
+            <div class="container">
+                <div class="navbar-brand d-flex align-items-center">
+                    <a class="me-5" href="/UI/uiky/main.html">
+                        <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
+                    </a>
+                </div>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav nav-fill gap-3 fs-5">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">인사</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/UI/uihs/userMang.html">직원관리</a></li>
+                                <li><a class="dropdown-item" href="/UI/uihs/deptMang.html">부서관리</a></li>
+                            </ul>
                         </li>
-                        <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
-                            제조
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/UI/uihs/item.html">품목관리</a>
                         </li>
-                        <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
-                            운송
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/UI/uihs/stock.html">재고관리</a>
                         </li>
-                        <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
-                            기사
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">발주</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/UI/uisw/orderList.html">발주목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송목록</a>
                         </li>
                     </ul>
                 </div>
             </div>
+        </nav>
 
-            <!-- 우측 영역 -->
-            <div class="col-12 col-md-9 mb-2">
-                <div class="section-box d-flex flex-column justify-content-between h-100">
-                    <div>
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">부서번호</span>
-                            <input type="text" id="no" class="form-control" placeholder="no" disabled>
+        <section class="container" style="min-height: 70vh;">
+            <div class="d-flex align-items-center mb-4">
+                <h2 class="mb-0">부서 관리</h2>
+                <button type="button" class="btn btn-outline-success ms-auto">부서 추가</button>
+            </div>
+
+            <div class="row mb-2">
+                <!-- 좌측 영역 -->
+                <div class="col-12 col-md-3 mb-2">
+                    <div class="section-box d-flex flex-column justify-content-between h-100">
+                        <ul class="list-group mb-2">
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                관리자
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                창고
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                제조
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                운송
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                기사
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                1
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                2
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                3
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                4
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                5
+                            </li>
+                        </ul>
+                        <div>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="First">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&lsaquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&rsaquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Last">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">부서명</span>
-                            <input type="text" id="name" class="form-control" placeholder="name">
+                <!-- 우측 영역 -->
+                <div class="col-12 col-md-9 mb-2">
+                    <div class="section-box d-flex flex-column justify-content-between h-100">
+                        <div>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text" style="width: 90px;">부서명</span>
+                                <input type="text" id="name" class="form-control" placeholder="name">
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <span class="input-group-text" style="width: 90px;">생성일</span>
+                                <input type="text" id="regDate" class="form-control" placeholder="regDate" disabled>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" style="width: 90px;">수정일</span>
+                                <input type="text" id="modDate" class="form-control" placeholder="modDate" disabled>
+                            </div>
+
+                            <table class="mb-2">
+                                <thead>
+                                    <tr>
+                                        <th colspan="3">부서구성원</th>
+                                    </tr>
+                                    <tr>
+                                        <th>사번</th>
+                                        <th>이름</th>
+                                        <th>소속부서</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>직원 A</td>
+                                        <td>창고</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>직원 B</td>
+                                        <td>제조, 운송</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>직원 C</td>
+                                        <td>기사</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>직원 D</td>
+                                        <td>제조</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>직원 E</td>
+                                        <td>관리자</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div>
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="First">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&lsaquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&rsaquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Last">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between ms-auto">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="deptUseYN" checked>
+                                    <label class="form-check-label" for="deptUseYN">부서 사용여부</label>
+                                </div>
+                                <div class="gap-2">
+                                    <button type="submit" class="btn btn-outline-success">수정</button>
+                                    <button type="submit" class="btn btn-outline-success">추가</button>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">생성일</span>
-                            <input type="text" id="regDate" class="form-control" placeholder="regDate" disabled>
-                        </div>
-
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">수정일</span>
-                            <input type="text" id="modDate" class="form-control" placeholder="modDate" disabled>
-                        </div>
-
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">사용여부</span>
-                            <input type="text" id="useYN" class="form-control" placeholder="useYN" disabled>
-                        </div>
-
-                        <table class="table table-striped table-bordered">
-                            <thead class="table-dark">
-                                <tr>
-                                    <th colspan="3">부서구성원</th>
-                                </tr>
-                                <tr class="text-center">
-                                    <th>사번</th>
-                                    <th>이름</th>
-                                    <th>소속부서</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>1</td>
-                                <td>직원 A</td>
-                                <td>창고</td>
-                              </tr>
-                              <tr>
-                                <td>2</td>
-                                <td>직원 B</td>
-                                <td>제조, 운송</td>
-                              </tr>
-                              <tr>
-                                <td>3</td>
-                                <td>직원 C</td>
-                                <td>기사</td>
-                              </tr>
-                            </tbody>
-                          </table>
-
-                    <div class="d-flex justify-content-center gap-2">
-                        <button type="submit" class="btn btn-success">수정</button>
-                        <button type="submit" class="btn btn-success">저장</button>
-                        <button type="button" class="btn btn-secondary">삭제</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</body>
+        </section>
+        <footer class="text-light py-4" style="background-color: #001f3f;">
+            <div class="container">
+                <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
+                    <!-- 왼쪽: 제목 및 팀원 정보 -->
+                    <div class="col-8 d-flex flex-column">
+                        <!-- 제목: 왼쪽 정렬 -->
+                        <h5 class="text-center">Oneteam 3차 Project ERP_System</h5>
+                        <!-- 팀원 정보: mt-auto로 아래쪽 끝으로 이동 -->
+                        <div class="mt-auto">
+                            <div class="row text-center">
+                                <!-- 팀원 1 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">함효신</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:hamhs0802@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">hamhs0802@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/HelenHam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 2 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">임지은</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:j.lim9304@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">j.lim9304@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/GGobung-of-Simba" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 3 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">강승우</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:swparabellum@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">swparabellum@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/swparabellum" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                                <!-- 팀원 4 -->
+                                <div class="col-6 col-md-3 mb-3 text-start">
+                                    <h6 style="font-size: 1rem; margin-bottom: 0.2rem;">이경일</h6>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="mailto:dlruddlf120914@gmail.com" class="text-light text-decoration-none" style="transition: color 0.3s;">dlruddlf120914@gmail.com</a>
+                                    </small>
+                                    <small style="font-size: 0.7rem; display: block;">
+                                        <a href="https://github.com/KY129" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">GitHub</a>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 오른쪽: GitHub 링크 -->
+                    <div class="col-4 d-flex justify-content-end">
+                        <div class="text-start">
+                            <!-- GitHub 로고와 제목을 한 줄로 정렬 -->
+                            <div class="d-flex align-items-center">
+                                <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem;">GitHub</h4>
+                            </div>
+                            <ul class="list-unstyled" style="font-size: 0.7rem; line-height: 1.6;">
+                                <li>
+                                    <a href="https://github.com/0neteam" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">0neteam</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/Project1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">1차 Project</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/app1" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app1</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/app2" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">2차 Project/app2</a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/0neteam/ERP_System" class="text-light text-decoration-none" target="_blank" style="transition: color 0.3s;">3차 Project/ERP_System</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <hr class="bg-light">
+        
+                <!-- 로고와 저작권 영역 -->
+                <div class="d-flex flex-nowrap justify-content-between align-items-center">
+                    <p class="mb-0">Copyright © STEP THREE 2025</p>
+                    <img src="../temp_logo.png" width="120" height="40" alt="Logo" class="flex-shrink-0">
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>
