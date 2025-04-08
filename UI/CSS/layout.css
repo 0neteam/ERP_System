@@ -52,4 +52,64 @@ body {
 section {
     padding:1.5em;
 }
+
+.custom-footer {
+  background-color: #001f3f;
+  color: #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.custom-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.custom-footer a:hover {
+  color: #cccccc;
+}
+
+.custom-footer h5 {
+  text-align: center;
+}
+
+.custom-footer .member-name {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+.custom-footer .member-info {
+  font-size: 0.7rem;
+  display: block;
+  text-align: left;
+}
+
+.custom-footer .github-header {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.custom-footer .github-links {
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+.custom-footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.custom-footer .footer-bottom p {
+  margin-bottom: 0;
+}
+
+.custom-footer .footer-logo {
+  width: 120px;
+  height: 40px;
+  flex-shrink: 0;
+}
   
