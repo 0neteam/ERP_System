@@ -66,27 +66,33 @@
         </div>
     </nav>    
     <main class="container">
-        <div class="d-flex justify-content-between mb-2 mt-3">
+        <div class="d-flex justify-content-between mb-2 mt-4 mb-4">
             <div>
-                <h2 class="mt-4 mb-4">발주 목록</h2>
+                <h2>발주 목록</h2>
             </div>
             <div>
-                <button type="button" class="btn btn-success">발주신청</button>
+                <button type="button" class="btn btn-outline-success">발주신청</button>
             </div>
         </div>
 
         <div class="mb-2">
             <form class="form">
-                <div class="d-flex justify-content-center gap-2">
-                    <select class="form-select w-25">
-                        <option value="1">발주번호</option>
-                        <option value="2">발주상태</option>
-                        <option value="3">발주요청일</option>
-                        <option value="4">발주승인일</option>
-                        <option value="5">발주취소일</option>
-                    </select>
-                    <input type="text" class="form-control w-50">
-                    <button type="submit" class="btn btn-success">요청</button>
+                <div class="d-flex gap-2 align-items-center">
+                    <div class="col-md-2">
+                        <select class="form-select">
+                            <option value="1">발주번호</option>
+                            <option value="2">발주상태</option>
+                            <option value="3">발주요청일</option>
+                            <option value="4">발주승인일</option>
+                            <option value="5">발주취소일</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control w-50" />
+                            <button type="submit" class="btn btn-outline-success">검색</button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
@@ -196,46 +202,46 @@
             </div>
         </div>
     </main>
-    <footer class="custom-footer">
-        <div class="container">
-            <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
-                <div class="col-8 d-flex flex-column">
-                    <h5>Oneteam 3차 Project ERP_System</h5>
-                    <div class="mt-auto">
-                        <div class="row text-center">
-                            <div class="col-6 col-md-3 mb-3">
-                                <h6 class="member-name">함효신</h6>
-                                <small class="member-info">
+    <footer className="custom-footer">
+        <div className="container">
+            <div className="row d-flex justify-content-between flex-nowrap" style={{minHeight: '150px'}}>
+                <div className="col-6 col-sm-8 d-flex flex-column">
+                    <h5>ERP_System</h5>
+                    <div className="mt-auto">
+                        <div className="row text-center">
+                            <div className="col-md-6 col-lg-3 mb-3">
+                                <h6 className="member-name">함효신</h6>
+                                <small className="member-info">
                                     <a href="mailto:hamhs0802@gmail.com">hamhs0802@gmail.com</a>
                                 </small>
-                                <small class="member-info">
+                                <small className="member-info">
                                     <a href="https://github.com/HelenHam" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
-                                <h6 class="member-name">임지은</h6>
-                                <small class="member-info">
+                            <div className="col-md-6 col-lg-3 mb-3">
+                                <h6 className="member-name">임지은</h6>
+                                <small className="member-info">
                                     <a href="mailto:j.lim9304@gmail.com">j.lim9304@gmail.com</a>
                                 </small>
-                                <small class="member-info">
+                                <small className="member-info">
                                     <a href="https://github.com/GGobung-of-Simba" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
-                                <h6 class="member-name">강승우</h6>
-                                <small class="member-info">
+                            <div className="col-md-6 col-lg-3 mb-3">
+                                <h6 className="member-name">강승우</h6>
+                                <small className="member-info">
                                     <a href="mailto:swparabellum@gmail.com">swparabellum@gmail.com</a>
                                 </small>
-                                <small class="member-info">
+                                <small className="member-info">
                                     <a href="https://github.com/swparabellum" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
-                                <h6 class="member-name">이경일</h6>
-                                <small class="member-info">
+                            <div className="col-md-6 col-lg-3 mb-3">
+                                <h6 className="member-name">이경일</h6>
+                                <small className="member-info">
                                     <a href="mailto:dlruddlf120914@gmail.com">dlruddlf120914@gmail.com</a>
                                 </small>
-                                <small class="member-info">
+                                <small className="member-info">
                                     <a href="https://github.com/KY129" target="_blank">GitHub</a>
                                 </small>
                             </div>
@@ -243,12 +249,12 @@
                     </div>
                 </div>
 
-                <div class="col-4 d-flex justify-content-end">
-                    <div class="text-start">
-                        <div class="d-flex align-items-center">
-                            <h4 class="github-header">GitHub</h4>
+                <div className="col-6 col-sm-4 d-flex justify-content-end">
+                    <div className="text-start">
+                        <div className="d-flex align-items-center">
+                            <h4 className="github-header">GitHub</h4>
                         </div>
-                        <ul class="list-unstyled github-links">
+                        <ul className="list-unstyled github-links">
                             <li><a href="https://github.com/0neteam" target="_blank">0neteam</a></li>
                             <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project</a></li>
                             <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project/app1</a></li>
@@ -259,11 +265,11 @@
                 </div>
             </div>
 
-            <hr class="bg-light">
+            <hr className="bg-light" />
 
-            <div class="footer-bottom">
+            <div className="footer-bottom">
                 <p>Copyright © STEP THREE 2025</p>
-                <img src="../temp_logo.png" alt="Logo" class="footer-logo">
+                <img src={Logo} alt="Logo" className="footer-logo" />
             </div>
         </div>
     </footer>
