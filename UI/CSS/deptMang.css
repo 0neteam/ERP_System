@@ -1,0 +1,149 @@
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a:hover, a:focus {
+    outline: none; 
+}
+
+.back {
+    padding: 50px 0 150px 0;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.menu a {
+    color: rgba(3, 3, 3, 0.8);
+    font-size: 17pt;
+    font-weight: 400;
+    padding: 15px 25px;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu-item {
+    display: block;
+}
+
+.dropdown-toggle {
+    position: relative;
+}
+
+.more-label a {
+    font-size: 17pt;
+    font-weight: 400;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: rgba(3, 3, 3, 0.8);
+    text-transform: uppercase;
+    display: block;
+}
+
+.more-label {
+    display: none;
+    padding: 0;
+}
+
+.more-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 99;
+}
+
+.dropdown-toggle input:checked + .more-label + .more-menu {
+    display: block;
+}
+
+.menu-item.always {
+    display: block;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item.md-up,
+.menu-item.lg-up,
+.menu-item.md-only,
+.menu-item.sm-only {
+    display: none;
+}
+
+@media (min-width: 961px) {
+    .menu-item.md-up,
+    .menu-item.lg-up {
+        display: block;
+    }
+
+    .dropdown-toggle {
+        display: none;
+    }
+}
+
+@media (max-width: 960px) and (min-width: 577px) {
+    .menu-item.md-up {
+        display: block;
+    }
+
+    .menu-item.md-only {
+        display: block;
+    }
+
+    .more-label {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-item.sm-only {
+        display: block;
+    }
+
+    .more-label {
+        display: block;
+    }
+}
+
+.effects a:before, .effects a:after {
+    content: "";
+    transition: 0.5s all ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: rgba(3, 3, 3, 0.5);
+}
+
+.effects a:before {
+    right: 0;
+    top: 0;
+}
+
+.effects a:after {
+    left: 0;
+    bottom: 0;
+}
+
+.effects a:hover:before, .effects a:hover:after {
+    width: 100%;
+    background: #1f1f1f;
+}

@@ -38,9 +38,9 @@
         <header class="navbar">
             <div class="container">
                 <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
-                    <a class="nav-item nav-link me-3" href="#!">마이페이지</a>
-                    <a class="nav-item nav-link" href="#!" id="login">로그인</a>
-                    <a class="nav-item nav-link" href="#!" id="logout">로그아웃</a>
+                    <a class="nav-item nav-link me-3" href="/UI/uije/mypage.html">마이페이지</a>
+                    <a class="nav-item nav-link" href="/UI/uije/signIn.html" id="login">로그인</a>
+                    <a class="nav-item nav-link" href="/UI/uiky/main.html" id="logout">로그아웃</a>
                 </div>
             </div>
         </header>
@@ -48,8 +48,8 @@
         <nav class="navbar navbar-expand-md bg-light">
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
-                    <a class="me-5" href="#!">
-                        <img src="/UI/temp_logo.png" alt="logo" width="120px" height="40px">
+                    <a class="me-5" href="/UI/uiky/main.html">
+                        <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px">
                     </a>
                 </div>
         
@@ -61,44 +61,42 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav nav-fill gap-3 fs-5">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">인사</a>
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">인사</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">직원관리</a></li>
-                                <li><a class="dropdown-item" href="#">부서관리</a></li>
+                                <li><a class="dropdown-item" href="/UI/uihs/userMang.html">직원관리</a></li>
+                                <li><a class="dropdown-item" href="/UI/uihs/deptMang.html">부서관리</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">품목관리</a>
+                            <a class="nav-link text-dark" href="/UI/uihs/item.html">품목관리</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">재고관리</a>
+                            <a class="nav-link text-dark" href="/UI/uihs/stock.html">재고관리</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">발주</a>
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">발주</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">발주목록</a></li>
-                                <li><a class="dropdown-item" href="#">발주신청</a></li>
+                                <li><a class="dropdown-item" href="/UI/uisw/orderList.html">발주목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">운송목록</a>
+                            <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송목록</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <section class="container mb-2 p-3" style="min-height: 70vh;">
-            <div class="p-3">
-                <h2>직원 관리</h2>
-            </div>
+        <section class="container" style="min-height: 70vh;">
+            <h2 class="mb-4">직원 관리</h2>
 
             <div class="row mb-2">
                 <!-- 좌측 영역 -->
                 <div class="col-12 col-md-4 mb-2">
                     <div class="section-box d-flex flex-column justify-content-between h-100">
                         <div class="input-group mb-2">
-                            <input type="input" class="form-control">
+                            <input type="input" class="form-control" />
                             <button type="submit" class="btn btn-outline-success">검색</button>
                         </div>
                         <ul class="list-group mb-2">
@@ -114,7 +112,52 @@
                             <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
                                 직원 D
                             </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                직원 E
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                직원 F
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                직원 G
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                직원 H
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                직원 I
+                            </li>
+                            <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
+                                직원 J
+                            </li>
                         </ul>
+                        <div>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="First">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&lsaquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&rsaquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Last">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -122,53 +165,100 @@
                 <div class="col-12 col-md-8 mb-2">
                     <div class="section-box d-flex flex-column h-100">
                         <div class="d-flex justify-content-center align-items-center w-100 w-lg-50 mb-4">
-                            <img class="empty" style="width: 20vh;" src="empty_user.png">
-                            <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
+                            <img class="empty" src="/UI/uihs/img/empty_user.png">
                         </div>
                         <div class="input-group mb-2">
                             <span class="input-group-text">사번</span>
-                            <input type="text" id="no" class="form-control" placeholder="no" disabled>
+                            <input type="text" id="no" class="form-control" placeholder="no" disabled />
                         </div>
 
                         <div class="input-group mb-2">
                             <span class="input-group-text">이름</span>
-                            <input type="text" id="name" class="form-control" placeholder="name" disabled>
+                            <input type="text" id="name" class="form-control" placeholder="name" disabled />
                         </div>
 
                         <div class="input-group mb-2">
                             <span class="input-group-text">메일</span>
-                            <input type="text" id="email" class="form-control" placeholder="email@email.com" disabled>
+                            <input type="text" id="email" class="form-control" placeholder="email@email.com" disabled />
                         </div>
                         
                         <div class="input-group mb-2">
                             <span class="input-group-text">부서</span>
-                            <input type="text" id="email" class="form-control" placeholder="제조, 창고" disabled>
+                            <input type="text" id="email" class="form-control" placeholder="제조, 창고" disabled />
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="py-2">
-            <hr class="border-secondary">
+        
+        <footer class="custom-footer">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-auto">
-                        <a class="nav-link text-dark fw-bold" href="https://github.com/0neteam">github</a>
+                <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
+                    <div class="col-6 col-sm-8 d-flex flex-column">
+                        <h5>ERP_System</h5>
+                        <div class="mt-auto">
+                            <div class="row text-center">
+                                <div class="col-md-6 col-lg-3 mb-3">
+                                    <h6 class="member-name">함효신</h6>
+                                    <small class="member-info">
+                                        <a href="mailto:hamhs0802@gmail.com">hamhs0802@gmail.com</a>
+                                    </small>
+                                    <small class="member-info">
+                                        <a href="https://github.com/HelenHam" target="_blank">GitHub</a>
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-3">
+                                    <h6 class="member-name">임지은</h6>
+                                    <small class="member-info">
+                                        <a href="mailto:j.lim9304@gmail.com">j.lim9304@gmail.com</a>
+                                    </small>
+                                    <small class="member-info">
+                                        <a href="https://github.com/GGobung-of-Simba" target="_blank">GitHub</a>
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-3">
+                                    <h6 class="member-name">강승우</h6>
+                                    <small class="member-info">
+                                        <a href="mailto:swparabellum@gmail.com">swparabellum@gmail.com</a>
+                                    </small>
+                                    <small class="member-info">
+                                        <a href="https://github.com/swparabellum" target="_blank">GitHub</a>
+                                    </small>
+                                </div>
+                                <div class="col-md-6 col-lg-3 mb-3">
+                                    <h6 class="member-name">이경일</h6>
+                                    <small class="member-info">
+                                        <a href="mailto:dlruddlf120914@gmail.com">dlruddlf120914@gmail.com</a>
+                                    </small>
+                                    <small class="member-info">
+                                        <a href="https://github.com/KY129" target="_blank">GitHub</a>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        <p class="mb-0">Copyright © STEP THREE 2025</p>
+    
+                    <div class="col-6 col-sm-4 d-flex justify-content-end">
+                        <div class="text-start">
+                            <div class="d-flex align-items-center">
+                                <h4 class="github-header">GitHub</h4>
+                            </div>
+                            <ul class="list-unstyled github-links">
+                                <li><a href="https://github.com/0neteam" target="_blank">0neteam</a></li>
+                                <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project</a></li>
+                                <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project/app1</a></li>
+                                <li><a href="https://github.com/0neteam/app2" target="_blank">2차 Project/app2</a></li>
+                                <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project/ERP_System</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <!-- <div class="col text-end">
-                        <button class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            팀원
-                        </button>
-                        <ul class="dropdown-menu" id="dropdown">
-                            <li>함효신 mail@mail.com</li>
-                            <li>이경일 mail@mail.com</li>
-                            <li>강승우 mail@mail.com</li>
-                            <li>임지은 mail@mail.com</li>
-                        </ul>
-                    </div> -->
+                </div>
+    
+                <hr class="bg-light" />
+    
+                <div class="footer-bottom">
+                    <p>Copyright © STEP THREE 2025</p>
+                    <img src="/UI/logo_white.png" alt="Logo" class="footer-logo" />
                 </div>
             </div>
         </footer>
