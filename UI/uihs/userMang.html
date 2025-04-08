@@ -5,44 +5,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/UI/CSS/layout.css" />
+        <link rel="stylesheet" href="/UI/CSS/table.css" />
         <title>userMang</title>
         <style>
-            .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
+            .section-box {
+                background-color: #ffffff;
+                border-radius: 12px;
+                padding: 16px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             }
-            header.navbar {
-                background-color: white !important;
+            .list-group-item {
+                border: none;
+                padding: 12px 16px;
+                margin-bottom: 6px;
+                border-radius: 8px;
+                background-color: #f1f3f5;
+                transition: all 0.2s ease-in-out;
+                color: #343a40;
+                font-size: 15px;
+                font-weight: 500;
             }
-            header.navbar .nav-link {
-                color: black !important;
-            }
-            .navbar {
-                background-color: #001f3f !important;
-            }
-            .navbar .nav-link,
-            .navbar .navbar-brand a{
-                color: white !important;
-            }
-            .navbar .dropdown-menu  a{
-                color: black !important;
-            }
-            .navbar .dropdown-menu {
-                background-color: white !important;
-            }
-            .navbar-toggler {
-                border-color: white !important;
-            }
-            .navbar-toggler-icon {
-                filter: invert(1);
-            }
-            .navbar-collapse.show .dropdown-menu {
-                background-color: #001f3f;
-                text-align: center;
-            }
-            @media (max-width: 300px) {
-                header.navbar .navbar-nav {
-                    display: none !important;
-                }
+            .list-group-item:hover {
+                background-color: #e9ecef;
+                cursor: pointer;
+                transform: translateX(4px);
             }
         </style>
     </head>
@@ -108,9 +95,13 @@
 
             <div class="row mb-2">
                 <!-- 좌측 영역 -->
-                <div class="col-12 col-md-3 mb-2">
+                <div class="col-12 col-md-4 mb-2">
                     <div class="section-box d-flex flex-column justify-content-between h-100">
-                        <ul class="list-group mb-3">
+                        <div class="input-group mb-2">
+                            <input type="input" class="form-control">
+                            <button type="submit" class="btn btn-outline-success">검색</button>
+                        </div>
+                        <ul class="list-group mb-2">
                             <li class="list-group-item border-1 d-flex justify-content-between align-items-center">
                                 직원 A
                             </li>
@@ -128,45 +119,30 @@
                 </div>
 
                 <!-- 우측 영역 -->
-                <div class="col-12 col-md-9 mb-2">
-                    <div class="section-box d-flex flex-column justify-content-between h-100">
-                        <div>
-                            <div class="input-group mb-2">
-                                <span class="input-group-text">사번</span>
-                                <input type="text" id="no" class="form-control" placeholder="no" disabled>
-                            </div>
-
-                            <div class="mb-2">
-                                <select class="form-select">
-                                    <option selected>부서 선택</option>
-                                    <option value="1">관리자</option>
-                                    <option value="2">창고</option>
-                                    <option value="3">제조</option>
-                                    <option value="4">운송</option>
-                                    <option value="5">기사</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group mb-2">
-                                <span class="input-group-text">부서</span>
-                                <input type="text" id="email" class="form-control" placeholder="제조, 창고" disabled>
-                            </div>
-
-                            <div class="input-group mb-2">
-                                <span class="input-group-text">메일</span>
-                                <input type="text" id="email" class="form-control" placeholder="email@email.com" disabled>
-                            </div>
-                            
-                            <div class="input-group mb-2">
-                                <span class="input-group-text">이름</span>
-                                <input type="text" id="name" class="form-control" placeholder="name" disabled>
-                            </div>
+                <div class="col-12 col-md-8 mb-2">
+                    <div class="section-box d-flex flex-column h-100">
+                        <div class="d-flex justify-content-center align-items-center w-100 w-lg-50 mb-4">
+                            <img class="empty" style="width: 20vh;" src="empty_user.png">
+                            <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">사번</span>
+                            <input type="text" id="no" class="form-control" placeholder="no" disabled>
                         </div>
 
-                        <div class="d-flex justify-content-end gap-2">
-                            <button type="submit" class="btn btn-success">추가</button>
-                            <button type="submit" class="btn btn-success">수정</button>
-                            <button type="button" class="btn btn-secondary">취소</button>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">이름</span>
+                            <input type="text" id="name" class="form-control" placeholder="name" disabled>
+                        </div>
+
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">메일</span>
+                            <input type="text" id="email" class="form-control" placeholder="email@email.com" disabled>
+                        </div>
+                        
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">부서</span>
+                            <input type="text" id="email" class="form-control" placeholder="제조, 창고" disabled>
                         </div>
                     </div>
                 </div>
