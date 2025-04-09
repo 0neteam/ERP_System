@@ -1,4 +1,5 @@
 @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+<<<<<<< HEAD
             body {
                 background: #f5f5f5;
                 font-family: 'Nanum Gothic', sans-serif;
@@ -20,6 +21,12 @@
                 background: #f5f5f5;
                 font-family: 'ChosunGu', sans-serif;
             } */
+=======
+* {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+>>>>>>> a60a020cd8ca9169b0ecb323ff7aa0d57ed5b4e7
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
   }
@@ -69,14 +76,14 @@
   }
 
 body {
-    background: #f5f5f5
+  background: #f5f5f5;
 }
 section {
     padding:1.5em;
 }
 
 .custom-footer {
-  background-color: #001f3f;
+  background-color: #001f3f !important;
   color: #ffffff;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -135,6 +142,38 @@ section {
   flex-shrink: 0;
 }
 
+<<<<<<< HEAD
 .heightCss {
   height: 500px;
 }
+=======
+@media (max-width: 576px) {
+  .custom-footer .col-md-6 {
+    padding-left: calc((100% - 150px) / 2);
+  }
+  .custom-footer .justify-content-end {
+    justify-content: center !important;
+  }
+}
+
+img.empty {
+  aspect-ratio: 1/1;
+  width: 300px;
+  height: 300px;
+}
+
+.item-container {
+  max-width: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .item-container .btns {
+    justify-content: center !important;
+  }
+}
+>>>>>>> a60a020cd8ca9169b0ecb323ff7aa0d57ed5b4e7
