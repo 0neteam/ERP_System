@@ -1,0 +1,43 @@
+server.port: 8000
+
+spring:
+  application.name: gateway
+  config:
+    import: optional:file:.env[.properties]
+  cloud:
+    gateway:
+      routes:
+        - id: stg-service
+          uri: ${ROUTE_STG_URI}
+          predicates:
+            - Path=/stg/**
+          filters:
+            - RewritePath=/stg/?(?<segment>.*), /${segment}
+        - id: mfr-service
+          uri: ${ROUTE_MFR_URI}
+          predicates:
+            - Path=/mfr/**
+          filters:
+            - RewritePath=/mfr/?(?<segment>.*), /${segment}
+        - id: trs-service
+          uri: ${ROUTE_TRS_URI}
+          predicates:
+            - Path=/trs/**
+          filters:
+            - RewritePath=/trs/?(?<segment>.*), /${segment}
+        - id: oauth-service
+          uri: ${ROUTE_OAUTH_URI}
+          predicates:
+            - Path=/oauth/**
+          filters:
+            - RewritePath=/oauth/?(?<segment>.*), /${segment}
+        - id: openapi
+          uri: ${ROUTE_API_URI}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/?(?<segment>.*), /${segment}/v3/api-docs
+
+springdoc:
+  swagger-ui:
+    use-root-path: true

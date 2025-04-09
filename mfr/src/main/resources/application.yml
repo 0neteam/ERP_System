@@ -1,0 +1,28 @@
+server.port: 8002
+
+spring:
+  application.name: mfr
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: ${DB_DRIVER}
+    url: ${DB_JDBC}
+    username: ${DB_USER}
+    password: ${DB_PWD}
+  jpa:
+    hibernate.ddl-auto: none
+    properties.hibernate:
+      show_sql: true
+      format_sql: true
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+springdoc:
+  swagger-ui:
+    path: /docs
+    operationsSorter: method
+
+swagger:
+  api-gateway-url: ${SWAGGER_URL}/${spring.application.name}
