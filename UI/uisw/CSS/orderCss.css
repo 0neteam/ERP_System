@@ -1,3 +1,7 @@
 .driverCard {
     height: 100px;
 }
+
+.btn {
+    min-width: 100%;
+}
