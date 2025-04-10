@@ -1,3 +1,30 @@
+img.item {
+    aspect-ratio: 1/1;
+    width: 300px;
+    height: 300px;
+}
+
+img.user {
+    aspect-ratio: 1/1;
+    width: 300px;
+    height: 300px;
+}
+  
+.item-container {
+    max-width: 500px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    justify-content: space-between;
+}
+  
+@media (max-width: 767px) {
+    .item-container .btns {
+      justify-content: center !important;
+    }
+}
+  
 .card {
     width: 100%;
     background-color: #fff;
@@ -19,6 +46,11 @@
     opacity: .8;
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
+}
+.modal .card:hover {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
 }
 .card .list-group-item {
     border: none;
