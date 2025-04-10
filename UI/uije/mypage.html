@@ -69,25 +69,29 @@
             <div class="col"></div>
             <div class="col-6" style="min-width: 400px;">
                 <h1 class="display-6 text-nowrap text-center">mypage</h1>
-                <div>
-                    <a class="btn btn-outline-primary w-25" href="mypage.html">돌아가기</a>
-                </div>
                 
-                <div style="text-align: center;">
+                
+                
+                <div class="mb-2 text-center">
                     <div class="overlayImg">
                       <img class="d-block rounded-circle img-thumbnail mt-3" src="img1.png" alt="logo" style="width: 20vh;">
-                      <button class="overlayButton">+</button>
-                      <input type="file" class="file-input" id="file-input" accept="image/*" style="display: none;">
+                      
+                      <button class="overlayButton dropdown-toggle addImgDropdown" type="button" id="addImg" data-bs-toggle="dropdown" aria-expanded="false">+</button>
+                      <ul class="dropdown-menu" aria-labelledby="addImg">
+                        <li><button class="dropdown-item">edit</button></li>
+                        <li><button class="dropdown-item">cancel</button></li>
+                      </ul>
+                      <input type="file" class="file-input d-none" id="file-input" accept="image/*"/>
                     </div>
                 </div>
 
                 <div class="input-group mt-3">
                     <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">사번</span>
-                    <input type="text" class="form-control" value="01" readonly>
+                    <input type="text" class="form-control" value="01" readonly />
                 </div>
                 <div class="input-group mt-3">
                     <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">Email</span>
-                    <input type="text" class="form-control" value="email@domain.com" readonly>
+                    <input type="text" class="form-control" value="email@domain.com" readonly />
                 </div>
                                
 
