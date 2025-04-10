@@ -3,63 +3,63 @@
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
-  header.navbar {
-    background-color: white !important;
-  }
-  
-  header.navbar .nav-link {
-    color: black !important;
-  }
-  
-  .navbar {
-    background-color: #001f3f !important;
-  }
-  
-  .navbar .nav-link,
-  .navbar .navbar-brand a {
-    color: white !important;
-  }
-  
-  .navbar .dropdown-menu a {
-    color: black !important;
-  }
-  
-  .navbar .dropdown-menu {
-    background-color: white !important;
-  }
-  
-  .navbar-toggler {
-    border-color: white !important;
-  }
-  
-  .navbar-toggler-icon {
-    filter: invert(1);
-  }
-  
-  .navbar-collapse.show .dropdown-menu {
-    background-color: #001f3f;
-    text-align: center;
-  }
-  
-  @media (max-width: 300px) {
-    header.navbar .navbar-nav {
-      display: none !important;
-    }
-  }
-
 body {
   background: #f5f5f5;
 }
 section {
-    padding:1.5em;
+    padding: 1.5em;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+  
+header.navbar {
+  background-color: white !important;
+}
+
+header.navbar .nav-link {
+  color: black !important;
+}
+
+.navbar {
+  background-color: #001f3f !important;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand a {
+  color: white !important;
+}
+
+.navbar .dropdown-menu a {
+  color: black !important;
+}
+
+.navbar .dropdown-menu {
+  background-color: white !important;
+}
+
+.navbar-toggler {
+  border-color: white !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-collapse.show .dropdown-menu {
+  background-color: #001f3f;
+  text-align: center;
+}
+
+@media (max-width: 300px) {
+  header.navbar .navbar-nav {
+    display: none !important;
+  }
 }
 
 .custom-footer {
-  background-color: #001f3f !important;
+  background-color: #001f3f;
   color: #ffffff;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -123,27 +123,6 @@ section {
     padding-left: calc((100% - 150px) / 2);
   }
   .custom-footer .justify-content-end {
-    justify-content: center !important;
-  }
-}
-
-img.empty {
-  aspect-ratio: 1/1;
-  width: 300px;
-  height: 300px;
-}
-
-.item-container {
-  max-width: 500px;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  min-height: 300px;
-  justify-content: space-between;
-}
-
-@media (max-width: 767px) {
-  .item-container .btns {
     justify-content: center !important;
   }
 }
