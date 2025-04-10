@@ -55,3 +55,26 @@ img.user {
 .card .list-group-item {
     border: none;
 }
+
+@media (max-width: 500px) {
+  
+    .form .input-group {
+      width: 100%;
+    }
+
+    .form .d-flex {
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .form .ms-auto {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.3rem;
+    }
+  
+    .form .ms-auto a {
+      width: auto;
+    }
+}
