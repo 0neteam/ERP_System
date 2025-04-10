@@ -82,7 +82,8 @@
                         <th><input type="checkbox" /></th>
                         <th>품목번호</th>
                         <th>품목명</th>
-                        <th>발주수량</th>
+                        <th>단위수량</th>
+                        <th>출고단위신청</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,60 +92,70 @@
                         <td>1001</td>
                         <td>사과</td>
                         <td>50</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1002</td>
                         <td>배</td>
                         <td>30</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1003</td>
                         <td>오렌지</td>
                         <td>20</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1004</td>
                         <td>포도</td>
                         <td>40</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1005</td>
                         <td>바나나</td>
                         <td>25</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1006</td>
                         <td>딸기</td>
                         <td>35</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1007</td>
                         <td>수박</td>
                         <td>10</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1008</td>
                         <td>복숭아</td>
                         <td>60</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1009</td>
                         <td>블루베리</td>
                         <td>15</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1010</td>
                         <td>키위</td>
                         <td>45</td>
+                        <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                 </tbody>
             </table>
@@ -310,34 +321,34 @@
                             <div aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="First">
+                                        <button class="page-link" aria-label="First">
                                             <span aria-hidden="true">&laquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
+                                        <button class="page-link" aria-label="Previous">
                                             <span aria-hidden="true">&lsaquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item active"><a class="page-link">1</a></li>
+                                    <li class="page-item"><a class="page-link">2</a></li>
+                                    <li class="page-item"><a class="page-link">3</a></li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
+                                        <button class="page-link" aria-label="Next">
                                             <span aria-hidden="true">&rsaquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Last">
+                                        <button class="page-link" aria-label="Last">
                                             <span aria-hidden="true">&raquo;</span>
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div class="d-flex justify-content-end gap-2">
                             <button type="button" class="btn btn-outline-success">적용</button>
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">취소</button>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
                         </div>
                     </div>
                 </div>

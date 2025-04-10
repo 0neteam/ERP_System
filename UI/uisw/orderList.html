@@ -69,47 +69,44 @@
             <div>
                 <h2>발주 목록</h2>
             </div>
-            <div>
-                <button type="button" class="btn btn-outline-success">발주신청</button>
-            </div>
         </div>
 
-        <div class="mb-2">
-            <form class="form">
-                <div class="d-flex gap-2 align-items-center">
-                    <div class="col-md-2">
-                        <select class="form-select">
-                            <option value="1">발주번호</option>
-                            <option value="2">발주상태</option>
-                            <option value="3">발주요청일</option>
-                            <option value="4">발주승인일</option>
-                            <option value="5">발주취소일</option>
-                        </select>
+        <div class="mb-4">
+            <div class="d-flex gap-2 align-items-center">
+                <div class="col-md-2">
+                    <select class="form-select">
+                        <option value="1">발주번호</option>
+                        <option value="2">발주상태</option>
+                        <option value="3">발주요청일</option>
+                        <option value="4">발주승인일</option>
+                        <option value="5">발주취소일</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" />
+                        <button type="submit" class="btn btn-outline-success">검색</button>
                     </div>
-                    <div class="col-md-4">
-                        <div class="input-group">
-                            <input type="text" class="form-control" />
-                            <button type="submit" class="btn btn-outline-success">검색</button>
-                        </div>
-                        <div class="input-group">
-                            <select class="form-select">
-                                <option value="1">발주요청</option>
-                                <option value="2">발주진행</option>
-                                <option value="3">발주완료</option>
-                                <option value="4">발주취소</option>
-                            </select>
-                            <button type="submit" class="btn btn-outline-success">검색</button>
-                        </div>
-                        <div class="input-group">
-                            <!-- 발주요청,승인,취소일 -->
-                            <input type="date" id="endDate" class="form-control" placeholder="종료일">
-                            <button type="submit" class="btn btn-outline-success">검색</button>
-                        </div>
+                    <div class="input-group">
+                        <select class="form-select">
+                            <option value="1">발주요청</option>
+                            <option value="2">발주진행</option>
+                            <option value="3">발주완료</option>
+                            <option value="4">발주취소</option>
+                        </select>
+                        <button type="submit" class="btn btn-outline-success">검색</button>
+                    </div>
+                    <div class="input-group">
+                        <!-- 발주요청,승인,취소일 -->
+                        <input type="date" id="endDate" class="form-control" placeholder="종료일">
+                        <span class="input-group-text">~</span>
+                        <input type="date" id="endDate" class="form-control" placeholder="종료일">
+                        <button type="submit" class="btn btn-outline-success">검색</button>
                     </div>
                 </div>
-            </form>
+                
+            </div>
         </div>
-
         <div>
             <table>
                 <thead>
@@ -189,27 +186,27 @@
             <div aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="First">
+                        <button class="page-link" aria-label="First">
                             <span aria-hidden="true">&laquo;</span>
-                        </a>
+                        </button>
                     </li>
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
+                        <button class="page-link" aria-label="Previous">
                             <span aria-hidden="true">&lsaquo;</span>
-                        </a>
+                        </button>
                     </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item active"><a class="page-link" >1</a></li>
+                    <li class="page-item"><a class="page-link" >2</a></li>
+                    <li class="page-item"><a class="page-link" >3</a></li>
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
+                        <button class="page-link" aria-label="Next">
                             <span aria-hidden="true">&rsaquo;</span>
-                        </a>
+                        </button>
                     </li>
                     <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Last">
+                        <button class="page-link" aria-label="Last">
                             <span aria-hidden="true">&raquo;</span>
-                        </a>
+                        </button>
                     </li>
                 </ul>
             </div>
