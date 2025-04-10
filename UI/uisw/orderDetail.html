@@ -202,7 +202,6 @@
 
         <div class="d-flex justify-content-center gap-2 mt-4 mb-2 border rounded p-1">
             <button type="button" class="btn btn-outline-success">출고요청</button>
-            <button type="button" class="btn btn-outline-success">배차</button>
             <button type="button" class="btn btn-outline-success">입출고관리</button>
         </div>
 
@@ -219,8 +218,6 @@
                         <th><input type="checkbox" /></th>
                         <th>품목코드</th>
                         <th>단위수량</th>
-                        <th>발주량</th>
-                        <th>미출고량</th>
                         <th>출고량</th>
                     </tr>
                 </thead>
@@ -229,247 +226,72 @@
                       <!--  style="width: 100%;" 는 실제로 만들때 style에 넣어서 하면 더 보기 좋을것임. -->
                       <td><input type="checkbox" /></td>
                         <td>1</td>
-                        <td>50</td>
-                        <td>4</td>
-                        <td>3</td>
-                        <td><input type="text" name="출고수량1" value="미출고수량" style="width: 100%;" /></td>
+                        <td>100</td>
+                        <td><input type="text" name="출고수량1" value="1" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>2</td>
+                        <td>20</td>
+                        <td><input type="text" name="출고수량2" value="5" style="width: 100%;" /></td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" /></td>
+                        <td>3</td>
                         <td>10</td>
-                        <td>20</td>
-                        <td>15</td>
-                        <td><input type="text" name="출고수량2" value="미출고수량" style="width: 100%;" /></td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>3</td>
-                        <td>150</td>
-                        <td>3</td>
-                        <td>2</td>
-                        <td><input type="text" name="출고수량3" value="미출고수량" style="width: 100%;" /></td>
+                        <td><input type="text" name="출고수량3" value="12" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>4</td>
-                        <td>20</td>
-                        <td>5</td>
-                        <td>2</td>
-                        <td><input type="text" name="출고수량4" value="미출고수량" style="width: 100%;" /></td>
+                        <td>50</td>
+                        <td><input type="text" name="출고수량4" value="2" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>5</td>
-                        <td>50</td>
-                        <td>15</td>
-                        <td>12</td>
-                        <td><input type="text" name="출고수량5" value="미출고수량" style="width: 100%;" /></td>
+                        <td>150</td>
+                        <td><input type="text" name="출고수량5" value="2" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>6</td>
-                        <td>100</td>
-                        <td>7</td>
-                        <td>2</td>
-                        <td><input type="text" name="출고수량6" value="미출고수량" style="width: 100%;" /></td>
+                        <td>5</td>
+                        <td><input type="text" name="출고수량6" value="13" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>7</td>
-                        <td>50</td>
-                        <td>8</td>
-                        <td>3</td>
-                        <td><input type="text" name="출고수량7" value="미출고수량" style="width: 100%;" /></td>
+                        <td>10</td>
+                        <td><input type="text" name="출고수량7" value="6" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>8</td>
                         <td>10</td>
-                        <td>28</td>
-                        <td>25</td>
-                        <td><input type="text" name="출고수량8" value="미출고수량" style="width: 100%;" /></td>
+                        <td><input type="text" name="출고수량8" value="12" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>9</td>
-                        <td>50</td>
-                        <td>12</td>
-                        <td>7</td>
-                        <td><input type="text" name="출고수량9" value="미출고수량" style="width: 100%;" /></td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox" /></td>
-                        <td>10</td>
                         <td>25</td>
-                        <td>8</td>
-                        <td>3</td>
-                        <td><input type="text" name="출고수량10" value="미출고수량" style="width: 100%;" /></td>
+                        <td><input type="text" name="출고수량9" value="2" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>10</td>
                         <td>10</td>
-                        <td>10</td>
-                        <td>9</td>
-                        <td><input type="text" name="출고수량11" value="미출고수량" style="width: 100%;" /></td>
+                        <td><input type="text" name="출고수량10" value="13" style="width: 100%;" /></td>
                       </tr>
                       
                 </tbody>
             </table>
         </div>
 
-        <button type="button" class="btn btn-outline-success ms-auto mt-2 d-flex">출고요청</button>
+        <button type="button" class="btn btn-outline-success ms-auto mt-2 d-flex" data-bs-toggle="modal" data-bs-target="#transpModal">출고요청</button>
 
         
         <!--출고요청끝-->
-
-        <h2 class="mt-4 mb-4">배차</h2>
-        <div class="row">
-            <div class="col-md-5">
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" /></th>
-                                <th class="text-nowrap">출고번호</th>
-                                <th class="text-nowrap">품목코드</th>
-                                <th class="text-nowrap">수량</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>50</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>1</td>
-                                <td>2</td>
-                                <td>100</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>1</td>
-                                <td>3</td>
-                                <td>75</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>1</td>
-                                <td>4</td>
-                                <td>60</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>2</td>
-                                <td>5</td>
-                                <td>30</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>2</td>
-                                <td>6</td>
-                                <td>20</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>7</td>
-                                <td>7</td>
-                                <td>50</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>8</td>
-                                <td>8</td>
-                                <td>200</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>9</td>
-                                <td>9</td>
-                                <td>150</td>
-                              </tr>
-                              <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>10</td>
-                                <td>10</td>
-                                <td>100</td>
-                              </tr>
-                        </tbody>
-                    </table>
-                    <div class="d-flex justify-content-center mt-3">
-                        <div aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="First">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&lsaquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&rsaquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Last">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="d-flex flex-column align-items-center justify-content-center h-100">
-                    <button type="button" class="btn btn-outline-success mb-2">삭제</button>
-                    <button type="button" class="btn btn-outline-secondary mb-2">추가</button>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" /></th>
-                                <th class="text-nowrap">출고번호</th>
-                                <th class="text-nowrap">품목코드</th>
-                                <th class="text-nowrap">수량</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" /></td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>50</td>
-                              </tr>
-        
-                        </tbody>
-                    </table>
-                </div>
-                
-            </div>
-        </div>
-        <div class="mt-2 d-flex gap-2 justify-content-end">
-            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#transpModal">운송기사
-                배정</button>
-        </div>
-        
-
-
-        <!--배차끝-->
 
         <p class="mt-4 mb-4"><h2>입출고 관리</h2></p>
         <div>
