@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="/UI/CSS/layout.css"/>
-    <link rel="stylesheet" href="/UI/CSS/main.css"/>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="/UI/CSS/layout.css" />
+    <link rel="stylesheet" href="/UI/CSS/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
@@ -25,12 +25,12 @@
     </div>
 </header>
 
-<!-- 내비게이션 바 -->
+<!-- 메인 네비게이션 -->
 <nav class="navbar navbar-expand-md bg-light">
     <div class="container">
         <div class="navbar-brand d-flex align-items-center">
             <a class="me-5" href="/UI/uiky/main.html">
-                <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px">
+                <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px" />
             </a>
         </div>
 
@@ -40,29 +40,33 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav nav-fill gap-3 fs-5">
+            <ul class="navbar-nav nav-fill gap-6 fs-5 me-1">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">인사</a>
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">인사관리</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/UI/uihs/userMang.html">직원관리</a></li>
                         <li><a class="dropdown-item" href="/UI/uihs/deptMang.html">부서관리</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/UI/uihs/item.html">품목관리</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">품목관리</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/UI/uihs/item.html">품목목록</a></li>
+                        <li><a class="dropdown-item" href="/UI/uihs/itemCreate.html">품목추가</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/UI/uihs/stock.html">재고관리</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">발주</a>
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">발주관리</a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="/UI/uisw/orderList.html">발주목록</a></li>
                         <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송목록</a>
+                    <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송관리</a>
                 </li>
             </ul>
         </div>
@@ -71,70 +75,176 @@
 
 <!-- 히어로 섹션 -->
 <section class="hero">
-    <div class="hero-overlay">
-        <div class="text-center animate__animated animate__fadeInDown">
-            <h1>환영합니다!</h1>
-            <p class="lead">최고의 유통 시스템과 함께하는 서비스</p>
-            <a href="#stg" class="btn btn-primary btn-lg animate__animated animate__fadeInUp">자세히 보기</a>
-        </div>
+    <div class="container text-center hero-overlay">
+        <h1 class="animate__animated animate__fadeInDown">환영합니다!</h1>
+        <p class="lead animate__animated animate__fadeInUp">최첨단 ERP 솔루션과 함께하는 통합 유통 시스템</p>
+        <a href="#services" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp">더 알아보기</a>
     </div>
 </section>
 
-<!-- 서비스 섹션: 발주 서비스 -->
-<section class="py-5 bg-light" id="stg">
+<!-- 서비스 섹션 -->
+<section id="services" class="section bg-light">
     <div class="container">
-        <div class="row align-items-center">
+        <h2 class="section-title">서비스 소개</h2>
+        <div class="row align-items-center mb-5">
             <div class="col-md-6">
-                <img src="img/stg.jpg" class="img-fluid animate__animated animate__fadeInLeft" alt="발주 서비스">
+                <img src="img/stg.jpg" alt="발주 서비스" class="img-fluid animate-img animate__animated animate__fadeInLeft" />
             </div>
-            <div class="typewriter col-md-6">
-                <h2 class="mt-3">발주 서비스</h2>
+            <div class="col-md-6">
+                <h3 class="mt-4">발주 서비스</h3>
                 <p>
-                    발주 서비스는 고객의 주문을 신속하게 처리하고, 적절한 재고 관리를 통해 원활한 유통을 보장합니다.
-                    주문 목록 관리, 발주 신청 및 확인 등의 기능을 통해 효율적인 운영을 지원합니다.
+                    고객의 주문을 신속하게 처리하여 재고관리를 효과적으로 수행합니다. 전문적인 발주 신청 및 확인 시스템으로 물류 흐름을 최적화합니다.
                 </p>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- 서비스 섹션: 제조 서비스 -->
-<section class="py-5" id="mfr">
-    <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center mb-5">
             <div class="col-md-6 order-md-2">
-                <img src="img/mfr.jpg" class="img-fluid animate__animated animate__zoomIn" alt="제조 서비스">
+                <img src="img/mfr.jpg" alt="제조 서비스" class="img-fluid animate-img animate__animated animate__zoomIn" />
             </div>
-            <div class="typewriter col-md-6 order-md-1">
-                <h2 class="mt-3">제조 서비스</h2>
+            <div class="col-md-6 order-md-1">
+                <h3 class="mt-4">제조 서비스</h3>
                 <p>
-                    제조 서비스는 제품 생산 공정을 효율적으로 관리하여 고품질의 제품을 생산합니다.
-                    생산 일정 관리, 공정 모니터링 및 개선을 통해 최적의 생산성을 달성합니다.
+                    효율적인 생산 프로세스 관리로 고품질 제품을 생산합니다. 생산 일정 관리와 실시간 모니터링을 통해 생산성을 극대화합니다.
                 </p>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- 서비스 섹션: 운송 서비스 -->
-<section class="py-5 bg-light" id="trs">
-    <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="img/trs.jpg" class="img-fluid animate__animated animate__fadeInRight" alt="운송 서비스">
+                <img src="img/trs.jpg" alt="운송 서비스" class="img-fluid animate-img animate__animated animate__fadeInRight" />
             </div>
-            <div class="typewriter col-md-6">
-                <h2 class="mt-3">운송 서비스</h2>
+            <div class="col-md-6">
+                <h3 class="mt-4">운송 서비스</h3>
                 <p>
-                    운송 서비스는 안전하고 신속한 배송을 보장하기 위해 최적의 물류 경로와 전문 운송 인력을 활용합니다.
-                    신속한 배송, 일정 관리 등으로 고객 만족도를 높입니다.
+                    최적의 물류 경로와 전문 운송 인력을 통해 신속하고 안전한 배송을 보장합니다. 고객 만족도를 높이는 정시 배송 서비스를 제공합니다.
                 </p>
             </div>
         </div>
     </div>
 </section>
 
-<!--/* layout footer */-->
+<!-- 비전 및 미션 섹션 -->
+<section id="vision" class="section">
+    <div class="container">
+        <h2 class="section-title">비전 &amp; 미션</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>우리의 비전</h3>
+                <p>
+                    당사는 혁신적인 ERP 솔루션을 통해 고객사의 경쟁력을 강화하고, 글로벌 시장에서 선도적인 역할을 수행하는 것을 목표로 합니다. 변화하는 시장 환경에 발맞춰 지속적인 기술 혁신과 고객 맞춤형 서비스를 제공하여, 신뢰와 우수성의 기준이 되고자 합니다.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h3>우리의 미션</h3>
+                <p>
+                    고객의 비즈니스 프로세스를 최적화하며, 효율적이고 투명한 운영 시스템을 구축하는 것이 우리의 미션입니다. 이를 위해 끊임없는 연구개발과 고객 의견 수렴을 통해 최고의 ERP 솔루션을 제공하고, 고객 성공을 함께 만들어 갑니다.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 고객 후기 섹션 -->
+<section id="testimonials" class="section">
+    <div class="container">
+        <h2 class="section-title">고객 후기</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>"ERP 솔루션 도입 후 업무 효율이 비약적으로 향상되었습니다. 사용하기 쉽고 안정적인 시스템입니다."</p>
+                    <footer class="blockquote-footer">고객 A, <cite title="Source Title">대표이사</cite></footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>"전문적인 지원과 우수한 기술력 덕분에 우리 회사의 운영 효율이 크게 개선되었습니다."</p>
+                    <footer class="blockquote-footer">고객 B, <cite title="Source Title">CTO</cite></footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>"직원들이 ERP 시스템을 통해 더 체계적으로 업무를 관리하게 되어 전반적인 업무 만족도가 높아졌습니다."</p>
+                    <footer class="blockquote-footer">고객 C, <cite title="Source Title">운영 관리자</cite></footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 뉴스 & 이벤트 섹션 -->
+<section id="news" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title">뉴스 &amp; 이벤트</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <article>
+                    <h4>신제품 ERP 모듈 출시 기념 이벤트</h4>
+                    <p>
+                        최신 ERP 모듈 출시를 기념하여 한정 기간 동안 특별 할인 및 무료 체험 이벤트를 진행합니다. 자세한 내용은 공지 사항을 확인해 주세요.
+                    </p>
+                    <a href="#" class="btn btn-outline-success">자세히 보기</a>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article>
+                    <h4>미니 프로젝트 카페 &amp; 블로그</h4>
+                    <p>
+                        미니 프로젝트 카페 &amp; 블로그는 소규모 프로젝트의 아이디어와 진행 과정을 공유하는 열린 공간입니다. 개발자들의 경험담, 최신 트렌드, 기술 팁과 사용자 후기를 통해 여러분의 창의력을 자극하고 협업 문화를 만들어갑니다.
+                    </p>
+                    <a href="#" class="btn btn-outline-success">자세히 보기</a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="history" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title">히스토리</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <strong>2025년 4월</strong> - ERP System 3차 프로젝트 런칭.
+            </li>
+            <li class="list-group-item">
+                <strong>2025년 2월</strong> - 혁신적인 ERP 솔루션 개발.
+            </li>
+            <li class="list-group-item">
+                <strong>2025년 1월</strong> - 2차 프로젝트 APP1, APP2 서비스 정식 오픈.
+            </li>
+            <li class="list-group-item">
+                <strong>2024년 12월</strong> - 1차 프로젝트 런칭.
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- 문의 섹션 -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title">문의하기</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form action="/contact_process" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">이름</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="이름을 입력하세요" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">이메일</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력하세요" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">문의 내용</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="문의 사항을 작성해주세요" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">전송하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer 섹션 -->
 <footer class="custom-footer">
     <div class="container">
         <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
@@ -206,6 +316,7 @@
         </div>
     </div>
 </footer>
+
 
 </body>
 </html>
