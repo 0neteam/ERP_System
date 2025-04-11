@@ -73,8 +73,8 @@
         </div>
 
         <div class="mb-4">
-            <div class="d-flex gap-2 align-items-center">
-                <div class="col-md-2">
+            <div class="row g-2"> <!-- row와 g-2로 변경 -->
+                <div class="col-12 col-md-2"> <!-- col-12 추가 -->
                     <select class="form-select">
                         <option value="1">발주번호</option>
                         <option value="2">발주상태</option>
@@ -83,39 +83,39 @@
                         <option value="5">발주취소일</option>
                     </select>
                 </div>
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <input type="text" class="form-control" />
-                        <button type="submit" class="btn btn-outline-success">검색</button>
-                    </div>
-                    <div class="input-group">
-                        <select class="form-select">
-                            <option value="1">발주요청</option>
-                            <option value="2">발주진행</option>
-                            <option value="3">발주완료</option>
-                            <option value="4">발주취소</option>
-                        </select>
-                        <button type="submit" class="btn btn-outline-success">검색</button>
-                    </div>
-                    <div class="input-group">
-                        <!-- 발주요청,승인,취소일 -->
-                        <input type="date" id="endDate" class="form-control" placeholder="종료일">
-                        <span class="input-group-text">~</span>
-                        <input type="date" id="endDate" class="form-control" placeholder="종료일">
-                        <button type="submit" class="btn btn-outline-success">검색</button>
+                <div class="col-12 col-md-4"> <!-- col-12 추가 -->
+                    <div class="d-flex flex-column gap-2"> <!-- flex-column과 gap-2 추가 -->
+                        <div class="input-group">
+                            <input type="text" class="form-control" />
+                            <button type="submit" class="btn btn-outline-success">검색</button>
+                        </div>
+                        <div class="input-group">
+                            <select class="form-select">
+                                <option value="1">발주요청</option>
+                                <option value="2">발주진행</option>
+                                <option value="3">발주완료</option>
+                                <option value="4">발주취소</option>
+                            </select>
+                            <button type="submit" class="btn btn-outline-success">검색</button>
+                        </div>
+                        <div class="input-group">
+                            <input type="date" id="startDate" class="form-control" placeholder="시작일">
+                            <span class="input-group-text">~</span>
+                            <input type="date" id="endDate" class="form-control" placeholder="종료일">
+                            <button type="submit" class="btn btn-outline-success">검색</button>
+                        </div>
                     </div>
                 </div>
-                
             </div>
         </div>
         <div>
             <table>
                 <thead>
                     <tr>
-                        <th>발주번호</th>
-                        <th>발주상태</th>
-                        <th>발주요청일</th>
-                        <th>발주승인/취소일</th>
+                        <th class="text-nowrap">발주번호</th>
+                        <th class="text-nowrap">발주상태</th>
+                        <th class="text-nowrap">발주요청일</th>
+                        <th class="text-nowrap">발주승인/취소일</th>
                     </tr>
                 </thead>
                 <tbody>
