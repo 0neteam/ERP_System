@@ -31,3 +31,54 @@ td {
 a {
     color: #222222;
 }
+
+.tableHeight {
+    height: 600px;
+    overflow-y: auto;
+  }
+
+
+/* @media all and (max-width: 768px) {
+    
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: right;
+    }
+
+    table {
+        position: relative; 
+        padding-bottom: 0;
+        border: none;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
+    
+    thead {
+        float: left;
+        white-space: nowrap;
+    }
+    
+    tbody {
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        white-space: nowrap;
+    }
+    
+    tr {
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    th {
+        border-bottom: 1px solid #222;
+    }
+    
+    td {
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+
+} */
