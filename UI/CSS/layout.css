@@ -7,11 +7,14 @@ body {
   background: #f5f5f5;
 }
 section {
-    padding: 1.5em;
+  padding: 1.5em;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
+@media (min-width: 768px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
 }
   
 header.navbar {
