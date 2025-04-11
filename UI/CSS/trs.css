@@ -1,0 +1,34 @@
+/* 운송기사 카드 기본 스타일 */
+.driver-card {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.card:hover {
+    opacity: .8;
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+/* 카드 내 패딩 조정 */
+.driver-card .card-body {
+  padding: 1.5rem;
+}
+
+/* 카드 내 텍스트 스타일 */
+.driver-card p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+.driver-card .card-title {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
