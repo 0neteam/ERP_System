@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/UI/CSS/layout.css">
     <link rel="stylesheet" href="/UI/CSS/table.css">
     <link rel="stylesheet" href="/UI/CSS/orderDetail.css">
+    <!-- <link rel="stylesheet" href="/UI/CSS/card.css" /> -->
 </head>
 
 <body>
@@ -30,23 +31,25 @@
                     <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px" />
                 </a>
             </div>
-    
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav nav-fill gap-6 fs-5 me-1">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">인사관리</a>
+                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button"
+                            aria-expanded="false">인사관리</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/UI/uihs/userMang.html">직원관리</a></li>
                             <li><a class="dropdown-item" href="/UI/uihs/deptMang.html">부서관리</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">품목관리</a>
+                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button"
+                            aria-expanded="false">품목관리</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/UI/uihs/item.html">품목목록</a></li>
                             <li><a class="dropdown-item" href="/UI/uihs/itemCreate.html">품목추가</a></li>
@@ -56,7 +59,8 @@
                         <a class="nav-link text-dark" href="/UI/uihs/stock.html">재고관리</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">발주관리</a>
+                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button"
+                            aria-expanded="false">발주관리</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/UI/uisw/orderList.html">발주목록</a></li>
                             <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
@@ -66,15 +70,14 @@
                         <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송관리</a>
                     </li>
                 </ul>
-            </div> 
+            </div>
         </div>
     </nav>
 
     <main class="container">
         <div>
-            <h2 class="mt-4 mb-4">발주 상세
-                <span class="badge bg-warning">발주요청</span>
-            </h2>
+            <h2 class="mt-4 mb-4">발주 상세</h2>
+            <h4><span class="badge bg-warning">발주요청</span></h4>
             <div class="d-flex align-items-center">
                 <p>발주번호 : 5</p>
                 <p class="ms-auto">발주요청일 : 2025-02-28</p>
@@ -169,6 +172,7 @@
         </div>
 
         <div class="d-flex justify-content-end gap-2 mt-2">
+            <a type="button" class="btn btn-outline-success" href="/UI/uisw/orderModify.html">발주수정</a>
             <button type="button" class="btn btn-outline-secondary">발주취소</button>
         </div>
         <div class="d-flex justify-content-center mt-3">
@@ -223,6 +227,7 @@
                         <th class="text-nowrap"><input type="checkbox" /></th>
                         <th class="text-nowrap">품목코드</th>
                         <th class="text-nowrap">단위수량</th>
+                        <th class="text-nowrap">남은수량</th>
                         <th class="text-nowrap">출고량</th>
                     </tr>
                 </thead>
@@ -232,61 +237,71 @@
                         <td><input type="checkbox" /></td>
                         <td>1</td>
                         <td>100</td>
-                        <td><input type="text" name="출고수량1" value="1" style="width: 100%;" /></td>
+                        <td>1</td>
+                        <td><input type="text" value="1" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>2</td>
                         <td>20</td>
-                        <td><input type="text" name="출고수량2" value="5" style="width: 100%;" /></td>
+                        <td>5</td>
+                        <td><input type="text" value="5" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>3</td>
                         <td>10</td>
-                        <td><input type="text" name="출고수량3" value="12" style="width: 100%;" /></td>
+                        <td>12</td>
+                        <td><input type="text" value="12" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>4</td>
                         <td>50</td>
-                        <td><input type="text" name="출고수량4" value="2" style="width: 100%;" /></td>
+                        <td>2</td>
+                        <td><input type="text" value="2" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>5</td>
                         <td>150</td>
-                        <td><input type="text" name="출고수량5" value="2" style="width: 100%;" /></td>
+                        <td>2</td>
+                        <td><input type="text" value="2" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>6</td>
                         <td>5</td>
-                        <td><input type="text" name="출고수량6" value="13" style="width: 100%;" /></td>
+                        <td>13</td>
+                        <td><input type="text" value="13" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>7</td>
                         <td>10</td>
-                        <td><input type="text" name="출고수량7" value="6" style="width: 100%;" /></td>
+                        <td>6</td>
+                        <td><input type="text" value="6" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>8</td>
                         <td>10</td>
-                        <td><input type="text" name="출고수량8" value="12" style="width: 100%;" /></td>
+                        <td>12</td>
+                        <td><input type="text" value="12" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>9</td>
                         <td>25</td>
-                        <td><input type="text" name="출고수량9" value="2" style="width: 100%;" /></td>
+                        <td>2</td>
+                        <td><input type="text" value="2" style="width: 100%;" /></td>
                     </tr>
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>10</td>
                         <td>10</td>
-                        <td><input type="text" name="출고수량10" value="13" style="width: 100%;" /></td>
+                        <td>13</td>
+                        <td><input type="text" value="13" style="width: 100%;" /></td>
                     </tr>
 
                 </tbody>
@@ -369,7 +384,7 @@
             <div aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <li class="page-item">
-                        <button class="page-link"  aria-label="First">
+                        <button class="page-link" aria-label="First">
                             <span aria-hidden="true">&laquo;</span>
                         </button>
                     </li>
@@ -495,83 +510,64 @@
                         <div class="row g-4 mb-2">
 
                             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                                <div class="card driverCard">
-                                    <div class="cardImg">
-                                        <img src="/UI/uisw/pic.jpg" class="card-img-top"/>
-                                    </div>
+                                <div class="card">
+                                    <img src="/UI/uisw/pic.jpg" class="card-img-top" />
                                     <div class="card-body d-flex flex-column">
-                                        <input class="form-check-input" type="radio" name="driverSelect" value="" />
                                         <h5 class="card-title">이름름</h5>
                                         <p class="card-text card-driver-email">email@example.com</p>
                                     </div>
                                 </div>
-                            </div>         
+                            </div>
                             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                                <div class="card driverCard">
-                                    <div class="cardImg">
-                                        <img src="/UI/uisw/pic.jpg" class="card-img-top"/>
-                                    </div>
+                                <div class="card">
+                                    <img src="/UI/uisw/pic.jpg" class="card-img-top" />
                                     <div class="card-body d-flex flex-column">
-                                        <input class="form-check-input" type="radio" name="driverSelect" value="" />
                                         <h5 class="card-title">이름름</h5>
                                         <p class="card-text card-driver-email">email@example.com</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                                <div class="card driverCard">
-                                    <div class="cardImg">
-                                        <img src="/UI/uisw/pic.jpg" class="card-img-top"/>
-                                    </div>
+                                <div class="card">
+                                    <img src="/UI/uisw/pic.jpg" class="card-img-top" />
                                     <div class="card-body d-flex flex-column">
-                                        <input class="form-check-input" type="radio" name="driverSelect" value="" />
                                         <h5 class="card-title">이름름</h5>
                                         <p class="card-text card-driver-email">email@example.com</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                                <div class="card driverCard">
-                                    <div class="cardImg">
-                                        <img src="/UI/uisw/pic.jpg" class="card-img-top"/>
-                                    </div>
+                                <div class="card">
+                                    <img src="/UI/uisw/pic.jpg" class="card-img-top" />
                                     <div class="card-body d-flex flex-column">
-                                        <input class="form-check-input" type="radio" name="driverSelect" value="" />
                                         <h5 class="card-title">이름름</h5>
                                         <p class="card-text card-driver-email">email@example.com</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                                <div class="card driverCard">
-                                    <div class="cardImg">
-                                        <img src="/UI/uisw/pic.jpg" class="card-img-top"/>
-                                    </div>
+                                <div class="card">
+                                    <img src="/UI/uisw/pic.jpg" class="card-img-top" />
                                     <div class="card-body d-flex flex-column">
-                                        <input class="form-check-input" type="radio" name="driverSelect" value="" />
                                         <h5 class="card-title">이름름</h5>
                                         <p class="card-text card-driver-email">email@example.com</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-                                <div class="card driverCard">
-                                    <div class="cardImg">
-                                        <img src="/UI/uisw/pic.jpg" class="card-img-top"/>
-                                    </div>
+                                <div class="card">
+                                    <img src="/UI/uisw/pic.jpg" class="card-img-top" />
                                     <div class="card-body d-flex flex-column">
-                                        <input class="form-check-input" type="radio" name="driverSelect" value="" />
                                         <h5 class="card-title">이름름</h5>
                                         <p class="card-text card-driver-email">email@example.com</p>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
 
 
                         </div>
 
                         <div class="d-flex justify-content-end gap-2 mt-2">
-                            <button type="button" class="btn btn-outline-success">배정</button>
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
                         </div>
                         <div class="d-flex justify-content-center mt-3">
@@ -624,78 +620,117 @@
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                        <div class="input-group">
-                            <span class="input-group-text">운송번호</span>
-                            <input type="text" class="form-control" value="1" readonly />
-                            <span class="input-group-text">운송자이름</span>
-                            <input type="text" class="form-control" value="김민정" readonly />
-                            <span class="input-group-text">연락처</span>
-                            <input type="text" class="form-control" value="ex@example.com" readonly />
+                        <div class="d-flex justify-content-between gap-2 mt-2">
+                            <div class="d-flex">
+                                <p>발주번호 : 1</p>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-outline-success">출고 완료</button>
+                                <button type="button" class="btn btn-outline-success">입고 완료</button>
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
+                            </div>
+                        </div>
+                        <div class="row g-0">
+                            <div class="col-12 col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text" style="width: 95px;">운송자이름</span>
+                                    <input type="text" class="form-control" value="김민정" readonly />
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text" style="width: 95px;">연락처</span>
+                                    <input type="text" class="form-control" value="ex@example.com" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-0">
+                            <div class="col-12 col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text" style="width: 95px;">출발일</span>
+                                    <input type="text" class="form-control" value="2025-03-01" readonly />
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="input-group">
+                                    <span class="input-group-text" style="width: 95px;">도착일</span>
+                                    <input type="text" class="form-control" value="2025-03-03" readonly />
+                                </div>
+                            </div>
                         </div>
                         <div class="input-group">
-                            <span class="input-group-text">출발일</span>
-                            <input type="text" class="form-control" value="2025-03-01" readonly />
-                            <span class="input-group-text">도착일</span>
-                            <input type="text" class="form-control" value="2025-03-03" readonly />
+                            <input type="text" class="form-control">
+                            <button type="submit" class="btn btn-outline-success">검색</button>
                         </div>
-
-                        <div>
-                            <table class="mb-2 overflow-y-auto">
+                        <div class="overflow-y-auto tableHeight">
+                            <table class="mb-2">
                                 <thead>
                                     <tr>
                                         <th class="text-nowrap">품목코드</th>
                                         <th class="text-nowrap">출고수량</th>
+                                        <th class="text-nowrap">입고량</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
                                         <td>30</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
                                         <td>50</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
                                         <td>10</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>4</td>
                                         <td>70</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>5</td>
                                         <td>90</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>6</td>
                                         <td>25</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>7</td>
                                         <td>60</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>8</td>
                                         <td>50</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>9</td>
                                         <td>300</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
                                     <tr>
                                         <td>10</td>
                                         <td>100</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
                                     </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>100</td>
+                                        <td><input type="text" style="width: 100%;" /></td>
+                                    </tr>
+                                    <tr>
+
                                 </tbody>
                             </table>
-                        </div>
-
-                        <div class="d-flex justify-content-end gap-2 mt-2">
-                            <button type="button" class="btn btn-outline-success">출고 완료</button>
-                            <button type="button" class="btn btn-outline-success">입고 완료</button>
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
                         </div>
                         <div class="d-flex justify-content-center mt-2">
                             <div aria-label="Page navigation example">
