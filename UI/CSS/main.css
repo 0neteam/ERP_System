@@ -1,0 +1,149 @@
+
+/* 히어로 섹션 */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../uiky/img/main.jpg') no-repeat center center;
+  background-size: cover;
+  height: 87.5vh; /* 화면 전체 높이 */
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  width: 100%;
+  animation: fadeInHero 1s ease-out;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: slideInDown 1s ease-out;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  animation: slideInUp 1s ease-out;
+}
+
+/* 대시보드 카드 섹션 */
+.dashboard-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-card p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* 타이핑 애니메이션 (텍스트 효과) */
+.typewriter h2 {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid orange;
+  font-size: 2rem;
+  animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* 애니메이션 효과 */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: orange; }
+}
+
+@keyframes fadeInHero {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* 서비스 이미지 애니메이션 */
+.animate-img {
+  transition: transform 0.5s ease;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+  .hero-overlay p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 300px) {
+  header.navbar .navbar-nav {
+    display: none !important;
+  }
+}
+
+/* 추가 섹션 (비전, 연혁, 고객 후기 등) 공통 스타일 */
+.section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* 기본 상태: 밑줄의 width가 0 */
+.section-title::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background: #001f3f;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.5s ease;
+}
+
+/* 전체 섹션에 마우스 올렸을 때, 그 섹션 내의 .section-title::after 의 width를 100px으로 확장 */
+.section:hover .section-title::after {
+  width: 100px;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

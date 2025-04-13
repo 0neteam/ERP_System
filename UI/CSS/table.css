@@ -32,6 +32,12 @@ a {
     color: #222222;
 }
 
+.tableHeight {
+    height: 600px;
+    overflow-y: auto;
+  }
+
+
 /* @media all and (max-width: 768px) {
     
     table, thead, tbody, th, td, tr {
@@ -74,9 +80,5 @@ a {
         border-bottom: 1px solid #e5e5e5;
     }
 
-<<<<<<< HEAD
 
 } */
-=======
-} */
->>>>>>> a60a020cd8ca9169b0ecb323ff7aa0d57ed5b4e7
