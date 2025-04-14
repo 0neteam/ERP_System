@@ -18,7 +18,8 @@
                 <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
                     <a class="nav-item nav-link me-3" href="/UI/uije/mypage.html">마이페이지</a>
                     <a class="nav-item nav-link" href="/UI/uije/signIn.html" id="login">로그인</a>
-                    <a class="nav-item nav-link" href="/UI/uiky/main.html" id="logout">로그아웃</a>
+                    <a class="nav-item nav-link me-3" href="/UI/uiky/main.html" id="logout">로그아웃</a>
+                    <a class="nav-item nav-link" href="/UI/uije/signUp.html">회원가입</a>
                 </div>
             </div>
         </header>
@@ -145,28 +146,34 @@
 
                 <!-- 우측 영역 -->
                 <div class="col-12 col-md-7 col-lg-8 mb-2">
-                    <div class="section-box d-flex flex-column h-100">
-                        <div class="d-flex justify-content-center align-items-center w-100 w-lg-50 mb-4">
-                            <img class="user" src="/UI/uihs/img/empty_user.png" />
-                        </div>
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">사번</span>
-                            <input type="text" id="no" class="form-control" placeholder="no" disabled />
+                    <div class="section-box d-flex flex-column justify-content-between h-100">
+                        <div>
+                            <div class="d-flex justify-content-center align-items-center w-100 w-lg-50 mb-4">
+                                <img class="user" src="/UI/uihs/img/empty_user.png" />
+                            </div>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">사번</span>
+                                <input type="text" id="no" class="form-control" placeholder="no" disabled />
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">이름</span>
+                                <input type="text" id="name" class="form-control" placeholder="name" disabled />
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">메일</span>
+                                <input type="text" id="email" class="form-control" placeholder="email@email.com" disabled />
+                            </div>
+                            
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">부서</span>
+                                <input type="text" id="email" class="form-control" placeholder="제조, 창고" disabled />
+                            </div>
                         </div>
 
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">이름</span>
-                            <input type="text" id="name" class="form-control" placeholder="name" disabled />
-                        </div>
-
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">메일</span>
-                            <input type="text" id="email" class="form-control" placeholder="email@email.com" disabled />
-                        </div>
-                        
-                        <div class="input-group mb-2">
-                            <span class="input-group-text">부서</span>
-                            <input type="text" id="email" class="form-control" placeholder="제조, 창고" disabled />
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-outline-secondary">직원 삭제</button>
                         </div>
                     </div>
                 </div>
@@ -227,10 +234,9 @@
                             </div>
                             <ul class="list-unstyled github-links">
                                 <li><a href="https://github.com/0neteam" target="_blank">0neteam</a></li>
-                                <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project</a></li>
-                                <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project/app1</a></li>
-                                <li><a href="https://github.com/0neteam/app2" target="_blank">2차 Project/app2</a></li>
-                                <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project/ERP_System</a></li>
+                                <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project / 웹 크롤링</a></li>
+                                <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project / ERP System</a></li>
+                                <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project / ERP System</a></li>
                             </ul>
                         </div>
                     </div>
