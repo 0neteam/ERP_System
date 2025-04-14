@@ -27,13 +27,13 @@
 <nav class="navbar navbar-expand-md bg-light">
     <div class="container">
         <div class="navbar-brand d-flex align-items-center">
-            <a class="me-5" href="/UI/uiky/main.html">
+            <a class="me-4" href="/UI/uiky/main.html">
                 <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px" />
             </a>
         </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -63,8 +63,13 @@
                         <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송관리</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">운송관리</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/UI/uiky/transpList.html">운송목록</a></li>
+                        <li><a class="dropdown-item" href="#">차량목록</a></li>
+                        <li><a class="dropdown-item" href="#">차량추가</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -105,23 +110,23 @@
             <div class="col">
                 <div class="card shadow-sm h-100">
                     <div class="card-body text-center text-lg-start">
-<!--                        <div>
+                        <div>
                             <button type="button" class="btn btn-outline-success w-100 mb-2">출발</button>
                             <p class="text-center mb-3">요청일자: 2025.04.13 12:47</p>
-                        </div>-->
+                        </div>
 
-<!--                        <div>
+                        <div>
                             <button type="button" class="btn btn-outline-success w-100 mb-2">도착</button>
                             <p class="text-center mb-3">요청일자: 2025.04.13 12:47</p>
                             <p class="text-center mb-3">출발일자: 2025.04.14 12:47</p>
-                        </div>-->
+                        </div>
 
-<!--                        <div>
+                        <div>
                             <button type="button" class="btn btn-outline-success w-100 mb-2" disabled>완료</button>
                             <p class="text-center mb-3">요청일자: 2025.04.13 12:47</p>
                             <p class="text-center mb-3">출발일자: 2025.04.14 12:47</p>
                             <p class="text-center mb-3">도착일자: 2025.04.15 12:47</p>
-                        </div>-->
+                        </div>
 
                         <div>
                             <button type="button" class="btn btn-danger w-100 mb-2" disabled>비정상</button>
