@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-md bg-light">
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
-                    <a class="me-5" href="/UI/uiky/main.html">
+                    <a class="me-4" href="/UI/uiky/main.html">
                         <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px" />
                     </a>
                 </div>
@@ -63,8 +63,13 @@
                                 <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송관리</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">운송관리</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/UI/uiky/transpList.html">운송목록</a></li>
+                                <li><a class="dropdown-item" href="#">차량목록</a></li>
+                                <li><a class="dropdown-item" href="#">차량추가</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -108,7 +113,7 @@
         
                     <div class="btns d-flex w-100 justify-content-between gap-2">
                         <div>
-                            <a class="btn btn-outline-danger" href="/UI/uihs/item.html">삭제</a>
+                            <a class="btn btn-outline-secondary" href="/UI/uihs/item.html">삭제</a>
                         </div>
                         <div>
                             <a class="btn btn-outline-success">수정</a>
