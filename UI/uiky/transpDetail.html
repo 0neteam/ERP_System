@@ -9,8 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/UI/CSS/table.css"/>
     <link rel="stylesheet" href="/UI/CSS/layout.css"/>
-    <link rel="stylesheet" href="/UI/CSS/trs.css"/>
-
 </head>
 <body>
 
@@ -20,7 +18,8 @@
         <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
             <a class="nav-item nav-link me-3" href="/UI/uije/mypage.html">마이페이지</a>
             <a class="nav-item nav-link" href="/UI/uije/signIn.html" id="login">로그인</a>
-            <a class="nav-item nav-link" href="/UI/uiky/main.html" id="logout">로그아웃</a>
+            <a class="nav-item nav-link me-3" href="/UI/uiky/main.html" id="logout">로그아웃</a>
+            <a class="nav-item nav-link" href="/UI/uije/signUp.html">회원가입</a>
         </div>
     </div>
 </header>
@@ -73,21 +72,25 @@
 </nav>
 
 <section class="container" style="min-height: 70vh;">
-    <div>
-        <div>
-            <h2 class="mb-4">운송 상세</h2>
+    <div class="mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">운송 상세</h2>
+            <button type="button" class="btn btn-outline-success" onclick="location.href='transpList.html'">목록</button>
         </div>
-        <div class="row align-items-center mb-3">
-            <div class="col-md-6">
-                <!-- card에 커스텀 클래스와 animate 클래스를 추가 -->
-                <div class="card shadow-sm driver-card animate__animated animate__fadeInUp">
+
+        <div class="row row-cols-1 row-cols-md-2 align-items-stretch g-3">
+            <!-- 왼쪽 카드 -->
+            <div class="col">
+                <div class="card shadow-sm h-100">
                     <div class="card-body">
-                        <div class="row align-items-startg gx-5">
-                            <!-- 이미지 컬럼 -->
+                        <div class="row align-items-start gx-5">
+                            <!-- 이미지 영역 -->
                             <div class="col-12 col-lg-4 text-center mb-3 mb-lg-0">
-                                <img src="/UI/uiky/img/driver2.png" alt="운송기사 사진" class="img-fluid rounded-circle" style="max-width: 150px;">
+                                <img src="/UI/uiky/img/driver3.png"
+                                     alt="운송기사 사진"
+                                     class="img-fluid rounded-circle"
+                                     style="max-width: 150px;">
                             </div>
-                            <!-- 텍스트 컬럼 -->
                             <div class="col-12 col-lg-8 mt-3">
                                 <p>운송번호 : 1</p>
                                 <p>운송요청일 : 2025-01-01 09:00</p>
@@ -98,7 +101,43 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body text-center text-lg-start">
+<!--                        <div>
+                            <button type="button" class="btn btn-outline-success w-100 mb-2">출발</button>
+                            <p class="text-center mb-3">요청일자: 2025.04.13 12:47</p>
+                        </div>-->
+
+<!--                        <div>
+                            <button type="button" class="btn btn-outline-success w-100 mb-2">도착</button>
+                            <p class="text-center mb-3">요청일자: 2025.04.13 12:47</p>
+                            <p class="text-center mb-3">출발일자: 2025.04.14 12:47</p>
+                        </div>-->
+
+<!--                        <div>
+                            <button type="button" class="btn btn-outline-success w-100 mb-2" disabled>완료</button>
+                            <p class="text-center mb-3">요청일자: 2025.04.13 12:47</p>
+                            <p class="text-center mb-3">출발일자: 2025.04.14 12:47</p>
+                            <p class="text-center mb-3">도착일자: 2025.04.15 12:47</p>
+                        </div>-->
+
+                        <div>
+                            <button type="button" class="btn btn-danger w-100 mb-2" disabled>비정상</button>
+                            <p class="text-center mb-3">요청일자: 2025.04.14 12:47</p>
+                            <p class="text-center mb-3">출발일자: 2025.04.15 12:47</p>
+                            <p class="text-center mb-3">비정상 내용: 품목코드: 129, 수량: 50 부족</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+
+
+
 
 
 
@@ -194,12 +233,6 @@
             </ul>
         </div>
 
-        <div class="d-flex justify-content-end mt-3">
-            <button type="button" class="btn btn-outline-success me-2">출발</button>
-            <button type="button" class="btn btn-outline-success me-2">도착</button>
-            <span class="btn btn-outline-success me-2">완료</span>
-            <button type="button" class="btn btn-outline-success me-2" onclick="location.href='transpList.html'">목록</button>
-        </div>
     </div>
 </section>
 
@@ -258,10 +291,9 @@
                     </div>
                     <ul class="list-unstyled github-links">
                         <li><a href="https://github.com/0neteam" target="_blank">0neteam</a></li>
-                        <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project</a></li>
-                        <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project/app1</a></li>
-                        <li><a href="https://github.com/0neteam/app2" target="_blank">2차 Project/app2</a></li>
-                        <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project/ERP_System</a></li>
+                        <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project / 웹 크롤링</a></li>
+                        <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project / ERP System</a></li>
+                        <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project / ERP System</a></li>
                     </ul>
                 </div>
             </div>
