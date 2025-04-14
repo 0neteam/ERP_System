@@ -16,7 +16,8 @@
                 <div class="navbar-nav d-flex flex-row flex-nowrap align-items-center ms-auto">
                     <a class="nav-item nav-link me-3" href="/UI/uije/mypage.html">마이페이지</a>
                     <a class="nav-item nav-link" href="/UI/uije/signIn.html" id="login">로그인</a>
-                    <a class="nav-item nav-link" href="/UI/uiky/main.html" id="logout">로그아웃</a>
+                    <a class="nav-item nav-link me-3" href="/UI/uiky/main.html" id="logout">로그아웃</a>
+                    <a class="nav-item nav-link" href="/UI/uije/signUp.html">회원가입</a>
                 </div>
             </div>
         </header>
@@ -70,28 +71,22 @@
     <section class="container" style="min-height: 50vh;">
         <div class="row">
             <div class="col"></div>
-            <div class="col-6" style="min-width: 400px;">
+            <div class="col-6" style="min-width: 300px;">
                 <h1 class="display-6 text-nowrap text-center">SignUp</h1>
-                <a href="#!">
-                    <img class="mx-auto d-block mt-3" style="width: 20vh;" src="img1.png" alt="logo">
-                </a>
+                <div class="form-floating mt-3">
+                    <input type="password" class="form-control" id="name" type="text" placeholder="Name" />
+                    <label for="email">Name</label>
+                </div>
 
                 <div class="form-floating mt-3">
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                    <input type="text" class="form-control" id="email" placeholder="Email" />
                     <label for="email">Email</label>
                 </div>
 
-                <!-- 메일인증 버튼을 누르면 위의 이메일 주소로 인증 코드가 전송 됨. (2차) -->
                 <div class="d-flex mt-3">
                     <button id="codeReqButton" name="codeReqButton" type="button" class="btn btn-outline-primary flex-fill">Email 인증코드 전송</button>
-                </div>
-                <!-- 인증코드 보내기를 누르고 나면 다시보내기 버튼으로 변경됨. 인증 오류로 다시 보내야하는 경우에 필요  -->
-                <div class="d-flex mt-3">
-                    <button id="reReqButton" name="reReqButton" type="button" class="btn btn-outline-primary flex-fill">재전송</button>
-                </div>
-
-                <!-- 메인인증 버튼을 누르기 전에는 display: none;, 버튼을 누르고 난 뒤 보임 -->
-                <!-- 확인 버튼을 눌러 보낸 인증코드와 기입된 인증코드가 일치하는지 확인 -->
+                </div>  
+            
                 <div class="input-group mt-3">
                     <div class="form-floating flex-grow-1">
                       <input type="text" class="form-control" id="code" name="code" placeholder="인증코드">
@@ -100,52 +95,27 @@
                     <button id="codeChk" name="codeChk" type="button" class="btn btn-outline-primary" style="width: 75px;">확인</button>
                 </div>
 
-                <!-- 메일인증 버튼을 누르기 전에는 display: none;(기본값), 버튼을 누르고 난 뒤 보이는 경고문 -->
-                <!-- 메일인증코드 유효시간이 표시되는 경고창 -->
-                <!-- 인증확인이 완료되면 사라짐 -->
-                <!-- 다시보내기를 누르면 남은시간 초기화. -->
-                <div class="mt-1">
-                    <div class="alert alert-secondary " style="display: block;">
-                        <span id="codeTime" name="codeTime" class="spinner-border spinner-border-sm me-2"></span>남은시간
-                    </div>
-                </div>
-
-                <!-- 확인 버튼을 누르고 난 뒤 메일인증이 정상적으로 처리 되었을 때 보이는 경고문-->
                 <div class="mt-1">
                     <div id="codePer" name="codePer" class="alert alert-info" style="display: block;">
                     인증코드 확인 완료
                     </div>
                 </div>
-                <!-- 확인 버튼을 누르고 난 뒤 코드가 불일치 하거나 정상적으로 처리되지 않았을 때 보이는 경고문 -->
-                <!-- 인증확인이 완료되면 사라짐 -->
+
                 <div class="mt-1">
                     <div id="codeError" name="codeError" class="alert alert-danger" style="display: block;">
                     다시 인증 해주세요.
                     </div>
                 </div>
 
-                <div class="form-floating mt-3">
-                    <input type="password" class="form-control" id="pw" name="pw" type="password" placeholder="Password">
-                    <label for="email">Password</label>
-                </div>
-                <div class="form-floating mt-1">
-                    <input type="password" class="form-control" id="pwChk" name="pwChk" placeholder="Password check">
-                    <label for="email">Password Check</label>
-                </div>
-                <!-- 비밀번호 input창에서 포커스 아웃되었을 때 비밀번호와 비밀번호 확인에 입력된 값이 다를 때 보이는 경고문 -->
                 <div class="mt-1">
-                    <div id="diffPw" name="diffPw" class="alert alert-warning" style="display: block;">
-                    비밀번호를 확인해주세요.
+                    <div id="codeError" name="codeError" class="alert alert-danger" style="display: block;">
+                    이미 사용 중인 이메일 주소입니다.
                     </div>
-                </div>
-                <div class="form-floating mt-3">
-                    <input type="password" class="form-control" id="name" name="name" type="text" placeholder="Name">
-                    <label for="email">Name</label>
-                </div>
+                </div>              
 
                 <div class="d-flex btn-group mt-3 mb-2">
                     <button type="button" class="btn btn-outline-primary">가입</button>
-                    <a type="button" class="btn btn-outline-danger" href="#!">취소</a>
+                    <a type="button" class="btn btn-outline-danger" href="/UI/uiky/main.html">취소</a>
                 </div>
             </div>
             <div class="col"></div>
@@ -155,11 +125,11 @@
     <footer class="custom-footer">
         <div class="container">
             <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
-                <div class="col-8 d-flex flex-column">
-                    <h5>Oneteam 3차 Project ERP_System</h5>
+                <div class="col-6 col-sm-8 d-flex flex-column">
+                    <h5>ERP_System</h5>
                     <div class="mt-auto">
                         <div class="row text-center">
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">함효신</h6>
                                 <small class="member-info">
                                     <a href="mailto:hamhs0802@gmail.com">hamhs0802@gmail.com</a>
@@ -168,7 +138,7 @@
                                     <a href="https://github.com/HelenHam" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">임지은</h6>
                                 <small class="member-info">
                                     <a href="mailto:j.lim9304@gmail.com">j.lim9304@gmail.com</a>
@@ -177,7 +147,7 @@
                                     <a href="https://github.com/GGobung-of-Simba" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">강승우</h6>
                                 <small class="member-info">
                                     <a href="mailto:swparabellum@gmail.com">swparabellum@gmail.com</a>
@@ -186,7 +156,7 @@
                                     <a href="https://github.com/swparabellum" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">이경일</h6>
                                 <small class="member-info">
                                     <a href="mailto:dlruddlf120914@gmail.com">dlruddlf120914@gmail.com</a>
@@ -199,27 +169,26 @@
                     </div>
                 </div>
 
-                <div class="col-4 d-flex justify-content-end">
+                <div class="col-6 col-sm-4 d-flex justify-content-end">
                     <div class="text-start">
                         <div class="d-flex align-items-center">
                             <h4 class="github-header">GitHub</h4>
                         </div>
                         <ul class="list-unstyled github-links">
                             <li><a href="https://github.com/0neteam" target="_blank">0neteam</a></li>
-                            <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project</a></li>
-                            <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project/app1</a></li>
-                            <li><a href="https://github.com/0neteam/app2" target="_blank">2차 Project/app2</a></li>
-                            <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project/ERP_System</a></li>
+                            <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project / 웹 크롤링</a></li>
+                            <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project / ERP System</a></li>
+                            <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project / ERP System</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <hr class="bg-light">
+            <hr class="bg-light" />
 
             <div class="footer-bottom">
                 <p>Copyright © STEP THREE 2025</p>
-                <img src="../temp_logo.png" alt="Logo" class="footer-logo">
+                <img src="/UI/logo_white.png" alt="Logo" class="footer-logo" />
             </div>
         </div>
     </footer>
