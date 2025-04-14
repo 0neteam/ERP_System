@@ -33,7 +33,7 @@
                 </div>
         
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
         
@@ -67,8 +67,8 @@
                             <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">운송관리</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="/UI/uiky/transpList.html">운송목록</a></li>
-                                <li><a class="dropdown-item" href="#">차량목록</a></li>
-                                <li><a class="dropdown-item" href="#">차량추가</a></li>
+                                <li><a class="dropdown-item" href="/UI/uiky/vehicle.html">차량목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uiky/vehicleCreate.html">차량추가</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -173,13 +173,47 @@
                             
                             <div class="input-group mb-2">
                                 <span class="input-group-text">부서</span>
-                                <input type="text" id="email" class="form-control" placeholder="제조, 창고" disabled />
+                                <input type="text" id="dept" class="form-control" placeholder="제조, 창고" disabled />
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">면허</span>
+                                <input type="text" id="licence" class="form-control" placeholder="1종 보통, 1종 대형" disabled />
+                            </div>
+                            
+
+                            <div class="row row-cols-2 row-cols-md-4 g-2 mb-4">
+                                <div class="col">
+                                    <input type="checkbox" class="btn-check" id="licence1" autocomplete="off" />
+                                    <label class="btn btn-outline-primary w-100 text-nowrap" for="licence1">1종 보통</label>
+                                </div>
+                                <div class="col">
+                                    <input type="checkbox" class="btn-check" id="licence2" autocomplete="off" />
+                                    <label class="btn btn-outline-primary w-100 text-nowrap" for="licence2">1종 대형</label>
+                                </div>
+                                <div class="col">
+                                    <input type="checkbox" class="btn-check" id="licence3" autocomplete="off" />
+                                    <label class="btn btn-outline-primary w-100 text-nowrap" for="licence3">1종 특수</label>
+                                </div>
+                                <div class="col">
+                                    <input type="checkbox" class="btn-check" id="licence4" autocomplete="off" />
+                                    <label class="btn btn-outline-primary w-100 text-nowrap" for="licence4">2종 보통</label>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <div class="btns d-flex w-100 justify-content-between gap-2">
+                            <div>
+                                <a class="btn btn-outline-danger" href="/UI/uihs/userMang.html">삭제</a>
+                            </div>
+                            <div>
+                                <a class="btn btn-outline-success">수정</a>
+                                <a class="btn btn-outline-success">저장</a>
+                                <a class="btn btn-outline-secondary" href="/UI/uiky/main.html">취소</a>
                             </div>
                         </div>
 
-                        <div class="d-flex justify-content-end">
-                            <button class="btn btn-outline-secondary">직원 삭제</button>
-                        </div>
                     </div>
                 </div>
             </div>

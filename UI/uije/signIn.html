@@ -25,13 +25,13 @@
         <nav class="navbar navbar-expand-md bg-light">
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
-                    <a class="me-5" href="/UI/uiky/main.html">
+                    <a class="me-4" href="/UI/uiky/main.html">
                         <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px" />
                     </a>
                 </div>
         
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
         
@@ -61,8 +61,13 @@
                                 <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송관리</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">운송관리</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/UI/uiky/transpList.html">운송목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uiky/vehicle.html">차량목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uiky/vehicleCreate.html">차량추가</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +77,7 @@
         
         <div class="row w-100">
             <div class="col"></div>
-            <div class="col-6 align-self-center" style="min-width: 300px; max-width: 500px;">
+            <div class="col-6 align-self-center" style="min-width: 350px; max-width: 500px;">
                 <h1 class="display-6 text-nowrap text-center">SignIn</h1>
                 <br/>
                 <br/>
@@ -118,11 +123,11 @@
     <footer class="custom-footer">
         <div class="container">
             <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
-                <div class="col-8 d-flex flex-column">
-                    <h5>Oneteam 3차 Project ERP_System</h5>
+                <div class="col-6 col-sm-8 d-flex flex-column">
+                    <h5>ERP_System</h5>
                     <div class="mt-auto">
                         <div class="row text-center">
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">함효신</h6>
                                 <small class="member-info">
                                     <a href="mailto:hamhs0802@gmail.com">hamhs0802@gmail.com</a>
@@ -131,7 +136,7 @@
                                     <a href="https://github.com/HelenHam" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">임지은</h6>
                                 <small class="member-info">
                                     <a href="mailto:j.lim9304@gmail.com">j.lim9304@gmail.com</a>
@@ -140,7 +145,7 @@
                                     <a href="https://github.com/GGobung-of-Simba" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">강승우</h6>
                                 <small class="member-info">
                                     <a href="mailto:swparabellum@gmail.com">swparabellum@gmail.com</a>
@@ -149,7 +154,7 @@
                                     <a href="https://github.com/swparabellum" target="_blank">GitHub</a>
                                 </small>
                             </div>
-                            <div class="col-6 col-md-3 mb-3">
+                            <div class="col-md-6 col-lg-3 mb-3">
                                 <h6 class="member-name">이경일</h6>
                                 <small class="member-info">
                                     <a href="mailto:dlruddlf120914@gmail.com">dlruddlf120914@gmail.com</a>
@@ -161,28 +166,27 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-4 d-flex justify-content-end">
+    
+                <div class="col-6 col-sm-4 d-flex justify-content-end">
                     <div class="text-start">
                         <div class="d-flex align-items-center">
                             <h4 class="github-header">GitHub</h4>
                         </div>
                         <ul class="list-unstyled github-links">
                             <li><a href="https://github.com/0neteam" target="_blank">0neteam</a></li>
-                            <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project</a></li>
-                            <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project/app1</a></li>
-                            <li><a href="https://github.com/0neteam/app2" target="_blank">2차 Project/app2</a></li>
-                            <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project/ERP_System</a></li>
+                            <li><a href="https://github.com/0neteam/Project1" target="_blank">1차 Project / 웹 크롤링</a></li>
+                            <li><a href="https://github.com/0neteam/app1" target="_blank">2차 Project / ERP System</a></li>
+                            <li><a href="https://github.com/0neteam/ERP_System" target="_blank">3차 Project / ERP System</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
-            <hr class="bg-light">
-
+    
+            <hr class="bg-light" />
+    
             <div class="footer-bottom">
                 <p>Copyright © STEP THREE 2025</p>
-                <img src="../temp_logo.png" alt="Logo" class="footer-logo">
+                <img src="/UI/logo_white.png" alt="Logo" class="footer-logo" />
             </div>
         </div>
     </footer>
