@@ -254,7 +254,16 @@
                 <div class="modal-body">
                     <div class="container">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-12 col-md-4">
+                                    <div class="input-group">
+                                        <select class="form-select">
+                                            <option value="1">전체</option>
+                                            <option value="2">품목코드</option>
+                                            <option value="3">품목명</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-8">
                                     <div class="input-group">
                                         <input type="text" class="form-control">
                                         <button type="submit" class="btn btn-outline-success">검색</button>
@@ -265,59 +274,59 @@
                         <div class="mt-2 overflow-y-auto">
                             <table>
                                 <thead>
-                                    <tr>
+                                    <tr">
                                         <th class="text-nowrap">품목코드</th>
                                         <th class="text-nowrap">품목명</th>
                                         <th class="text-nowrap">현재 재고량</th>
                                     </tr>
                                 </thead>
                                     <tbody>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>1</td>
                                         <td>전자제품</td>
                                         <td>150</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>2</td>
                                         <td>의자</td>
                                         <td>200</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>3</td>
                                         <td>책상</td>
                                         <td>120</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>4</td>
                                         <td>램프</td>
                                         <td>80</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>5</td>
                                         <td>커튼</td>
                                         <td>50</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>6</td>
                                         <td>컴퓨터</td>
                                         <td>30</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>7</td>
                                         <td>노트북</td>
                                         <td>75</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>8</td>
                                         <td>키보드</td>
                                         <td>300</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>9</td>
                                         <td>마우스</td>
                                         <td>500</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>10</td>
                                         <td>헤드폰</td>
                                         <td>120</td>
@@ -357,7 +366,6 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-end gap-2">
-                            <button type="button" class="btn btn-outline-success">적용</button>
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
                         </div>
                     </div>
