@@ -26,13 +26,13 @@
     <nav class="navbar navbar-expand-md bg-light">
         <div class="container">
             <div class="navbar-brand d-flex align-items-center">
-                <a class="me-5" href="/UI/uiky/main.html">
+                <a class="me-4" href="/UI/uiky/main.html">
                     <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px" />
                 </a>
             </div>
     
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
     
@@ -62,8 +62,13 @@
                             <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송관리</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">운송관리</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/UI/uiky/transpList.html">운송목록</a></li>
+                            <li><a class="dropdown-item" href="/UI/uiky/vehicle.html">차량목록</a></li>
+                            <li><a class="dropdown-item" href="/UI/uiky/vehicleCreate.html">차량추가</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -124,61 +129,61 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr onclick="location.href='orderDetail.html'">
                         <td>1</td>
                         <td>발주요청</td>
                         <td>2025-03-01</td>
                         <td>-</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>2</td>
                         <td>진행</td>
                         <td>2025-03-02</td>
                         <td>2025-03-04</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>3</td>
                         <td>완료</td>
                         <td>2025-03-03</td>
                         <td>2025-03-05</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>4</td>
                         <td>취소</td>
                         <td>2025-03-04</td>
                         <td>2025-03-06</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>5</td>
                         <td>발주요청</td>
                         <td>2025-03-05</td>
                         <td>-</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>6</td>
                         <td>진행</td>
                         <td>2025-03-06</td>
                         <td>2025-03-07</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>7</td>
                         <td>완료</td>
                         <td>2025-03-07</td>
                         <td>2025-03-09</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>8</td>
                         <td>취소</td>
                         <td>2025-03-08</td>
                         <td>2025-03-10</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>9</td>
                         <td>발주요청</td>
                         <td>2025-03-09</td>
                         <td>-</td>
                       </tr>
-                      <tr>
+                      <tr onclick="location.href='orderDetail.html'">
                         <td>10</td>
                         <td>진행</td>
                         <td>2025-03-10</td>

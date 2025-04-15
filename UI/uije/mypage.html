@@ -26,13 +26,13 @@
         <nav class="navbar navbar-expand-md bg-light">
             <div class="container">
                 <div class="navbar-brand d-flex align-items-center">
-                    <a class="me-5" href="/UI/uiky/main.html">
+                    <a class="me-4" href="/UI/uiky/main.html">
                         <img src="/UI/logo_white.png" alt="logo" width="120px" height="40px" />
                     </a>
                 </div>
         
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
         
@@ -62,8 +62,13 @@
                                 <li><a class="dropdown-item" href="/UI/uisw/orderCreate.html">발주신청</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="/UI/uiky/transpList.html">운송관리</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" role="button" aria-expanded="false">운송관리</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/UI/uiky/transpList.html">운송목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uiky/vehicle.html">차량목록</a></li>
+                                <li><a class="dropdown-item" href="/UI/uiky/vehicleCreate.html">차량추가</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -72,11 +77,8 @@
     <section class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">
         <div class="row w-100">
             <div class="col"></div>
-            <div class="col-6 align-self-center" style="min-width: 300px; max-width: 500px;">
-                <h1 class="display-6 text-nowrap text-center">mypage</h1>
-                
-                
-                
+            <div class="col-6 align-self-center" style="min-width: 350px; max-width: 500px;">
+                <h1 class="display-6 text-nowrap text-center">mypage</h1>              
                 <div class="mb-2 text-center">
                     <div class="overlayImg">
                       <img class="d-block rounded-circle img-thumbnail mt-3" src="img1.png" alt="logo" style="width: 20vx;">
@@ -97,16 +99,40 @@
                     <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">Email</span>
                     <input type="text" class="form-control" value="email@domain.com" readonly />
                 </div>
-                               
-
 
                 <div class="input-group mt-3">
                     <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">이름</span>
                     <input type="text" class="form-control" value="성이름" readonly>
                 </div>
-                <div class="d-flex btn-group mt-3 mb-2">
-                    <!-- 조회 중일 때 보이는 버튼 : 수정 -->
-                    <!-- 수정 중일 때 보이는 버튼 : 저장, 취소 -->
+                <div class="input-group mt-3">
+                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">부서</span>
+                    <input type="text" class="form-control" value="관리자,창고,제조,운송" readonly>
+                </div>
+                <div class="input-group mt-3">
+                    <span class="input-group-text d-flex justify-content-center text-nowrap" style="width: 100px;">면허</span>
+                    <input type="text" class="form-control" value="1종 보통, 1종 대형, 1종 특수" readonly>
+                </div>
+                
+                <div class="row row-cols-2 g-2 mt-1">
+                    <div class="col">
+                        <input type="checkbox" class="btn-check" id="licence1" autocomplete="off" />
+                        <label class="btn btn-outline-primary w-100 text-nowrap" for="licence1">1종 보통</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" class="btn-check" id="licence2" autocomplete="off" />
+                        <label class="btn btn-outline-primary w-100 text-nowrap" for="licence2">1종 대형</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" class="btn-check" id="licence3" autocomplete="off" />
+                        <label class="btn btn-outline-primary w-100 text-nowrap" for="licence3">1종 특수</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" class="btn-check" id="licence4" autocomplete="off" />
+                        <label class="btn btn-outline-primary w-100 text-nowrap" for="licence4">2종 보통</label>
+                    </div>
+                </div>
+
+                <div class="d-flex btn-group mt-4 mb-2">
                     <button type="button" class="btn btn-outline-primary text-nowrap w-50" href="#!">수정</button>
                     <button type="button" class="btn btn-outline-primary w-50" href="#!">저장</button>
                     <a type="button" class="btn btn-outline-danger w-50" href="/UI/uiky/main.html">취소</a>
@@ -161,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="col-6 col-sm-4 d-flex justify-content-end">
                     <div class="text-start">
                         <div class="d-flex align-items-center">
@@ -176,9 +202,9 @@
                     </div>
                 </div>
             </div>
-
+    
             <hr class="bg-light" />
-
+    
             <div class="footer-bottom">
                 <p>Copyright © STEP THREE 2025</p>
                 <img src="/UI/logo_white.png" alt="Logo" class="footer-logo" />
