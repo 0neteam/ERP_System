@@ -74,7 +74,7 @@
             </div>
         </div>
     </nav>
-    <main class="container">
+    <section class="container">
         <h2 class="mt-4 mb-4">발주 신청</h2>
         <div class="d-flex justify-content-between mb-2">
             <div>
@@ -84,7 +84,7 @@
                 <button type="button" class="btn btn-outline-secondary">선택삭제</button>
             </div>
         </div>
-        <div class="overflow-y-auto">
+        <div>
             <table>
                 <thead>
                     <tr class="text-center">
@@ -99,70 +99,70 @@
                     <tr>
                         <td><input type="checkbox" /></td>
                         <td>1001</td>
-                        <td>사과</td>
+                        <td class="text-truncate">사과</td>
                         <td>50</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1002</td>
-                        <td>배</td>
+                        <td class="text-truncate">배</td>
                         <td>30</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1003</td>
-                        <td>오렌지</td>
+                        <td class="text-truncate">오렌지</td>
                         <td>20</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1004</td>
-                        <td>포도</td>
+                        <td class="text-truncate">포도</td>
                         <td>40</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1005</td>
-                        <td>바나나</td>
+                        <td class="text-truncate">바나나</td>
                         <td>25</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1006</td>
-                        <td>딸기</td>
+                        <td class="text-truncate">딸기</td>
                         <td>35</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1007</td>
-                        <td>수박</td>
+                        <td class="text-truncate">수박</td>
                         <td>10</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1008</td>
-                        <td>복숭아</td>
+                        <td class="text-truncate">복숭아</td>
                         <td>60</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1009</td>
-                        <td>블루베리</td>
+                        <td class="text-truncate">전자제품아아아아아아아아아아주긴품목명오늘내일어쩌구저쩌구왈랄랄라블루베리근데이름이거어어어어어어어업나긴데요</td>
                         <td>15</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
                       <tr>
                         <td><input type="checkbox" /></td>
                         <td>1010</td>
-                        <td>키위</td>
+                        <td class="text-truncate">키위</td>
                         <td>45</td>
                         <td><input type="text" style="width: 100%;" /></td>
                       </tr>
@@ -173,7 +173,7 @@
             <button type="button" class="btn btn-outline-success">발주 신청</button>
             <a type="button" class="btn btn-outline-secondary" href="/UI/uiky/main.html">취소</a>
         </div>
-    </main>
+    </section>
     <footer class="custom-footer">
         <div class="container">
             <div class="row d-flex justify-content-between flex-nowrap" style="min-height: 150px;">
@@ -249,78 +249,86 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p><h3>품목선택</h3></p>
+                    <h3>품목선택</h3>
                 </div>
                 <div class="modal-body">
                     <div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div class="row g-2">
+                                <div class="col-12 col-md-4">
                                     <div class="input-group">
-                                        <input type="text" class="form-control">
-                                        <button type="submit" class="btn btn-outline-success">검색</button>
+                                        <select class="form-select">
+                                            <option value="1">전체</option>
+                                            <option value="2">품목코드</option>
+                                            <option value="3">품목명</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6"></div>
+                                <div class="col-12 col-md-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control">
+                                        <button class="btn btn-outline-success">검색</button>
+                                    </div>
+                                </div>
                             </div>
-                        <div class="mt-2 overflow-y-auto">
+                        <div class="mt-2">
                             <table>
                                 <thead>
                                     <tr>
                                         <th class="text-nowrap">품목코드</th>
                                         <th class="text-nowrap">품목명</th>
-                                        <th class="text-nowrap">현재 재고량</th>
+                                        <th class="text-nowrap">단위수량</th>
                                     </tr>
                                 </thead>
                                     <tbody>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>1</td>
-                                        <td>전자제품</td>
-                                        <td>150</td>
-                                      </tr>
-                                      <tr>
-                                        <td>2</td>
-                                        <td>의자</td>
-                                        <td>200</td>
-                                      </tr>
-                                      <tr>
-                                        <td>3</td>
-                                        <td>책상</td>
-                                        <td>120</td>
-                                      </tr>
-                                      <tr>
-                                        <td>4</td>
-                                        <td>램프</td>
-                                        <td>80</td>
-                                      </tr>
-                                      <tr>
-                                        <td>5</td>
-                                        <td>커튼</td>
+                                        <td class="text-truncate">전자제품아아아아아아아아아아주긴품목명오늘내일어쩌구저쩌구왈랄랄라전자제품아아아아아아아아아아주긴품목명오늘내일어쩌구저쩌구왈랄랄라</td>
                                         <td>50</td>
                                       </tr>
-                                      <tr>
-                                        <td>6</td>
-                                        <td>컴퓨터</td>
+                                      <tr style="cursor:pointer;">
+                                        <td>2</td>
+                                        <td class="text-truncate">의자</td>
+                                        <td>20</td>
+                                      </tr>
+                                      <tr style="cursor:pointer;">
+                                        <td>3</td>
+                                        <td class="text-truncate">책상</td>
+                                        <td>50</td>
+                                      </tr>
+                                      <tr style="cursor:pointer;">
+                                        <td>4</td>
+                                        <td class="text-truncate">램프</td>
                                         <td>30</td>
                                       </tr>
-                                      <tr>
-                                        <td>7</td>
-                                        <td>노트북</td>
-                                        <td>75</td>
+                                      <tr style="cursor:pointer;">
+                                        <td>5</td>
+                                        <td class="text-truncate">커튼</td>
+                                        <td>20</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
+                                        <td>6</td>
+                                        <td class="text-truncate">컴퓨터</td>
+                                        <td>5</td>
+                                      </tr>
+                                      <tr style="cursor:pointer;">
+                                        <td>7</td>
+                                        <td class="text-truncate">노트북</td>
+                                        <td>10</td>
+                                      </tr>
+                                      <tr style="cursor:pointer;">
                                         <td>8</td>
-                                        <td>키보드</td>
+                                        <td class="text-truncate">키보드</td>
                                         <td>300</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>9</td>
-                                        <td>마우스</td>
+                                        <td class="text-truncate">마우스</td>
                                         <td>500</td>
                                       </tr>
-                                      <tr>
+                                      <tr style="cursor:pointer;">
                                         <td>10</td>
-                                        <td>헤드폰</td>
-                                        <td>120</td>
+                                        <td class="text-truncate">헤드폰</td>
+                                        <td>200</td>
                                       </tr>
                                 </tbody>
                             </table>
@@ -357,7 +365,6 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-end gap-2">
-                            <button type="button" class="btn btn-outline-success">적용</button>
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">닫기</button>
                         </div>
                     </div>
