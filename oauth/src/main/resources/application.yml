@@ -1,4 +1,8 @@
-server.port: 9000
+server:
+  port: 9000
+  servlet:
+    session:
+      timeout: 24h
 
 spring:
   application.name: oauth
@@ -18,33 +22,38 @@ spring:
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-#   security:
-#     user:
-#       name: user
-#       password: password
-#     oauth2:
-#       authorizationserver:
-#         client:
-#           oidc-client:
-#             registration:
-#               client-id: "oidc-client"
-#               client-secret: "{noop}secret"
-#               client-authentication-methods:
-#                 - "client_secret_basic"
-#               authorization-grant-types:
-#                 - "authorization_code"
-#                 - "refresh_token"
-#               redirect-uris:
-#                 - "http://127.0.0.1:8080/login/oauth2/code/oidc-client"
-#               post-logout-redirect-uris:
-#                 - "http://127.0.0.1:8080/"
-#               scopes:
-#                 - "openid"
-#                 - "profile"
-#             require-authorization-consent: true
-# logging:
-#   level:
-#     org.springframework.security: trace
+  servlet:
+    multipart:
+      maxFileSize: 100MB
+      maxRequestSize: 100MB
+  mail:
+    host: ${EMAIL_HOST}
+    port: ${EMAIL_PORT}
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: ${EMAIL_SMTP_AUTH}
+          timeout: ${EMAIL_SMTP_TIMEOUT}
+          starttls:
+            enable: ${EMAIL_SMTP_ENABLE}
+
+management:
+  info:
+    git:
+      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
 
 springdoc:
   swagger-ui:
@@ -53,3 +62,13 @@ springdoc:
 
 swagger:
   api-gateway-url: ${SWAGGER_URL}/${spring.application.name}
+
+logging.level.org:
+  springframework.security: trace
+  hibernate.sql: debug
+
+rsa:
+  public-key: ${RSA_PUBLIC_KEY}
+  private-key: ${RSA_PRIVATE_KEY}
+
+logout.redirect-url: ${SWAGGER_URL}
