@@ -13,6 +13,7 @@ target/
 .springBeans
 .sts4-cache
 
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -31,5 +32,9 @@ build/
 
 ### VS Code ###
 .vscode/
-
 .env
+access-keys/
+.github
+.metadata
+bin/
+upload
