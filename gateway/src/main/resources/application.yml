@@ -57,10 +57,10 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/?(?<segment>.*), /${segment}/v3/api-docs
-        - id: react
-          uri: ${ROUTE_REACT_URI}
-          predicates:
-            - Path=/**
+#        - id: react
+#          uri: ${ROUTE_REACT_URI}
+#          predicates:
+#            - Path=/**
 management:
   endpoints:
     web:

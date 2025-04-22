@@ -37,12 +37,21 @@ public class UserMngServiceImp implements UserMngService {
     }
 
     @Override
-    public ResDTO findByNo(Long no, Authentication authentication) {
-        boolean status = false;
-        String message = "존재하지 않는 직원 입니다.";
-        Object result = null;
-
-        return ResDTO.builder().status(status).result(result).message(message).build();
+    public ResDTO findByNo(Long no, Authentication auth) {
+        return userRepository.findById(no)
+                .filter(u -> u.getUseYn() == 'Y')
+                .map(u -> {
+                    UserDTO dto = UserDTO.findByUser(u);
+                    return ResDTO.builder()
+                            .status(true)
+                            .result(dto)
+                            .message(null)
+                            .build();
+                })
+                .orElseGet(() -> ResDTO.builder()
+                        .status(false)
+                        .message("존재하지 않는 직원 입니다.")
+                        .build());
     }
 
     @Transactional
