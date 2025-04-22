@@ -38,10 +38,10 @@ public class OpenAPI3Configuration {
 
     return new OpenAPI()
             .info(new Info()
-                    .title(name + " Service APIs")
-                    .description("Gateway " + name + " Service APIs")
-                    .version("v1.0.0")
-                    .contact(new Contact().name("0neteam").url(apiGatewayUrl)))
+                    .title("OAUTH")
+                    .description("인증인가 서버")
+                    .version("v1.0.1")
+                    .contact(new Contact().name("Github: ERP_System").url("https://github.com/0neteam/ERP_System")))
             .servers(List.of(new Server().url(apiGatewayUrl)))
             .addSecurityItem(securityRequirement)
             .components(components);
