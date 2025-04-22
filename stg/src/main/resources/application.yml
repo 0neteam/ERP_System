@@ -19,6 +19,22 @@ spring:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 
+management:
+  info:
+    git:
+      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: stg
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+
 springdoc:
   swagger-ui:
     path: /docs
@@ -26,3 +42,10 @@ springdoc:
 
 swagger:
   api-gateway-url: ${SWAGGER_URL}/${spring.application.name}
+
+logging.level.org:
+  springframework.security: trace
+  hibernate.sql: debug
+
+jwt:
+  keys-uri: ${JWT_KEY_URL}
