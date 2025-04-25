@@ -32,9 +32,9 @@ const Detail = () => {
     if(status == 2) return '비정상'
   }
   const pointEvent = () => {
-    if(point === 0) return '출발'
-    if(point === 1) return '도착'
-    if(point === 2) return '완료'
+    if(point === 0 || point === 1) return '출발'
+    if(point === 2 || point === 3) return '도착'
+    if(point === 4) return '완료'
   }
 //   const getLicence = licence => {
 //     if(licence === 1) return '1종 특수'
@@ -56,9 +56,16 @@ const Detail = () => {
       if(res.status) {
         setTransp(res.result.transp)
         setReleases(res.result.releases.list)
-        if(res.result.transp.arrDate == null && res.result.transp.depDate == null) setPoint(0)
-        else if(res.result.transp.arrDate == null && res.result.transp.depDate != null) setPoint(1)
-        else if(res.result.transp.arrDate != null && res.result.transp.depDate != null) setPoint(2)
+
+        // if(res.result.transp.arrDate == null && res.result.transp.depDate == null) setPoint(0)
+        // else if(res.result.transp.arrDate == null && res.result.transp.depDate != null) setPoint(1)
+        // else if(res.result.transp.arrDate != null && res.result.transp.depDate != null) setPoint(2)
+        if(res.result.transp.depDate == null && res.result.releases.list[0].depDate == null) setPoint(0) //출발버튼 disabled
+        else if(res.result.transp.depDate == null && res.result.releases.list[0].depDate != null) setPoint(1) //출발버튼
+        else if(res.result.transp.depDate != null && res.result.releases.list[0].depDate != null && res.result.releases.list[0].arrDate == null) setPoint(2) //도착버튼 disabled
+        else if(res.result.releases.list[0].arrDate != null && res.result.releases.list[0].depDate != null && res.result.transp.arrDate == null) setPoint(3) //도착버튼
+        else if(res.result.releases.list[0].arrDate != null && res.result.releases.list[0].depDate != null && res.result.transp.arrDate != null) setPoint(4) //완료
+        console.log(point)
       }
     })
   }
@@ -89,7 +96,7 @@ const Detail = () => {
                                   <p className="card-text">이메일: {transp?.userEmail}</p>
                                   <h5 className="card-title">운송기사: {transp?.userName}</h5>
                               </div>
-                              
+
                           </div>
                       </div>
                   </div>
@@ -99,12 +106,12 @@ const Detail = () => {
                   <div className="card shadow-sm h-100">
                       <div className="card-body text-center text-lg-start">
                           <div>
-                              <button type="button" className="btn btn-outline-success w-100 mb-2" disabled={point === 2} onClick={transpEvent}>{pointEvent()}</button>
+                              <button type="button" className="btn btn-outline-success w-100 mb-2" disabled={point === 0 || point === 2 || point === 4} onClick={transpEvent}>{pointEvent()}</button>
                               <p className="text-center mb-3">요청일자: {transp.regDate}</p>
-                              {point >= 1 && 
+                              {point >= 2 &&
                                 <p className="text-center mb-3">출발일자: {transp.depDate}</p>
                               }
-                              {point >= 2 && 
+                              {point >= 4 &&
                                 <p className="text-center mb-3">도착일자: {transp.arrDate}</p>
                               }
                           </div>

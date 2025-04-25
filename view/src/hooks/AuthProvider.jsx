@@ -18,7 +18,7 @@ const AuthProvider = ({children}) => {
   }
 
   const isAccess = () => {
-    return access
+    return cookies.auth === undefined ? '' : decode(cookies.auth)
   }
 
   const removeAccess = () => {

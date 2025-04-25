@@ -32,12 +32,12 @@ const Create = () => {
           <div>
             <div className="input-group mb-2">
               <span className="input-group-text" style={blockStyle}>등록번호</span>
-              <input type="text" className="form-control" placeholder="차량 번호를 입력하세요." name="regNumber" value={vehicle.regNumber} onChange={changeEvent} />
+              <input type="text" className="form-control" placeholder="차량 번호를 입력하세요." name="regNumber" value={vehicle.regNumber} onChange={changeEvent} required />
             </div>
             <div className="input-group mb-2">
               <span className="input-group-text" style={blockStyle}>차종</span>
-              <select className="form-select" required name="type" value={vehicle.type} onChange={changeEvent}>
-                <option value="0">차종을 선택하세요.</option>
+              <select className="form-select" name="type" value={vehicle.type} onChange={changeEvent} required >
+                <option value="">차종을 선택하세요.</option>
                 <option value="1">소형화물</option>
                 <option value="2">카고</option>
                 <option value="3">탑차</option>
@@ -47,13 +47,13 @@ const Create = () => {
             </div>
             <div className="input-group mb-2">
               <span className="input-group-text" style={blockStyle}>차량명</span>
-              <input type="text" className="form-control" placeholder="차량명을 입력하세요." name="name" value={vehicle.name} onChange={changeEvent} />
+              <input type="text" className="form-control" placeholder="차량명을 입력하세요." name="name" value={vehicle.name} onChange={changeEvent} required />
             </div>
-            
+
             <div className="input-group mb-2">
               <span className="input-group-text" style={blockStyle}>면허</span>
-              <select className="form-select" name="licence" value={vehicle.licence} onChange={changeEvent}>
-                <option value="0">면허증을 선택하세요.</option>
+              <select className="form-select" name="licence" value={vehicle.licence} onChange={changeEvent} required >
+                <option value="">면허증을 선택하세요.</option>
                 <option value="1">1종 특수</option>
                 <option value="2">1종 대형</option>
                 <option value="3">1종 보통</option>
@@ -68,7 +68,7 @@ const Create = () => {
           </div>
 
           <div className="btns d-flex w-100 justify-content-end gap-2">
-            <button type="submit" className="btn btn-outline-primary">저장</button>
+            <button type="submit" className="btn btn-outline-success">저장</button>
             <a className="btn btn-outline-secondary" href="/vehicle">취소</a>
           </div>
         </form>
