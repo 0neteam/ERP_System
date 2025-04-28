@@ -88,7 +88,7 @@ const Detail = () => {
             <div>
               <div className="input-group mb-3">
                 <span className="input-group-text" style={{width: '100px'}}>품목명</span>
-                <input type="text" className="form-control" name="name" placeholder="품목명을 입력하세요." required value={item.name} onChange={changeEvent} readOnly={show} />
+                <input type="text" className="form-control text-truncate" name="name" placeholder="품목명을 입력하세요." required value={item.name} onChange={changeEvent} readOnly={show} />
               </div>
               <div className="input-group mb-3">
                 <span className="input-group-text" style={{width: '100px'}}>생산단위</span>

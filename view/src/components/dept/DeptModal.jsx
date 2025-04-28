@@ -1,5 +1,5 @@
-import React from 'react'
-import { GET, POST, PUT, PATCH, DELETE } from '@utils/Network.js'
+import React, { useState } from 'react'
+import { PUT } from '@utils/Network.js'
 
 const DeptModal = ({handleClose}) => {
   const [dept, setDept] = useState({deptName: '', name: ''})
@@ -46,4 +46,4 @@ const DeptModal = ({handleClose}) => {
   )
 }
 
-export default DeptModal;
+export default DeptModal

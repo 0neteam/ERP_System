@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { POST } from '@utils/Network.js'
-import Pagination from '@components/commons/Pagination.jsx';
+import Pagination from '@components/commons/Pagination.jsx'
 
 const List = () => {
   const [transps, setTransps] = useState([])

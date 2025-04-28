@@ -43,4 +43,4 @@ const SignUpStep1 = ({auth, setAuth, authEvent, offEvent, timerRef, user}) => {
   )
 }
 
-export default SignUpStep1;
+export default SignUpStep1
