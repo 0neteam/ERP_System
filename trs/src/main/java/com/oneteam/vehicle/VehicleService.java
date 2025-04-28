@@ -15,4 +15,5 @@ public interface VehicleService {
     public ResDTO modify(Long no, VehicleReqDTO vehicleReqDTO, Authentication authentication);
     public ResDTO delete(Long no, Authentication authentication);
 
+
 }

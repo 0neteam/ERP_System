@@ -164,6 +164,7 @@ public class VehicleServiceImp implements VehicleService {
         return ResDTO.builder().status(status).message(message).build();
     }
 
+
     private LocalDateTime getLocalDateTime(String data, boolean type) {
         if(data == null) data = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String time = "T00:00:00";
