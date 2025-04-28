@@ -3,7 +3,7 @@ import EmptyUser from '@assets/user/empty_user.png'
 import '@styles/user/user.css'
 import '@styles/card.css'
 import { GET, PATCH, DELETE } from '@utils/Network.js'
-import Pagination from '@components/commons/Pagination.jsx';
+import Pagination from '@components/commons/Pagination.jsx'
 
 const User = () => {
   const [depts, setDepts] = useState(null)

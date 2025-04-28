@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { POST } from '@utils/Network.js'
 
 const SignInStep1 = ({auth, setAuth, authEvent, offEvent, timerRef, user}) => {
@@ -44,4 +44,4 @@ const SignInStep1 = ({auth, setAuth, authEvent, offEvent, timerRef, user}) => {
 }
 
 
-export default SignInStep1;
+export default SignInStep1

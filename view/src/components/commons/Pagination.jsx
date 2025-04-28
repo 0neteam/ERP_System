@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Pagination = ({pagination, clickEvent, page, total}) => {
   const oneStepEvent = type => {
@@ -50,4 +50,4 @@ const Pagination = ({pagination, clickEvent, page, total}) => {
   )
 }
 
-export default Pagination;
+export default Pagination
