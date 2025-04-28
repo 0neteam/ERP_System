@@ -13,12 +13,14 @@ import lombok.*;
 @Schema(description = "입출고 요청 데이터")
 public class ReleaseReqDTO {
 
+  private Long no;
   @NotBlank(message = "발주번호를 입력하세요.")
   private Long orderItemNo;
   @NotBlank(message = "품목번호를 입력하세요.")
   private Long itemNo;
   private Long transpNo;
-  @NotBlank(message = "수량을 입력하세요.")
-  private int qty;
+  private Integer oQty;
+  private Integer iQty;
+  private Integer pQty;
 
 }

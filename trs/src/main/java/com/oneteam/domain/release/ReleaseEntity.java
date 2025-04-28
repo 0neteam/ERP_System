@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Table(name="releases")
 @Setter
 @Getter
-//@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

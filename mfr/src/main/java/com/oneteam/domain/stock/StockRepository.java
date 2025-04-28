@@ -11,4 +11,5 @@ public interface StockRepository extends JpaRepository<StockEntity, Long> {
   public Page<StockEntity> findAllByUseYn(char useYn, Pageable pageable);
   public Optional<StockEntity> findByNoAndUseYn(Long no, char useYn);
 
+  StockEntity findByItemNo(Long itemNo);
 }

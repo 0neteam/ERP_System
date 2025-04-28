@@ -35,11 +35,11 @@ public class BaseEntity {
   private Long regUserNo;
 
   @UpdateTimestamp
-  @Column(name = "modDate", nullable = true, columnDefinition = "TIMESTAMP")
+  @Column(name = "modDate", nullable = true, insertable=false, columnDefinition = "TIMESTAMP")
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
   private LocalDateTime modDate;
 
-  @Column(name = "modUserNo", nullable = true)
+  @Column(name = "modUserNo", nullable = true, insertable=false)
   private Long modUserNo;
 
 }

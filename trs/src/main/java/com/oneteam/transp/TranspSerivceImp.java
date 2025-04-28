@@ -82,6 +82,7 @@ public class TranspSerivceImp implements TranspSerivce {
             resultMap.put("transp", TranspDTO.findByTransp(transpEntity));
             resultMap.put("releases", ReleaseDTO.findByReleases(releases));
             result = resultMap;
+            System.out.println(result+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         }
         return ResDTO.builder().status(status).result(result).message(message).build();
     }
@@ -106,8 +107,8 @@ public class TranspSerivceImp implements TranspSerivce {
         if(point != null) {
             TranspEntity transp = transpRepository.findByNoAndUseYn(no, 'Y').orElseThrow(() -> new RuntimeException("존재하지 않는 운송 입니다."));
             if (transp != null) {
-                if(point == 1) transp.setDepDate(LocalDateTime.now());
-                if(point == 2) transp.setArrDate(LocalDateTime.now());
+                if(point == 2) transp.setDepDate(LocalDateTime.now());
+                if(point == 4) transp.setArrDate(LocalDateTime.now());
                 transp.setModUserNo(Long.parseLong(authentication.getName()));
                 log.info("t: {}, p: {}", transp.getNo(), point);
                 transp = transpRepository.save(transp);

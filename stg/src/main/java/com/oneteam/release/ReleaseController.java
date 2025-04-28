@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/release")
 @RequiredArgsConstructor
-public class ReleaseController implements ReleaseControllerDocs {
+public class ReleaseController {
 
   private final ReleaseService releaseService;
 

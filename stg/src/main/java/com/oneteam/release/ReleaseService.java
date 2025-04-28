@@ -11,6 +11,5 @@ public interface ReleaseService {
   public ResDTO findByNo(Long no, Authentication authentication);
   public ResDTO register(ReleaseReqDTO releaseReqDTO, Authentication authentication);
   public ResDTO modify(Long no, ReleaseReqDTO releaseReqDTO, Authentication authentication);
-  public ResDTO delete(Long no, Authentication authentication);
 
 }
