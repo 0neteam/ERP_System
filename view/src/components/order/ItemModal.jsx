@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Pagination from '@components/commons/Pagination.jsx'
 import { GET, PUT } from '@utils/Network.js'
 
 const ItemModal = ({handleClose, addOrderEvent, orders}) => {
@@ -95,7 +96,7 @@ const ItemModal = ({handleClose, addOrderEvent, orders}) => {
                     return (
                       <tr style={{cursor: 'pointer'}} key={i} onClick={() => addOrderEvent(v)} >
                         <td style={{backgroundColor: selectStyle(v.no)}}>{v.no}</td>
-                        <td style={{backgroundColor: selectStyle(v.no)}}>{v.name}</td>
+                        <td className="text-nowrap" style={{backgroundColor: selectStyle(v.no)}}>{v.name}</td>
                         <td style={{backgroundColor: selectStyle(v.no)}}>{v.bundle}</td>
                       </tr>
                     )

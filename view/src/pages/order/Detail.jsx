@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams } from "react-router-dom"
+import { useAuth } from '@hooks/AuthProvider.jsx'
 import { GET, POST, PUT, DELETE, PATCH } from '@utils/Network.js'
 import EmptyUser from '@assets/user/empty_user.png'
 import Step1 from '@components/order/Step1.jsx'
@@ -19,6 +20,17 @@ const Detail = () => {
   const [licence, setLicence] = useState(0)
   const [status, setStatus] = useState(0)
   const [show, isShow] = useState(0)
+  const { isAccess } = useAuth()
+  const checkRole = data => {
+    let cnt = 0;
+    if(isAccess().roles != null) {
+      for(let role of data) {
+        if(isAccess().roles?.search(role) >= 0) cnt += 1
+      }
+    }
+    return cnt > 0 ? true : false
+  }
+  
   const changeStatus = s => {
     if(s === 1) return '발주요청'
     if(s === 2) return '발주진행'
@@ -51,7 +63,7 @@ const Detail = () => {
       }
     })
   }
-  useState(() => {
+  useEffect(() => {
     getData()
   }, [])
   return (
@@ -69,13 +81,13 @@ const Detail = () => {
       <Step1 items={items} status={status} id={id} show={show} outEvent={outEvent} />
 
       <div className={status === 4 ? 'd-flex justify-content-end gap-2 mt-4 mb-2 p-1' : 'd-flex justify-content-center gap-2 mt-4 mb-2 p-1'}>
-        {status < 3 &&
+        {status < 3 && checkRole(['ADMIN','MFR']) &&
         <button type="button" className="btn btn-outline-success w-100" onClick={() => isShow(1)}>출고요청</button>
         }
-        {status == 2 &&
+        {status == 2 && checkRole(['ADMIN','TRS']) &&
         <button type="button" className="btn btn-outline-success w-100" onClick={() => isShow(2)}>운송관리</button>
         }
-        {(status > 1 && status < 4) &&
+        {(status > 1 && status < 4) && checkRole(['ADMIN','MFR','STG']) &&
         <button type="button" className="btn btn-outline-success w-100" onClick={() => isShow(4)}>입출고관리</button>
         }
         <button type="button" className="btn btn-outline-success" style={{width: status === 4 ? 'auto' : '100%'}} onClick={() => document.location.href = '/order'}>발주목록</button>

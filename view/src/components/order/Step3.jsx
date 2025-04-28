@@ -110,7 +110,7 @@ const Step3 = ({id, isShow, setVehicleNo, setLicence}) => {
         </div>
       </div>
 
-      <div className="mt-3">
+      <div className="mt-3 mb-3">
         <table>
           <thead>
             <tr>

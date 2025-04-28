@@ -86,8 +86,8 @@ const Create = () => {
                 return (
                   <tr key={i}>
                     <td><input type="checkbox" checked={isChecked(v.itemNo)} onChange={() => handleRowClick(v.itemNo)} /></td>
-                    <td>{v.no}</td>
-                    <td>{v.name}</td>
+                    <td>{v.itemNo}</td>
+                    <td className="text-nowrap">{v.name}</td>
                     <td>{v.bundle}</td>
                     <td><input type="number" className="w-100" placeholder='0' name="qty" value={v.qty} onChange={(e) => changeEvent(e, v)}/></td>
                   </tr>
