@@ -80,7 +80,7 @@ const Create = () => {
               </div>
               <div className="input-group mb-3">
                 <span className="input-group-text" style={{width: '100px'}}>생산단가</span>
-                <input type="number" className="form-control" name="price" placeholder="단품 가격을 입력하세요." value={item.price} onChange={changeEvent} />
+                <input type="number" className="form-control" name="price" placeholder="단품 가격을 입력하세요." required value={item.price} onChange={changeEvent} />
               </div>
             </div>
     

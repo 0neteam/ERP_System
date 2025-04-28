@@ -69,7 +69,6 @@ const Step1 = ({id, items, status, show, outEvent}) => {
     setPagination(arr)
   }
   const itemEvent = data => {
-    console.log(data)
     if(show === 1) {
       if(data.qty == data.iqty) return
       if((data.qty - data.oqty) + data.pqty == 0) return
@@ -547,7 +546,6 @@ const Step5 = ({id, checkData}) => {
 }
 
 const Modal = ({handleClose, transp}) => {
-  console.log(transp)
   const searchRef = useRef(null)
   const [releaseItems, setReleaseItems] = useState([])
   const [driInfo, setDriInfo] = useState([])

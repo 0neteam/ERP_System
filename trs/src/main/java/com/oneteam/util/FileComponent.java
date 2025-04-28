@@ -33,11 +33,11 @@ public class FileComponent {
         String contentType = file.getContentType();
         String name = getName(file);
         String originalFileExtension = "";
-        if(!ObjectUtils.isEmpty(contentType)) {
-            if(contentType.contains("image/jpeg")) {originalFileExtension = ".jpg";}
-            else if(contentType.contains("image/png")) {originalFileExtension = ".png";}
-            else if(contentType.contains("image/gif")) {originalFileExtension = ".gif";}
-            else if(name.lastIndexOf(".") > 0) {originalFileExtension = name.substring(name.lastIndexOf("."), name.length());}
+        if (!ObjectUtils.isEmpty(contentType)){
+            if(contentType.contains("image/jpeg")){originalFileExtension = ".jpg";}
+            else if(contentType.contains("image/png")){originalFileExtension = ".png";}
+            else if(contentType.contains("image/gif")){originalFileExtension = ".gif";}
+            else if(name.lastIndexOf(".") > 0){originalFileExtension = name.substring(name.lastIndexOf("."), name.length());}
         }
         return originalFileExtension;
     }
@@ -54,7 +54,7 @@ public class FileComponent {
             log.info("attachPath : {}", attachPath);
             try {
                 File newFile = new File(attachPath.concat("/").concat(name).concat(ext));
-                if(!newFile.exists()) {newFile.mkdirs();}
+                if(!newFile.exists()){newFile.mkdirs();}
                 file.transferTo(newFile);
                 FileEntity fileInfo = FileEntity.builder()
                         .origin(origin)
@@ -67,7 +67,7 @@ public class FileComponent {
                 fileInfo.setRegUserNo(userNo);
                 fileInfo = fileRepository.save(fileInfo);
                 return (fileInfo.getNo() > 0) ? fileInfo.getNo() : null;
-            }   catch (IOException e) {
+            } catch (IOException e) {
                 log.error(e.getMessage());
             }
         }

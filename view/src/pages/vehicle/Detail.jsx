@@ -62,7 +62,6 @@ const Detail = () => {
       } 
       form.append('status', vehicle.status)
       PATCH(`/trs/vehicle/${id}`, form).then(res => {
-        console.log(res)
       })
     }
     isEdit(!edit)
@@ -72,7 +71,6 @@ const Detail = () => {
   }
   const getData = () => {
     POST(`/trs/vehicle/${id}`, {}).then(res => {
-      console.log(res)
       if(res.status) {
         setVehicle(res.result)
       }
