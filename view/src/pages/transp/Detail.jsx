@@ -45,14 +45,13 @@ const Detail = () => {
 //   }
   const transpEvent = () => {
     const params = {point: point + 1}
-    console.log(params)
     PATCH(`/trs/transp/${id}`, params).then(res => {
       if(res.status) getData()
     })
   }
   const getData = () => {
     POST(`/trs/transp/${id}`, {}).then(res => {
-      console.log(res)
+
       if(res.status) {
         setTransp(res.result.transp)
         setReleases(res.result.releases.list)
@@ -65,7 +64,6 @@ const Detail = () => {
         else if(res.result.transp.depDate != null && res.result.releases.list[0].depDate != null && res.result.releases.list[0].arrDate == null) setPoint(2) //도착버튼 disabled
         else if(res.result.releases.list[0].arrDate != null && res.result.releases.list[0].depDate != null && res.result.transp.arrDate == null) setPoint(3) //도착버튼
         else if(res.result.releases.list[0].arrDate != null && res.result.releases.list[0].depDate != null && res.result.transp.arrDate != null) setPoint(4) //완료
-        console.log(point)
       }
     })
   }
