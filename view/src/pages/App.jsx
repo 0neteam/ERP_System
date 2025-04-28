@@ -10,6 +10,7 @@ import SignUp from '@pages/auth/SignUp.jsx'
 import Info from '@pages/auth/Info.jsx'
 import User from '@pages/user/Index.jsx'
 import Dept from '@pages/dept/Index.jsx'
+import Item from '@pages/item/Index.jsx'
 import Transp from "@pages/transp/Index.jsx";
 import Vehicle from "@pages/vehicle/Index.jsx"
 
@@ -38,6 +39,9 @@ function App() {
 
             {/* 메인화면 (기본) */}
             <Route path="*" element={<Main />} />
+
+            {/* 품목관리 */}
+            <Route path="/item/*" element={<Item />} />
           </Routes>
       </Router>
       <Footer />
