@@ -16,22 +16,22 @@ import org.hibernate.annotations.Where;
 @NoArgsConstructor
 public class DeptUserEntity extends BaseEntity {
 
-    @Column(name = "deptNo", nullable = false)
-    private Long deptNo;
+  @Column(name = "deptNo", nullable = false)
+  private Long deptNo;
 
-    @Column(name = "userNo", nullable = false)
-    private Long userNo;
+  @Column(name = "userNo", nullable = false)
+  private Long userNo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userNo", insertable=false, updatable = false)
-    private UserEntity targetUser;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "userNo", insertable=false, updatable = false)
+  private UserEntity targetUser;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "regUserNo", insertable=false, updatable = false)
-    private UserEntity regUser;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "regUserNo", insertable=false, updatable = false)
+  private UserEntity regUser;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "modUserNo", insertable=false, updatable = false)
-    private UserEntity modUser;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "modUserNo", insertable=false, updatable = false)
+  private UserEntity modUser;
 
 }

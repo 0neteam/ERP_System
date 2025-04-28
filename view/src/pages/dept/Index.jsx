@@ -28,7 +28,6 @@ const DeptModal = ({handleClose}) => {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">부서 추가</h5>
-            <button type="button" className="btn-close" onClick={closeEvent}></button>
           </div>
           <div className="modal-body">
             <div className="input-group mb-3">
@@ -59,6 +58,7 @@ const UserRegModal = ({handleClose, dept}) => {
     return baseUrl + fileNo
   }
   const selectEvent = (i) => {
+    if (selectUsers?.some(user => user.no == targetUsers[i].no)) return
     setSelectUsers([...selectUsers, targetUsers[i]])
   }
   const saveEvent = () => {
@@ -115,12 +115,16 @@ const UserRegModal = ({handleClose, dept}) => {
                   {selectUsers?.map((v, i) => {
                     return (
                       <div className="col-6 col-md-4 col-lg-2 mb-2" key={i} onClick={() => selectUserEvent(v)}>
+
+
                         <div className="card h-100">
                           <img src={getFile(v.fileNo)} className="card-img-top" />
                           <div className="card-body d-flex flex-column text-center">
                             <h6 className="card-title mt-2">{v.name}</h6>
                           </div>
                         </div>
+
+
                       </div>
                     )
                   })}
@@ -148,6 +152,7 @@ const UserRegModal = ({handleClose, dept}) => {
                     return (
                       <div className="col-6 col-md-4 col-lg-2 mb-2" key={i} onClick={()=> selectEvent(i)}>
                         <div className="card h-100">
+
                           <img src={getFile(v.fileNo)} className="card-img-top" />
                           <div className="card-body d-flex flex-column text-center">
                             <h6 className="card-title mt-2">{v.name}</h6>
@@ -176,6 +181,7 @@ const UserDelModal = ({handleClose, deptUsers, dept}) => {
     return baseUrl + fileNo
   }
   const selectEvent = (i) => {
+    if (selectUsers?.some(user => user.no == targetUsers[i].no)) return
     setSelectUsers([...selectUsers, targetUsers[i]])
   }
   const saveEvent = () => {
@@ -254,6 +260,7 @@ const UserDelModal = ({handleClose, deptUsers, dept}) => {
 
 const Dept = () => {
   const [selectDept, setSelectDept] = useState(null)
+  const [selectedU, setselectedU] = useState([])
   const [users, setUsers] = useState([])
   const [depts, setDepts] = useState([])
   const [showModal1, setShowModal1] = useState(false)

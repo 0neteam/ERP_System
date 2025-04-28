@@ -7,9 +7,9 @@ import org.springframework.security.core.Authentication;
 
 public interface UserMngService {
 
-    public ResDTO findAll(String name, Pageable pageable);
-    public ResDTO findByNo(Long no, Authentication authentication);
-    public ResDTO modify(Long no, UserMngReqDTO userMngReqDTO, Authentication authentication);
-    public ResDTO delete(Long no, Authentication authentication);
+  public ResDTO findAll(String name, Pageable pageable);
+  public ResDTO findByNo(Long no, Authentication authentication);
+  public ResDTO modify(Long no, UserMngReqDTO userMngReqDTO, Authentication authentication);
+  public ResDTO delete(Long no, Authentication authentication);
 
 }

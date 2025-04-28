@@ -13,13 +13,13 @@ import lombok.*;
 @Schema(description = "사용자 요청 데이터")
 public class UserReqDTO {
 
-    @NotBlank(message = "이메일를 입력하세요.")
-    private String email;
+  @NotBlank(message = "이메일를 입력하세요.")
+  private String email;
 
-    //  @NotBlank(message = "비밀번호를 입력하세요.")
-    private String password;
-    private String name;
-    @NotBlank(message = "유형을 선택하세요.")
-    private String type;
+//  @NotBlank(message = "비밀번호를 입력하세요.")
+  private String password;
+  private String name;
+  @NotBlank(message = "유형을 선택하세요.")
+  private String type;
 
 }

@@ -18,25 +18,25 @@ import java.util.List;
 @NoArgsConstructor
 public class DeptEntity extends BaseEntity {
 
-    @Column(name = "name", nullable = false, length = 100, unique = true)
-    private String name;
+  @Column(name = "name", nullable = false, length = 100, unique = true)
+  private String name;
 
-    @Column(name = "deptName", nullable = false, length = 100, unique = true)
-    private String deptName;
+  @Column(name = "deptName", nullable = false, length = 100, unique = true)
+  private String deptName;
 
-    @OrderBy("no asc")
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "dept_user",
-            joinColumns = @JoinColumn(name = "deptNo"),
-            inverseJoinColumns = @JoinColumn(name = "userNo"))
-    private List<UserEntity> users = new ArrayList<>();
+  @OrderBy("no asc")
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "dept_user",
+      joinColumns = @JoinColumn(name = "deptNo"),
+      inverseJoinColumns = @JoinColumn(name = "userNo"))
+  private List<UserEntity> users = new ArrayList<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "regUserNo", insertable=false, updatable = false)
-    private UserEntity regUser;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "regUserNo", insertable=false, updatable = false)
+  private UserEntity regUser;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "modUserNo", insertable=false, updatable = false)
-    private UserEntity modUser;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "modUserNo", insertable=false, updatable = false)
+  private UserEntity modUser;
 
 }

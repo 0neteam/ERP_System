@@ -10,10 +10,10 @@ import lombok.*;
 @NoArgsConstructor
 public class MailDTO {
 
-    private String emailFrom;
-    private String emailTo;
-    private String emailSubject;
-    private String emailBody;
-    private boolean emailHtmlEnable;
+  private String emailFrom;
+  private String emailTo;
+  private String emailSubject;
+  private String emailBody;
+  private boolean emailHtmlEnable;
 
 }

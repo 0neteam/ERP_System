@@ -18,28 +18,28 @@ import java.time.LocalDateTime;
 @EntityListeners(AuditingEntityListener.class)
 public class BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "no", nullable = false)
-    private Long no;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "no", nullable = false)
+  private Long no;
 
-    @Column(name = "useYn", nullable = false, length = 1)
-    private char useYn;
+  @Column(name = "useYn", nullable = false, length = 1)
+  private char useYn;
 
-    @CreationTimestamp
-    @Column(name = "regDate", nullable = false, updatable = false, columnDefinition = "TIMESTAMP")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
-    private LocalDateTime regDate;
+  @CreationTimestamp
+  @Column(name = "regDate", nullable = false, updatable = false, columnDefinition = "TIMESTAMP")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
+  private LocalDateTime regDate;
 
-    @Column(name = "regUserNo", nullable = true)
-    private Long regUserNo;
+  @Column(name = "regUserNo", nullable = true)
+  private Long regUserNo;
 
-    @UpdateTimestamp
-    @Column(name = "modDate", nullable = true, columnDefinition = "TIMESTAMP")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
-    private LocalDateTime modDate;
+  @UpdateTimestamp
+  @Column(name = "modDate", nullable = true, insertable=false, columnDefinition = "TIMESTAMP")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
+  private LocalDateTime modDate;
 
-    @Column(name = "modUserNo", nullable = true)
-    private Long modUserNo;
+  @Column(name = "modUserNo", nullable = true, insertable=false)
+  private Long modUserNo;
 
 }

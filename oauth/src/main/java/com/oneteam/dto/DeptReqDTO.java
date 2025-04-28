@@ -10,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 public class DeptReqDTO {
 
-    private String name;
-    private String deptName;
+  private String name;
+  private String deptName;
 
 }
