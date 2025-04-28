@@ -11,6 +11,7 @@ import Info from '@pages/auth/Info.jsx'
 import User from '@pages/user/Index.jsx'
 import Dept from '@pages/dept/Index.jsx'
 import Item from '@pages/item/Index.jsx'
+import Stock from '@pages/stock/Index.jsx'
 import Order from '@pages/order/Index.jsx'
 import Transp from "@pages/transp/Index.jsx";
 import Vehicle from "@pages/vehicle/Index.jsx"
@@ -29,10 +30,10 @@ const RedirectUrl = () => {
 
 const Pages = () => {
   const { isAccess } = useAuth()
-  // const isLoggedIn = true;
   const list = [
     {roles: ['ADMIN'],                    list: [{url: '/user', element: <User />},{url: '/dept', element: <Dept />}]},
     {roles: ['ADMIN','MFR'],              list: [{url: '/item/*', element: <Item />}]},
+    {roles: ['ADMIN','STG'],              list: [{url: '/stock/*', element: <Stock />}]},
     {roles: ['ADMIN','STG','MFR','TRS'],  list: [{url: '/order/*', element: <Order />}]},
     {roles: ['ADMIN','TRS','DRI'],        list: [{url: '/transp/*', element: <Transp />},{url: '/vehicle/*', element: <Vehicle />}]},
   ]
@@ -58,6 +59,7 @@ const Pages = () => {
       <Route path="/user" element={<User />} />
       <Route path="/dept" element={<Dept />} />
       <Route path="/item/*" element={<Item />} />
+      <Route path="/stock/*" element={<Stock />} />
       <Route path="/order/*" element={<Order />} />
       <Route path="/transp/*" element={<Transp />} />
       <Route path="/vehicle/*" element={<Vehicle />} />  
