@@ -1,4 +1,4 @@
-package com.oneteam.domain.file;
+package com.oneteam.domain.vehicle;
 
 import com.oneteam.domain.BaseEntity;
 import com.oneteam.domain.user.UserEntity;
@@ -6,29 +6,32 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name="file")
+@Table(name="vehicle")
 @Setter
 @Getter
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FileEntity extends BaseEntity {
+public class VehicleEntity extends BaseEntity {
 
-  @Column(name = "origin", nullable = false, length = 100)
-  private String origin;
+  @Column(name = "regNumber", nullable = false, length = 8)
+  private String regNumber;
 
-  @Column(name = "name", nullable = false, length = 100)
+  @Column(name = "type", nullable = false)
+  private int type;
+
+  @Column(name = "name", nullable = false, length = 20)
   private String name;
 
-  @Column(name = "attachPath", nullable = false, length = 100)
-  private String attachPath;
+  @Column(name = "licence", nullable = false)
+  private int licence;
 
-  @Column(name = "ext", nullable = false, length = 10)
-  private String ext;
+  @Column(name = "status", nullable = false)
+  private int status;
 
-  @Column(name = "mediaType", nullable = false, length = 255)
-  private String mediaType;
+  @Column(name = "fileNo", nullable = true)
+  private Long fileNo;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "regUserNo", insertable=false, updatable = false)

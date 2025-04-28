@@ -10,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 public class FileDTO {
 
-    private Long no;
-    private String url;
+  private Long no;
+  private String url;
 
 }

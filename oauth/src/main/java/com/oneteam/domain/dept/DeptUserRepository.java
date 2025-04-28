@@ -8,10 +8,10 @@ import java.util.Optional;
 
 public interface DeptUserRepository extends JpaRepository<DeptUserEntity, Long> {
 
-    public Page<DeptUserEntity> findAllByUseYn(char useYn, Pageable pageable);
-    public Page<DeptUserEntity> findAllByDeptNoAndUseYn(Long deptNo, char useYn, Pageable pageable);
-    public Page<DeptUserEntity> findAllByNoNotAndUseYn(Long no, char useYn, Pageable pageable);
-    public Optional<DeptUserEntity> findByNoAndUseYn(Long no, char useYn);
-    public DeptUserEntity findByDeptNoAndUserNo(Long deptNo, Long userNo);
+  public Page<DeptUserEntity> findAllByUseYn(char useYn, Pageable pageable);
+  public Page<DeptUserEntity> findAllByDeptNoAndUseYn(Long deptNo, char useYn, Pageable pageable);
+  public Page<DeptUserEntity> findAllByNoNotAndUseYn(Long no, char useYn, Pageable pageable);
+  public Optional<DeptUserEntity> findByNoAndUseYn(Long no, char useYn);
+  public DeptUserEntity findByDeptNoAndUserNo(Long deptNo, Long userNo);
 
 }

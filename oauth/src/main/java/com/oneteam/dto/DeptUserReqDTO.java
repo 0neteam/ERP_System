@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 public class DeptUserReqDTO {
 
-    private List<Long> users;
+  private List<Long> users;
 
 }

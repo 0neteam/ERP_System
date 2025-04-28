@@ -13,7 +13,7 @@ import lombok.*;
 @Schema(description = "임시 인증 번호 확인")
 public class AuthReqDTO {
 
-    @NotBlank(message = "인증 번호를 입력하세요.")
-    private String code;
+  @NotBlank(message = "인증 번호를 입력하세요.")
+  private String code;
 
 }

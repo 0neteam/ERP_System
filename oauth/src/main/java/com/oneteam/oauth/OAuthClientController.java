@@ -13,17 +13,17 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class OAuthClientController implements OAuthClientControllerDocs {
 
-    private final JWKSet jwkSet;
+  private final JWKSet jwkSet;
 
-    @GetMapping("/")
-    public String home(Authentication authentication) {
-        if(authentication != null) log.info("Auth : {}", authentication.getAuthorities());
-        return "AUTHORIZATION";
-    }
+  @GetMapping("/")
+  public String home(Authentication authentication) {
+    if(authentication != null) log.info("Auth : {}", authentication.getAuthorities());
+    return "AUTHORIZATION";
+  }
 
-    @GetMapping("/.well-known/jwks.json")
-    public Map<String, Object> keys() {
-        return jwkSet.toJSONObject();
-    }
+  @GetMapping("/.well-known/jwks.json")
+  public Map<String, Object> keys() {
+    return jwkSet.toJSONObject();
+  }
 
 }

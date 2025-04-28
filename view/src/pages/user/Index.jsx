@@ -97,11 +97,13 @@ const User = () => {
     setPagination(arr)
   }
   const selectUserEvent = data => {
-    data?.depts?.map(v => isDri(v.no === 5))
+    if (data?.depts?.length > 0) data?.depts?.map(v => isDri(v.no === 5))
+    if (data?.depts?.length === 0) isDri(false)
     setUser(data)
     setDepts(data?.depts?.map(d => d.deptName).join(', '))
     changeLicence(data)
     isInfo(true)
+    console.log(data)
   }
   const submitEvent = e => {
     e.preventDefault()

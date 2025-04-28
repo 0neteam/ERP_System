@@ -12,8 +12,8 @@ import java.time.LocalTime;
 @NoArgsConstructor
 public class KeyDTO {
 
-    private String email;
-    private String key;
-    private LocalTime regTime;
+  private String email;
+  private String key;
+  private LocalTime regTime;
 
 }

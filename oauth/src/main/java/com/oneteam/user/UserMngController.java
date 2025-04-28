@@ -16,30 +16,30 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UserMngController implements UserMngControllerDocs {
 
-    private final UserMngService userMngService;
+  private final UserMngService userMngService;
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @GetMapping
-    public ResDTO findAll(@RequestParam(name = "name", required = false) String name, @PageableDefault(size = 10, sort = "name", direction = Sort.Direction.ASC) Pageable pageable) {
-        return userMngService.findAll(name, pageable);
-    }
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @GetMapping
+  public ResDTO findAll(@RequestParam(name = "name", required = false) String name, @PageableDefault(size = 10, sort = "name", direction = Sort.Direction.ASC) Pageable pageable) {
+    return userMngService.findAll(name, pageable);
+  }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PostMapping("/{no:[0-9]+}")
-    public ResDTO findByNo(@PathVariable("no") Long no, Authentication authentication) {
-        return userMngService.findByNo(no, authentication);
-    }
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @PostMapping("/{no:[0-9]+}")
+  public ResDTO findByNo(@PathVariable("no") Long no, Authentication authentication) {
+    return userMngService.findByNo(no, authentication);
+  }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PatchMapping("/{no:[0-9]+}")
-    public ResDTO modify(@PathVariable("no") Long no, @RequestBody @Valid UserMngReqDTO userMngReqDTO, Authentication authentication) {
-        return userMngService.modify(no, userMngReqDTO, authentication);
-    }
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @PatchMapping("/{no:[0-9]+}")
+  public ResDTO modify(@PathVariable("no") Long no, @RequestBody @Valid UserMngReqDTO userMngReqDTO, Authentication authentication) {
+    return userMngService.modify(no, userMngReqDTO, authentication);
+  }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @DeleteMapping("/{no:[0-9]+}")
-    public ResDTO delete(@PathVariable("no") Long no, Authentication authentication) {
-        return userMngService.delete(no, authentication);
-    }
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
+  @DeleteMapping("/{no:[0-9]+}")
+  public ResDTO delete(@PathVariable("no") Long no, Authentication authentication) {
+    return userMngService.delete(no, authentication);
+  }
 
 }

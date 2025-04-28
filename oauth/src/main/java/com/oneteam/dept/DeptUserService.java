@@ -7,9 +7,9 @@ import org.springframework.security.core.Authentication;
 
 public interface DeptUserService {
 
-    public ResDTO findAll(Long no, String name, Pageable pageable);
-    public ResDTO findByNo(Long no, Pageable pageable);
-    public ResDTO register(Long no, DeptUserReqDTO deptUserReqDTO, Authentication authentication);
-    public ResDTO delete(Long no, DeptUserReqDTO deptUserReqDTO, Authentication authentication);
+  public ResDTO findAll(Long no, String name, Pageable pageable);
+  public ResDTO findByNo(Long no, Pageable pageable);
+  public ResDTO register(Long no, DeptUserReqDTO deptUserReqDTO, Authentication authentication);
+  public ResDTO delete(Long no, DeptUserReqDTO deptUserReqDTO, Authentication authentication);
 
 }

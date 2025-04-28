@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface FileRepository extends JpaRepository<FileEntity, Long> {
 
-    public Page<FileEntity> findAllByUseYn(char useYn, Pageable pageable);
-    public Optional<FileEntity> findByNoAndUseYn(Long no, char useYn);
+  public Page<FileEntity> findAllByUseYn(char useYn, Pageable pageable);
+  public Optional<FileEntity> findByNoAndUseYn(Long no, char useYn);
 
 }

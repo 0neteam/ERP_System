@@ -16,19 +16,25 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class FileController implements FileControllerDocs {
 
-    private final FileService fileService;
+  private final FileService fileService;
 
-    @PreAuthorize("isAuthenticated()")
-    @ResponseBody
-    @PostMapping
-    public ResDTO upload(@RequestParam("file") MultipartFile file, Authentication authentication) {
-        return fileService.upload(file, authentication);
-    }
+  @PreAuthorize("isAuthenticated()")
+  @ResponseBody
+  @PostMapping
+  public ResDTO upload(@RequestParam("file") MultipartFile file, Authentication authentication) {
+    return fileService.upload(file, authentication);
+  }
 
-    //  @PreAuthorize("isAuthenticated()")
-    @GetMapping("/{type:[iu]}/{no:[0-9]+}")
-    public ResponseEntity<?> uri(@PathVariable("type") String type, @PathVariable("no") Long no, Authentication authentication) {
-        return fileService.uri(type, no, authentication);
-    }
+  @PreAuthorize("isAuthenticated()")
+  @GetMapping("/{type:[iu]}/{no:[0-9]+}")
+  public ResponseEntity<?> uri(@PathVariable("type") String type, @PathVariable("no") Long no, Authentication authentication) {
+    return fileService.uri(type, no, authentication);
+  }
+
+  @PreAuthorize("isAuthenticated()")
+  @GetMapping("/{no:[0-9]+}")
+  public ResponseEntity<?> uri(@PathVariable("no") Long no, Authentication authentication) {
+    return fileService.uri(no, authentication);
+  }
 
 }

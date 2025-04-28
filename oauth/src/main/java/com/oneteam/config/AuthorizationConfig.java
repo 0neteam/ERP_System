@@ -135,9 +135,9 @@ public class AuthorizationConfig {
     @Bean
     public JWKSet jwkSet() {
         RSAKey.Builder builder = new RSAKey.Builder(rsaKeys.publicKey())
-                .keyUse(KeyUse.SIGNATURE)
-                .algorithm(JWSAlgorithm.RS256)
-                .keyID("public-key-id");
+            .keyUse(KeyUse.SIGNATURE)
+            .algorithm(JWSAlgorithm.RS256)
+            .keyID("public-key-id");
         return new JWKSet(builder.build());
     }
 
