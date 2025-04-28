@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/stock")
 @RequiredArgsConstructor
-public class StockController implements StockControllerDocs {
+public class StockController {
 
   private final StockService stockService;
 

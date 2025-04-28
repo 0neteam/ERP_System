@@ -1,5 +1,6 @@
 package com.oneteam.release;
 
+import com.oneteam.dto.ReleaseItemReqDTO;
 import com.oneteam.dto.ReleaseReqDTO;
 import com.oneteam.dto.ResDTO;
 import jakarta.validation.Valid;
@@ -26,28 +27,30 @@ public class ReleaseController implements ReleaseControllerDocs {
     return releaseService.findAll(pageable);
   }
 
-  //  @PreAuthorize("isAuthenticated()")
+  @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MFR','ROLE_STG','ROLE_TRS','ROLE_DRI')")
+  @GetMapping("/{transpNo:[0-9]+}")
+  public ResDTO findByTranspNo(@PathVariable("transpNo") Long transpNo, Authentication authentication) {
+    return releaseService.findByTranspNo(transpNo, authentication);
+  }
+
   @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MFR','ROLE_STG','ROLE_TRS','ROLE_DRI')")
   @PostMapping("/{no:[0-9]+}")
-  public ResDTO findByNo(@PathVariable("no") Long no, Authentication authentication) {
-    return releaseService.findByNo(no, authentication);
+  public ResDTO findByNo(@PathVariable("no") Long no, Authentication authentication, @PageableDefault(size = 5, sort = "no", direction = Sort.Direction.DESC) Pageable pageable) {
+    return releaseService.findByNo(no, authentication, pageable);
   }
 
-  //  @PreAuthorize("isAuthenticated()")
   @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MFR','ROLE_STG','ROLE_TRS','ROLE_DRI')")
-  @PutMapping
-  public ResDTO register(@RequestBody @Valid ReleaseReqDTO releaseReqDTO, Authentication authentication) {
-    return releaseService.register(releaseReqDTO, authentication);
+  @PutMapping("/{no:[0-9]+}")
+  public ResDTO register(@PathVariable("no") Long no, @RequestBody @Valid ReleaseItemReqDTO releaseItemReqDTO, Authentication authentication) {
+    return releaseService.register(no, releaseItemReqDTO, authentication);
   }
 
-  //  @PreAuthorize("isAuthenticated()")
   @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MFR','ROLE_STG','ROLE_TRS','ROLE_DRI')")
-  @PatchMapping("/{no:[0-9]+}")
-  public ResDTO modify(@PathVariable("no") Long no, @RequestBody @Valid ReleaseReqDTO releaseReqDTO, Authentication authentication) {
-    return releaseService.modify(no, releaseReqDTO, authentication);
+  @PatchMapping("/{transpNo:[0-9]+}")
+  public ResDTO modify(@PathVariable("transpNo") Long transpNo, @RequestBody @Valid ReleaseItemReqDTO releaseItemReqDTO, Authentication authentication) {
+    return releaseService.modify(transpNo, releaseItemReqDTO, authentication);
   }
 
-  //  @PreAuthorize("isAuthenticated()")
   @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MFR','ROLE_STG','ROLE_TRS','ROLE_DRI')")
   @DeleteMapping("/{no:[0-9]+}")
   public ResDTO delete(@PathVariable("no") Long no, Authentication authentication) {

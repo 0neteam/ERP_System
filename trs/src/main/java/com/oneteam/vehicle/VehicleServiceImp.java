@@ -2,10 +2,6 @@ package com.oneteam.vehicle;
 
 import com.oneteam.domain.vehicle.VehicleEntity;
 import com.oneteam.domain.vehicle.VehicleRepository;
-import com.oneteam.dto.ResDTO;
-import com.oneteam.dto.VehicleDTO;
-import com.oneteam.dto.VehicleReqDTO;
-import com.oneteam.dto.VehicleSearchReqDTO;
 import com.oneteam.dto.*;
 import com.oneteam.util.FileComponent;
 import lombok.RequiredArgsConstructor;
