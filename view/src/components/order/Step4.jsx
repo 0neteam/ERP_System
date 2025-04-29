@@ -46,7 +46,7 @@ const Step4 = ({id, isShow, vehicleNo, licence}) => {
   }
   const transpEvent = () => {
     PUT(`/trs/order/${id}`, {userNo, vehicleNo}).then(res => {
-      if(res.status) isShow(3)
+      if(res.status) isShow(0)
     })
   }
   const getData = () => {
