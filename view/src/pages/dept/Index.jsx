@@ -119,6 +119,7 @@ const Dept = () => {
           </div>
           <div className="row g-4 mb-2">
             {users?.map((v, i) => {
+              if (!v) return null;
               return (
                 <div className="col-6 col-md-4 col-lg-2" key={i}>
                   <div className="card h-100">

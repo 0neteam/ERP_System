@@ -65,7 +65,6 @@ const Info = () => {
         form.append('file', fileRef.current.files[0])
       }
       PATCH(`/oauth/user/${user.no}`, form).then(res=>{
-        console.log(res)
         if(!res.status) {
           fileRef.current.value = ''
           getData()

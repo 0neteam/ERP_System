@@ -59,11 +59,11 @@ const Detail = () => {
         // if(res.result.transp.arrDate == null && res.result.transp.depDate == null) setPoint(0)
         // else if(res.result.transp.arrDate == null && res.result.transp.depDate != null) setPoint(1)
         // else if(res.result.transp.arrDate != null && res.result.transp.depDate != null) setPoint(2)
-        if(res.result.transp.depDate == null && res.result.releases.list[0].depDate == null) setPoint(0) //출발버튼 disabled
-        else if(res.result.transp.depDate == null && res.result.releases.list[0].depDate != null) setPoint(1) //출발버튼
-        else if(res.result.transp.depDate != null && res.result.releases.list[0].depDate != null && res.result.releases.list[0].arrDate == null) setPoint(2) //도착버튼 disabled
-        else if(res.result.releases.list[0].arrDate != null && res.result.releases.list[0].depDate != null && res.result.transp.arrDate == null) setPoint(3) //도착버튼
-        else if(res.result.releases.list[0].arrDate != null && res.result.releases.list[0].depDate != null && res.result.transp.arrDate != null) setPoint(4) //완료
+        if(res.result.transp.depDate == null && res.result.releases?.list[0]?.depDate == null) setPoint(0) //출발버튼 disabled
+        else if(res.result.transp.depDate == null && res.result.releases?.list[0]?.depDate != null) setPoint(1) //출발버튼
+        else if(res.result.transp.depDate != null && res.result.releases?.list[0]?.depDate != null && res.result.releases?.list[0]?.arrDate == null) setPoint(2) //도착버튼 disabled
+        else if(res.result.releases?.list[0]?.arrDate != null && res.result.releases?.list[0]?.depDate != null && res.result.transp.arrDate == null) setPoint(3) //도착버튼
+        else if(res.result.releases?.list[0]?.arrDate != null && res.result.releases?.list[0]?.depDate != null && res.result.transp.arrDate != null) setPoint(4) //완료
       }
     })
   }

@@ -16,7 +16,7 @@ const Pagination = ({pagination, clickEvent, page, total}) => {
     }
   }
   return (
-    <div>
+    <div className="mt-3">
       <ul className="pagination justify-content-center">
         <li className="page-item">
           <button className="page-link" aria-label="First" onClick={() => oneStepEvent('P')}>
