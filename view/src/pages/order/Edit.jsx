@@ -61,7 +61,6 @@ const Edit = () => {
   }
   const getData = () => {
     POST(`/stg/order/edit/${id}`, {}).then(res => {
-      console.log(res)
       if(res.status) {
         setOrders(res.result)
       }

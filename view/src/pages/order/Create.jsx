@@ -35,7 +35,6 @@ const Create = () => {
   }
   const isChecked = no => checkedItems.includes(no)
   const handleRowClick = (no) => {
-    console.log(no)
     setCheckedItems(prev => (prev.includes(no)) 
       ? prev.filter(itemNo => itemNo !== no)
       : [...prev, no]

@@ -39,7 +39,6 @@ const SignUp = () => {
   const signUpEvent = () => {
     PUT('/oauth/user', user).then(
       res => {
-        console.log(res)
         if(res.status) {
           document.location.href = "/signIn"
         } else {
@@ -58,7 +57,6 @@ const SignUp = () => {
     }
     POST('/oauth/user/auth', {code: auth}).then(
       res => {
-        console.log(res)
         if(res.status) {
           setStep(3)
           setType(arr[0])

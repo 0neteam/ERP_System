@@ -29,7 +29,6 @@ const Detail = () => {
         form.append('file', fileRef.current.files[0])
       }
       PATCH(`/mfr/item/${id}`, form).then(res=>{ 
-        console.log(res) 
       })
     }
     setShow(!show)
