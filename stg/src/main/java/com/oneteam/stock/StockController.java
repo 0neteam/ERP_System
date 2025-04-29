@@ -20,7 +20,7 @@ public class StockController {
 
   @PreAuthorize("isAuthenticated()")
   @GetMapping
-  public ResDTO findAll(@PageableDefault(size = 4, sort = "no", direction = Sort.Direction.DESC) Pageable pageable, @RequestParam(name = "itemNo", required = false) String itemNo, @RequestParam(name = "name", required = false) String name) {
+  public ResDTO findAll(@PageableDefault(size = 12, sort = "no", direction = Sort.Direction.DESC) Pageable pageable, @RequestParam(name = "itemNo", required = false) String itemNo, @RequestParam(name = "name", required = false) String name) {
     return stockService.findAll(pageable, itemNo, name);
   }
 

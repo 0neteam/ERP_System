@@ -51,16 +51,16 @@ spring:
           filters:
             - RewritePath=/oauth/?(?<segment>.*), /${segment}
             - ApiFilter
-        # - id: openapi
-        #   uri: ${ROUTE_API_URI}
-        #   predicates:
-        #     - Path=/v3/api-docs/**
-        #   filters:
-        #     - RewritePath=/v3/api-docs/?(?<segment>.*), /${segment}/v3/api-docs
-        - id: react
-          uri: ${ROUTE_REACT_URI}
+        - id: openapi
+          uri: ${ROUTE_API_URI}
           predicates:
-            - Path=/**
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/?(?<segment>.*), /${segment}/v3/api-docs
+        # - id: react
+        #   uri: ${ROUTE_REACT_URI}
+        #   predicates:
+        #     - Path=/**
 management:
   endpoints:
     web:

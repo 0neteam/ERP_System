@@ -22,7 +22,7 @@ public class ItemController implements ItemControllerDocs {
 
   @PreAuthorize("isAuthenticated()")
   @GetMapping
-  public ResDTO findAll(@PageableDefault(size = 4, sort = "no", direction = Sort.Direction.DESC) Pageable pageable, @RequestParam(name = "no", required = false) String no, @RequestParam(name = "name", required = false) String name) {
+  public ResDTO findAll(@PageableDefault(size = 12, sort = "no", direction = Sort.Direction.DESC) Pageable pageable, @RequestParam(name = "no", required = false) String no, @RequestParam(name = "name", required = false) String name) {
     return itemService.findAll(pageable, no, name);
   }
 
