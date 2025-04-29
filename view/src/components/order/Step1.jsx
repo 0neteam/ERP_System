@@ -43,7 +43,7 @@ const Step1 = ({id, items, status, show, outEvent}) => {
   }, [items])
   return (
     <>
-      <div className="overflow-y-auto">
+      <div className="overflow-y-auto mb-3">
         <table>
           <thead>
             <tr>

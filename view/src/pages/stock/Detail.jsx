@@ -66,7 +66,7 @@ const Detail = () => {
             </div>
             <div className="input-group mb-2">
               <span className="input-group-text text-nowrap" style={blockStyle}>품목명</span>
-              <input type="text" className="form-control" name="itemName" defaultValue={stock.itemName} disabled />
+              <input type="text" className="form-control text-truncate" name="itemName" defaultValue={stock.itemName} title={stock.itemName} disabled />
             </div>
             <div className="input-group mb-2">
               <span className="input-group-text text-nowrap" style={blockStyle}>생산단위</span>

@@ -42,7 +42,7 @@ const Step2 = ({id, outItems, setOutItems, setStatus}) => {
     <>
       <h2 className="mt-4 mb-4">출고 요청</h2>
 
-      <div className="overflow-y-auto mt-1">
+      <div className="overflow-y-auto mt-1 mb-3">
         <table>
           <thead>
             <tr>
