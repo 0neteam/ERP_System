@@ -1,5 +1,7 @@
 package com.oneteam.vehicle;
 
+import com.oneteam.domain.release.ReleaseEntity;
+import com.oneteam.domain.release.ReleaseRepository;
 import com.oneteam.domain.vehicle.VehicleEntity;
 import com.oneteam.domain.vehicle.VehicleRepository;
 import com.oneteam.dto.*;
@@ -14,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 @Slf4j
 @Service
@@ -23,6 +26,7 @@ public class VehicleServiceImp implements VehicleService {
 
     private final VehicleRepository vehicleRepository;
     private final FileComponent fileComponent;
+    private final ReleaseRepository releaseRepository;
 
     @Override
     public ResDTO findByVehicle(Pageable pageable, VehicleSearchReqDTO vehicleSearchReqDTO) {
@@ -30,23 +34,27 @@ public class VehicleServiceImp implements VehicleService {
         String message = "조회된 차량이 없습니다.";
         Object result = null;
         Integer point = vehicleSearchReqDTO.getPoint();
+        Integer no = Integer.parseInt(vehicleSearchReqDTO.getOrderNo());
         String regNumber = vehicleSearchReqDTO.getRegNumber();
         String name = vehicleSearchReqDTO.getName();
         Integer type = vehicleSearchReqDTO.getType();
-
-        if(point != null) {
-            Page<VehicleEntity> vehicles = null;
-            if(point == 1) vehicles = vehicleRepository.findAllByUseYnAndStatusAndRegNumberContaining('Y', 1, (regNumber == null)?"":regNumber, pageable);
-            else if(point == 2) vehicles = vehicleRepository.findAllByUseYnAndStatusAndNameContaining('Y', 1, (name == null)?"":name, pageable);
-            else if(point == 3 && type > 0) vehicles = vehicleRepository.findAllByUseYnAndStatusAndType('Y', 1, type, pageable);
-            else vehicles = vehicleRepository.findAllByUseYnAndStatus('Y', 1, pageable);
-            if(vehicles != null) {
-                status = true;
-                message = null;
-                result = VehicleDTO.findByVehicles(vehicles);
+        List<ReleaseEntity> releases = releaseRepository.findAllByOrderNoAndTranspIsNull(no, 'Y');
+        // System.out.println("여기요"+releases.size());
+        if(releases.size() != 0){     
+            System.out.println("낫널");
+            if(point != null) {
+                Page<VehicleEntity> vehicles = null;
+                if(point == 1) vehicles = vehicleRepository.findAllByUseYnAndStatusAndRegNumberContaining('Y', 1, (regNumber == null)?"":regNumber, pageable);
+                else if(point == 2) vehicles = vehicleRepository.findAllByUseYnAndStatusAndNameContaining('Y', 1, (name == null)?"":name, pageable);
+                else if(point == 3 && type > 0) vehicles = vehicleRepository.findAllByUseYnAndStatusAndType('Y', 1, type, pageable);
+                else vehicles = vehicleRepository.findAllByUseYnAndStatus('Y', 1, pageable);
+                if(vehicles != null) {
+                    status = true;
+                    message = null;
+                    result = VehicleDTO.findByVehicles(vehicles);
+                }
             }
         }
-
         return ResDTO.builder().status(status).result(result).message(message).build();
     }
 

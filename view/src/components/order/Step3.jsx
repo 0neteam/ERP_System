@@ -55,7 +55,9 @@ const Step3 = ({id, isShow, setVehicleNo, setLicence}) => {
     getData()
   }
   const getData = () => {
-    const params = {point}
+    const orderNo = id
+    const params = {point, orderNo}
+    console.log(params)
     if(point === 1) params['regNumber'] = query
     if(point === 2) params['name'] = query
     if(point === 3) params['type'] = type

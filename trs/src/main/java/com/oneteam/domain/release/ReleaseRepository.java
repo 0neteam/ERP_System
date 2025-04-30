@@ -19,4 +19,7 @@ public interface ReleaseRepository extends JpaRepository<ReleaseEntity, Long> {
   @Query("SELECT r from ReleaseEntity r JOIN r.orderItem oi WHERE oi.orderNo = :no AND r.transpNo is null AND r.useYn = :useYn")
   public List<ReleaseEntity> findAllByOrderItemNoAndUseYnAndTranspNoNull(@Param("no") Long no, @Param("useYn") char useYn);
 
+  @Query("SELECT r FROM ReleaseEntity r WHERE r.orderItemNo IN (SELECT no FROM OrderItemEntity oi WHERE oi.orderNo = :no) AND transpNo IS null AND useYn = :useYn")
+  public List<ReleaseEntity> findAllByOrderNoAndTranspIsNull(@Param("no") int no, @Param("useYn") char useYn);
+
 }

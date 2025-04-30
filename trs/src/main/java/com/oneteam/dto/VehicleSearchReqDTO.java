@@ -13,6 +13,7 @@ import lombok.*;
 public class VehicleSearchReqDTO {
 
   private Integer point;
+  private String orderNo;
   private String regNumber;
   private String name;
   private Integer type;
