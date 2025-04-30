@@ -143,6 +143,7 @@ const List = () => {
               <th className="text-nowrap">발주완료/취소일</th>
             </tr>
           </thead>
+
           <tbody>
             {orders?.map((v, i) => {
               return (
@@ -158,7 +159,9 @@ const List = () => {
           </tbody>
         </table>
       </div>
+      {orders.length > 0 && (
       <Pagination pagination={pagination} clickEvent={clickEvent} page={page} total={total} />
+      )}
     </section>
   )
 }

@@ -40,7 +40,7 @@ const List = () => {
   }
   const selectEvent = (e) => {
     setType(Number(e.target.value))
-    inputRef.current.value = ''
+    if(inputRef.current.value !== null) inputRef.current.value = ''
     if(Number(e.target.value) === 0) getData({page})
   }
   const submitEvent = (e) => {

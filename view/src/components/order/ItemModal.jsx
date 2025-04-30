@@ -104,7 +104,9 @@ const ItemModal = ({handleClose, addOrderEvent, orders}) => {
                   </tbody>
                 </table>
               </div>
+              {items.length > 0 && (
               <Pagination pagination={pagination} clickEvent={clickEvent} page={page} total={total} />
+              )}
               <div className="d-flex justify-content-end gap-2">
                 <button type="button" className="btn btn-outline-secondary" onClick={handleClose}>닫기</button>
               </div>
