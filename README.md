@@ -1,9 +1,9 @@
 <div align="center">
 
-<img src="UI/logo_black.png" width="100"/>
+[<img src="UI/logo_black.png" width="100"/>](https://github.com/0neteam/ERP_System)
 
 ### ERP_System
-[<img src="https://img.shields.io/badge/프로젝트 기간-2025.12.09~2025.12.09-green?style=flat&logo=&logoColor=white" />]()
+[<img src="https://img.shields.io/badge/프로젝트 기간-2025.12.09~2025.12.09-green?style=flat&logo=&logoColor=white" />](https://github.com/0neteam/ERP_System)
 
 </div> 
 
@@ -24,14 +24,15 @@
 - 설치 및 실행
 - API 문서
 - 화면 구성
+- 주요 기능
 
 <br />
 
 ## 💁‍♂️ 프로젝트 팀원
-|팀장|팀원|팀원|팀원|
-|:---:|:---:|:---:|:---:|
-| ![사진]() | ![사진]() |![사진]() |![사진]() |
-|[함효신](https://github.com/HelenHam)|[임지은](https://github.com/GGobung-of-Simba)|[강승우](https://github.com/swparabellum)|[이경일](https://github.com/KY129)|
+| 팀장 | 팀원 | 팀원 | 팀원 |
+|:-----:|:--------:|:---------:|:------:|
+| [<img src="https://github.com/HelenHam.png" width="80" alt="함효신"/>](https://github.com/HelenHam) | [<img src="https://github.com/GGobung-of-Simba.png" width="80" alt="임지은"/>](https://github.com/GGobung-of-Simba) | [<img src="https://github.com/swparabellum.png" width="80" alt="강승우"/>](https://github.com/swparabellum) | [<img src="https://github.com/KY129.png" width="80" alt="이경일"/>](https://github.com/KY129) |
+| [함효신](https://github.com/HelenHam) | [임지은](https://github.com/GGobung-of-Simba) | [강승우](https://github.com/swparabellum) | [이경일](https://github.com/KY129) |
 
 <br />
 
@@ -102,6 +103,20 @@
 <br />
 
 ## 🚀 설치 및 실행
+
+### 요구 사항
+- Java 17 이상
+
+- Maven 3.6+
+
+- Node.js 16 이상
+
+- npm 8+
+
+- MariaDB 10.5 이상
+
+- Git 2.20 이상
+
 ### 1. 저장소 클론
 ```
 git clone https://github.com/0neteam/ERP_System.git
@@ -150,7 +165,7 @@ EMAIL_SMTP_TIMEOUT=5000
 EMAIL_SMTP_ENABLE=true
 EMAIL_SMTP_SSL=true
 ```
--  키 파일 위치: oauth/src/main/resources/keys/ 폴더에 public.pem 및 private.pem을 저장하세요.
+- 키 파일 위치: oauth/src/main/resources/keys/ 폴더에 public.pem 및 private.pem을 저장하세요.
 
 #### Services (mfr, stg, trs, .env)
 ```
@@ -174,7 +189,9 @@ VITE_APP_GATEWAY_URL=http://localhost:8000
 #### Back-End 예시: 제조 모듈(mfr)
 ```
 cd mfr
-./mvnw spring-boot:run
+mvnw spring-boot:run
+또는
+MfrApplication.java 우클릭 → Run
 ```
 
 #### Front-End
@@ -189,7 +206,8 @@ npm run dev
 
 ## 📑 API 문서
 - 각 서비스 모듈별 Swagger UI
-  - http://localhost:8000/swagger-ui/index.html
+   - http://localhost:8000/swagger-ui/index.html
+<img src="https://github.com/user-attachments/assets/46a0be6f-aed8-4bd1-b35d-609707b22dd9" width="400"/>
 
 <br />
 
@@ -198,5 +216,21 @@ npm run dev
 |메인 화면|발주 상세 화면|
 |:---:|:---:|
 |<img src="https://github.com/user-attachments/assets/573151ce-b278-438f-9984-b0118467b5d2" width="400"/>|<img src="https://github.com/user-attachments/assets/91b932b7-72b8-4671-af26-8fa195895289" width="400"/>|
+
+<br />
+
+## 🎯 주요 기능
+
+- **이메일 인증**: 회원가입 및 로그인 시 인증 코드 발송 기능
+
+- **발주 및 출고 관리**: 발주 추가/조회/검색, 출고 요청, 모달 상세 정보 제공
+
+- **재고 관리**: 입출고 내역, 재고 수량, 기간별 활용도 분석
+
+- **운송 관리**: 운송 요청 승인, 기사(Driver) 배정, 운송 상태 실시간 업데이트
+
+- **검색 및 필터링**: 발주, 재고, 운송, 입출고 내역 등 다양한 카테고리별 검색 기능
+
+- **모듈화된 인증·인가**: Spring Authorization Server 기반 JWT 인증, 서비스별 권한 설정
 
 <br />
