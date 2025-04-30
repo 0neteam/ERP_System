@@ -9,50 +9,76 @@
 
 <br />
 
-## 💁‍♂️ 프로젝트 팀원
-|Backend|Frontend|
-|:---:|:---:|
-| ![사진]() | ![사진]() |
-|[이름]()|[이름]()|
+## 📌 개요
+다수의 모듈로 구성된 사내 자원 관리 플랫폼으로,
+제조(Manufacturer), 창고(Storage), 운송(Transportation) 등의 업무를 
+마이크로서비스 아키텍처(MSA) 기반으로 통합 관리합니다.
+각 모듈 간 API 게이트웨이와 인증 서버를 통해 유연한 확장성과 보안성을 보장합니다.
+
+- 프로젝트 개요
+- 프로젝트 팀원
+- 사용한 기술 스택
+- 저장소 구조
+- 프로젝트 아키텍처
+- 개발 워크플로우
+- 설치 및 실행
+- API 문서
+- 화면 구성
 
 <br />
 
-## 📝 소개
-효율적인 사내 자원관리를 위한 ERP 시스템
-
-- 프로젝트 팀원
-- 프로젝트 소개
-- 사용한 기술 스택
-- 프로젝트 아키텍처
-- 프로젝트 API 설계
-- 개발 워크플로우
-- 프로젝트 화면 구성
+## 💁‍♂️ 프로젝트 팀원
+|팀장|팀원|팀원|팀원|
+|:---:|:---:|:---:|:---:|
+| ![사진]() | ![사진]() |![사진]() |![사진]() |
+|[함효신](https://github.com/HelenHam)|[임지은](https://github.com/GGobung-of-Simba)|[강승우](https://github.com/swparabellum)|[이경일](https://github.com/KY129)|
 
 <br />
 
 ## ⚙ 기술 스택
 
+### front-end
+<div>
+  <img src="https://github.com/user-attachments/assets/c4f1ad1b-009d-4c3e-9719-77c3584d3c36" width="80">
+  <img src="https://github.com/user-attachments/assets/c8349feb-172d-4b7a-9317-fe1d701c6af1" width="80">
+  <img src="https://github.com/user-attachments/assets/71be7c9c-6d7d-4659-b7c8-d9d792c806b9" width="80">
+  <img src="https://github.com/user-attachments/assets/0851b258-ed10-4893-9c8e-86baa09f607b" width="80">
+  <img src="https://github.com/user-attachments/assets/ec60a747-ce50-4635-9ccf-ef6f45d4323d" width="80">
+</div>
+
 ### Back-end
 <div>
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Java.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/SpringBoot.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/SpringSecurity.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/SpringDataJPA.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Mysql.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Ajax.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Thymeleaf.png?raw=true" width="80">
+  <img src="https://github.com/user-attachments/assets/cf7a2b5e-1029-4208-9baf-84197c30f364" width="80">
+  <img src="https://github.com/user-attachments/assets/c6b3cecd-7659-45d1-99d5-152bbefea166" width="80">
+  <img src="https://github.com/user-attachments/assets/01297ea8-bb8d-4ec2-b63f-cfaab9d64ddd" width="80">
+  <img src="https://github.com/user-attachments/assets/d1cf27e6-dd9d-457f-8101-7c53baab3caa" width="80">
+  <img src="https://github.com/user-attachments/assets/850fb75f-c138-49ae-9f27-9cfe135fd6f3" width="80">
+  <img src="https://github.com/user-attachments/assets/231e0131-8749-45b9-9a9e-5b8765755489" width="80">
+  <img src="https://github.com/user-attachments/assets/a86b996c-d622-461c-a021-8650fa9b7cff" width="80">
 </div>
 
-### Infra
+### Infra & Tools
 <div>
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/AWSEC2.png?raw=true" width="80">
+  <img src="https://github.com/user-attachments/assets/f69158e3-9425-4081-b59c-ac9749cc4161" width="80">
+  <img src="https://github.com/user-attachments/assets/d282e7db-5223-42e9-b515-8333bdd5830f" width="80">
+  <img src="https://github.com/user-attachments/assets/6809e8b0-41d7-4dee-85c4-68ec5baa2f3d" width="80">
+  <img src="https://github.com/user-attachments/assets/336ef6d3-9a44-4579-9f36-e3bb41b072f8" width="80">
 </div>
 
-### Tools
-<div>
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Github.png?raw=true" width="80">
-<img src="https://github.com/yewon-Noh/readme-template/blob/main/skills/Notion.png?raw=true" width="80">
-</div>
+<br />
+
+## 📁 저장소 구조
+```
+/ERP_System
+├── .idea                 # IntelliJ 설정 파일
+├── UI                    # 공통 UI 컴포넌트 및 정적 리소스
+├── gateway               # API Gateway 서비스 (Spring Cloud Gateway)
+├── mfr                   # 제조사(Manufacturer) 서비스 모듈
+├── oauth                 # 인증 서버 (Spring Authorization Server, JWT)
+├── stg                   # 창고(Storage) 서비스 모듈
+├── trs                   # 운송(Transportation) 서비스 모듈
+└── view                  # Front-end 애플리케이션 (React, Vite)
+```
 
 <br />
 
@@ -61,26 +87,116 @@
 
 <br />
 
-## 🗂️ 프로젝트 API 설계
-
-<br />
-
-# 🛠️ 개발 워크플로우
-## 브랜치 전략 (Branch Strategy)
-- Main Branch
+## 🛠️ 개발 워크플로우
+### 브랜치 전략 (Branch Strategy)
+- main
   - 배포 가능한 상태의 코드를 유지하는 메인 브랜치로, 직접 개발하지 않습니다.
 
-- Dev
+- dev
   - 모든 팀원이 개발을 진행하는 기본 브랜치입니다.
   
 - 각 맡은 파트{name}
   - 팀원 각자의 개발 브랜치입니다.
   - 모든 기능 개발은 이 브랜치에서 이루어집니다.
 
-<br/>
+<br />
 
-### 화면 구성
-|Screen #1|Screen #2|
+## 🚀 설치 및 실행
+### 1. 저장소 클론
+```
+git clone https://github.com/0neteam/ERP_System.git
+cd ERP_System
+```
+
+### 2. 공통 환경 변수 설정
+- 각 모듈 최상위에 .env 파일로 환경변수 설정
+#### Gateway (.env)
+```
+# 허용할 CORS Origin
+CORS_ORIGIN1=http://localhost:5173
+CORS_ORIGIN2=http://127.0.0.1:5173
+
+# 라우팅 URI
+ROUTE_STG_URI=http://localhost:8001
+ROUTE_MFR_URI=http://localhost:8002
+ROUTE_TRS_URI=http://localhost:8003
+ROUTE_OAUTH_URI=http://localhost:9000
+ROUTE_API_URI=http://localhost:8000
+ROUTE_REACT_URI=http://localhost:5173
+```
+
+#### Auth (인증 서버, .env)
+```
+# Database 설정
+DB_DRIVER=org.mariadb.jdbc.Driver
+DB_JDBC=jdbc:mariadb://<DB_HOST>:<DB_PORT>/<DB_NAME>
+DB_USER=<DB_USERNAME>
+DB_PWD=<DB_PASSWORD>
+
+# Swagger URL
+SWAGGER_URL=http://localhost:8000
+
+# RSA 키 파일 경로
+RSA_PUBLIC_KEY=classpath:keys/public.pem
+RSA_PRIVATE_KEY=classpath:keys/private.pem
+
+# 이메일 SMTP 설정
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USERNAME=<YOUR_EMAIL>
+EMAIL_PASSWORD=<YOUR_EMAIL_PASSWORD>
+EMAIL_SMTP_AUTH=true
+EMAIL_SMTP_TIMEOUT=5000
+EMAIL_SMTP_ENABLE=true
+EMAIL_SMTP_SSL=true
+```
+-  키 파일 위치: oauth/src/main/resources/keys/ 폴더에 public.pem 및 private.pem을 저장하세요.
+
+#### Services (mfr, stg, trs, .env)
+```
+# Database 설정
+DB_DRIVER=org.mariadb.jdbc.Driver
+DB_JDBC=jdbc:mariadb://<DB_HOST>:<DB_PORT>/<DB_NAME>
+DB_USER=<DB_USERNAME>
+DB_PWD=<DB_PASSWORD>
+
+# Swagger 및 JWT 키 URL
+SWAGGER_URL=http://localhost:8000
+JWT_KEY_URL=http://localhost:8000/oauth/.well-known/jwks.json
+```
+
+#### Front-End (view, .env)
+```
+VITE_APP_GATEWAY_URL=http://localhost:8000
+```
+
+### 3. 모듈별 실행
+#### Back-End 예시: 제조 모듈(mfr)
+```
+cd mfr
+./mvnw spring-boot:run
+```
+
+#### Front-End
+```
+cd view
+npm install
+npm run dev
+```
+- 개발 서버: http://localhost:5173
+
+<br />
+
+## 📑 API 문서
+- 각 서비스 모듈별 Swagger UI
+  - http://localhost:8000/swagger-ui/index.html
+
+<br />
+
+
+## 🖼️ 화면 구성
+|메인 화면|발주 상세 화면|
 |:---:|:---:|
-|<img src="https://i.pinimg.com/originals/39/0c/fa/390cfa0be830d217a7ce74d8489b75c5.gif" width="400"/>|<img src="https://flexible.img.hani.co.kr/flexible/normal/960/960/imgdb/resize/2019/0121/00501111_20190121.webp" width="400"/>|
+|<img src="https://github.com/user-attachments/assets/573151ce-b278-438f-9984-b0118467b5d2" width="400"/>|<img src="https://github.com/user-attachments/assets/91b932b7-72b8-4671-af26-8fa195895289" width="400"/>|
 
+<br />
