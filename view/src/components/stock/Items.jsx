@@ -2,7 +2,6 @@ import React from 'react'
 import EMPTY from '@assets/item/empty_img.jpg'
 
 const Items = ({items}) => {
-  console.log(items)
   const baseUrl = import.meta.env.VITE_APP_GATEWAY_URL + '/oauth/file/i/'
   const getFile = (fileNo) => {
     if(fileNo == null) return EMPTY

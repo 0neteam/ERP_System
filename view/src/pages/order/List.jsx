@@ -51,6 +51,13 @@ const List = () => {
   const linkEvent = no => {
     document.location.href = `/order/${no}`
   }
+  const formattedDate = () => {
+    const eDate = new Date(); 
+    return eDate.getFullYear() + '-' +
+          String(eDate.getMonth() + 1).padStart(2, '0') + '-' +
+          String(eDate.getDate()).padStart(2, '0');
+  }
+
   const getData = () => {
     let params = {type}
     if(type === 1) params.orderNo = query
@@ -68,7 +75,7 @@ const List = () => {
       if(endDate !== '') params.cancelDateEnd = endDate
     }
     POST(`/stg/order?size=${size}&page=${page}`, params).then(res => {
-      if(res.status) {console.log(res)
+      if(res.status) {
         setOrders(res.result.list)
         const arr = []
         for(let i = 0; i < res.result.totalPages; i++) {
@@ -121,9 +128,12 @@ const List = () => {
                 }
                 {type > 2 &&
                 <>
-                  <input type="date" id="startDate" className="form-control dateInput" placeholder="시작일" value={startDate} onChange={e => setStartDate(e.target.value)} />
+                  <input type="date" id="startDate" className="form-control dateInput" placeholder="시작일" value={startDate} onChange={e => {
+                    setStartDate(e.target.value)
+                    setEndDate(formattedDate())
+                    }} max={endDate == '' ? formattedDate() : endDate}/>
                   <span className="input-group-text">~</span>
-                  <input type="date" id="endDate" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)}/>
+                  <input type="date" id="endDate" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)} min={startDate}/>
                 </>
                 }
                 <button type="submit" className="btn btn-outline-success">검색</button>

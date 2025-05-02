@@ -17,7 +17,6 @@ const Modal = ({handleClose, transp}) => {
         setReleaseItems(res.result[1].list)
       }
     })
-    console.log(transp.arrDate)
   }
   const changeEvent = (e, data) => {
     setReleaseItems(prev => prev.filter(item => {
