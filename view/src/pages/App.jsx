@@ -55,15 +55,7 @@ const Pages = () => {
           }
         )
       })}
-       
-      <Route path="/user" element={<User />} />
-      <Route path="/dept" element={<Dept />} />
-      <Route path="/item/*" element={<Item />} />
-      <Route path="/stock/*" element={<Stock />} />
-      <Route path="/order/*" element={<Order />} />
-      <Route path="/transp/*" element={<Transp />} />
-      <Route path="/vehicle/*" element={<Vehicle />} />  
-      
+             
       <Route path="*" element={<RedirectUrl />} />
     </Routes>
   )

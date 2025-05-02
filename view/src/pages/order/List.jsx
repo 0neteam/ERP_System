@@ -68,7 +68,7 @@ const List = () => {
       if(endDate !== '') params.cancelDateEnd = endDate
     }
     POST(`/stg/order?size=${size}&page=${page}`, params).then(res => {
-      if(res.status) {
+      if(res.status) {console.log(res)
         setOrders(res.result.list)
         const arr = []
         for(let i = 0; i < res.result.totalPages; i++) {

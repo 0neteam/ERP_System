@@ -24,11 +24,11 @@ public class OrderEntity extends BaseEntity {
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
   private LocalDateTime reqDate;
 
-  @Column(name = "perDate", nullable = true, updatable = false, columnDefinition = "TIMESTAMP")
+  @Column(name = "perDate", nullable = true, updatable = true, columnDefinition = "TIMESTAMP")
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
   private LocalDateTime perDate;
 
-  @Column(name = "cancelDate", nullable = true, updatable = false, columnDefinition = "TIMESTAMP")
+  @Column(name = "cancelDate", nullable = true, updatable = true, columnDefinition = "TIMESTAMP")
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "ASIA/Seoul")
   private LocalDateTime cancelDate;
 
