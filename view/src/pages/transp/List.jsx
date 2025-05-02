@@ -33,6 +33,12 @@ const List = () => {
     e.preventDefault()
     getData()
   }
+  const formattedDate = () => {
+    const eDate = new Date(); 
+    return eDate.getFullYear() + '-' +
+          String(eDate.getMonth() + 1).padStart(2, '0') + '-' +
+          String(eDate.getDate()).padStart(2, '0');
+  }
   const getData = () => {
     let params = {type}
     if(type !== 0) {
@@ -74,9 +80,12 @@ const List = () => {
           {type != 0 &&
           <div className="col-12 col-md">
             <div className="input-group">
-              <input type="date" className="form-control dateInput" placeholder="시작일" value={startDate} onChange={e => setStartDate(e.target.value)} />
+              <input type="date" className="form-control dateInput" placeholder="시작일" value={startDate} onChange={e => {
+                    setStartDate(e.target.value)
+                    setEndDate(formattedDate())
+                    }} max={endDate == '' ? formattedDate() : endDate}/>
               <span className="input-group-text">~</span>
-              <input type="date" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)} />
+              <input type="date" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)} min={startDate}/>
               <button type="submit" className="btn btn-outline-success">검색</button>
             </div>
           </div>

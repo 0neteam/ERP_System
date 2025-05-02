@@ -38,7 +38,6 @@ const UserRegModal = ({handleClose, dept}) => {
   }
   const submitEvent = e => {
     e.preventDefault()
-    console.log(e.target.name.value)
     getUser({name: e.target.name.value})
   }
   const getUser = param => {
