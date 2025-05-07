@@ -3,7 +3,7 @@
 [<img src="UI/logo_black.png" width="100"/>](https://github.com/0neteam/ERP_System)
 
 ### ERP_System
-[<img src="https://img.shields.io/badge/프로젝트 기간-2025.12.09~2025.12.09-green?style=flat&logo=&logoColor=white" />](https://github.com/0neteam/ERP_System)
+[<img src="https://img.shields.io/badge/프로젝트 기간-2025.03.07~2025.05.16-green?style=flat&logo=&logoColor=white" />](https://github.com/0neteam/ERP_System)
 
 </div> 
 
@@ -44,17 +44,18 @@
   <img src="https://github.com/user-attachments/assets/c8349feb-172d-4b7a-9317-fe1d701c6af1" width="80">
   <img src="https://github.com/user-attachments/assets/71be7c9c-6d7d-4659-b7c8-d9d792c806b9" width="80">
   <img src="https://github.com/user-attachments/assets/0851b258-ed10-4893-9c8e-86baa09f607b" width="80">
-  <img src="https://github.com/user-attachments/assets/ec60a747-ce50-4635-9ccf-ef6f45d4323d" width="80">
+  <img src="https://github.com/user-attachments/assets/338db264-a783-4f80-bc9b-df4c083e7177" width="80">
 </div>
 
 ### Back-end
 <div>
   <img src="https://github.com/user-attachments/assets/cf7a2b5e-1029-4208-9baf-84197c30f364" width="80">
   <img src="https://github.com/user-attachments/assets/c6b3cecd-7659-45d1-99d5-152bbefea166" width="80">
+  <img src="https://github.com/user-attachments/assets/74d3d6bb-b3ea-4fca-bff7-db912c667b56" width="80">
   <img src="https://github.com/user-attachments/assets/01297ea8-bb8d-4ec2-b63f-cfaab9d64ddd" width="80">
   <img src="https://github.com/user-attachments/assets/d1cf27e6-dd9d-457f-8101-7c53baab3caa" width="80">
   <img src="https://github.com/user-attachments/assets/850fb75f-c138-49ae-9f27-9cfe135fd6f3" width="80">
-  <img src="https://github.com/user-attachments/assets/231e0131-8749-45b9-9a9e-5b8765755489" width="80">
+  <img src="https://github.com/user-attachments/assets/c8d48930-acec-4cd2-9c26-7f8f03df7437" width="80">
   <img src="https://github.com/user-attachments/assets/a86b996c-d622-461c-a021-8650fa9b7cff" width="80">
 </div>
 
@@ -62,8 +63,9 @@
 <div>
   <img src="https://github.com/user-attachments/assets/f69158e3-9425-4081-b59c-ac9749cc4161" width="80">
   <img src="https://github.com/user-attachments/assets/d282e7db-5223-42e9-b515-8333bdd5830f" width="80">
-  <img src="https://github.com/user-attachments/assets/6809e8b0-41d7-4dee-85c4-68ec5baa2f3d" width="80">
-  <img src="https://github.com/user-attachments/assets/336ef6d3-9a44-4579-9f36-e3bb41b072f8" width="80">
+  <img src="https://github.com/user-attachments/assets/c2dca35f-1e16-4fda-8f6d-ebd6fd448bf5" width="80">
+  <img src="https://github.com/user-attachments/assets/ef6ac842-7830-4681-bf31-cc3d7d8266b2" width="80">
+  <img src="https://github.com/user-attachments/assets/aa55a59b-2eba-43ea-b0c2-dac5dfe685b2" width="80">
 </div>
 
 <br />
@@ -84,7 +86,17 @@
 <br />
 
 ## 🛠️ 프로젝트 아키텍처
-![no-image](https://user-images.githubusercontent.com/80824750/208294567-738dd273-e137-4bbf-8307-aff64258fe03.png)
+|MSA1|MSA2|
+|:---:|:---:|
+|<img src="https://github.com/user-attachments/assets/51739337-75de-4057-8be0-35e749eb1338" width="400"/>|<img src="https://github.com/user-attachments/assets/8b5e5905-63ae-43a6-a7f6-f7b26a426efe" width="400"/>|
+
+|React|
+|:---:|
+|<img src="https://github.com/user-attachments/assets/b4d40111-efd2-47e0-b088-7cd40236bcdf" width="827"/>|
+
+|Docker|
+|:---:|
+|<img src="https://github.com/user-attachments/assets/4b41d75f-5cc9-4cce-94a9-99207e00676f" width="827"/>|
 
 <br />
 
