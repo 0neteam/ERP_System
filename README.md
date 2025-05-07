@@ -117,17 +117,15 @@
 ## 🚀 설치 및 실행
 
 ### 요구 사항
-- Java 17 이상
+- Java 21+
 
-- Maven 3.6+
+- Maven 4.0
 
-- Node.js 16 이상
+- Node.js 22.12.0+
 
-- npm 8+
+- npm 10.9+
 
-- MariaDB 10.5 이상
-
-- Git 2.20 이상
+- MariaDB 11.5+
 
 ### 1. 저장소 클론
 ```
