@@ -31,8 +31,8 @@
 ## 💁‍♂️ 프로젝트 팀원
 | 팀장 | 팀원 | 팀원 | 팀원 |
 |:-----:|:--------:|:---------:|:------:|
-| [<img src="https://github.com/HelenHam.png" width="80" alt="함효신"/>](https://github.com/HelenHam) | [<img src="https://github.com/GGobung-of-Simba.png" width="80" alt="임지은"/>](https://github.com/GGobung-of-Simba) | [<img src="https://github.com/swparabellum.png" width="80" alt="강승우"/>](https://github.com/swparabellum) | [<img src="https://github.com/KY129.png" width="80" alt="이경일"/>](https://github.com/KY129) |
-| [함효신](https://github.com/HelenHam) | [임지은](https://github.com/GGobung-of-Simba) | [강승우](https://github.com/swparabellum) | [이경일](https://github.com/KY129) |
+| [<img src="https://github.com/swparabellum.png" width="80" alt="강승우"/>](https://github.com/swparabellum) | [<img src="https://github.com/GGobung-of-Simba.png" width="80" alt="임지은"/>](https://github.com/GGobung-of-Simba) | [<img src="https://github.com/HelenHam.png" width="80" alt="함효신"/>](https://github.com/HelenHam)  | [<img src="https://github.com/KY129.png" width="80" alt="이경일"/>](https://github.com/KY129) |
+| [강승우](https://github.com/swparabellum) | [임지은](https://github.com/GGobung-of-Simba) | [함효신](https://github.com/HelenHam) | [이경일](https://github.com/KY129) |
 
 <br />
 
@@ -55,8 +55,8 @@
   <img src="https://github.com/user-attachments/assets/01297ea8-bb8d-4ec2-b63f-cfaab9d64ddd" width="80">
   <img src="https://github.com/user-attachments/assets/d1cf27e6-dd9d-457f-8101-7c53baab3caa" width="80">
   <img src="https://github.com/user-attachments/assets/850fb75f-c138-49ae-9f27-9cfe135fd6f3" width="80">
-  <img src="https://github.com/user-attachments/assets/c8d48930-acec-4cd2-9c26-7f8f03df7437" width="80">
   <img src="https://github.com/user-attachments/assets/a86b996c-d622-461c-a021-8650fa9b7cff" width="80">
+  <img src="https://github.com/user-attachments/assets/c8d48930-acec-4cd2-9c26-7f8f03df7437" width="80">
 </div>
 
 ### Infra & Tools
@@ -116,16 +116,16 @@
 
 ## 🚀 설치 및 실행
 
-### 요구 사항
-- Java 21+
+### 개발 환경
+- Java 21
 
 - Maven 4.0
 
-- Node.js 22.12.0+
+- Node.js 22.12.0
 
-- npm 10.9+
+- npm 10.9
 
-- MariaDB 11.5+
+- MariaDB 11.5
 
 ### 1. 저장소 클론
 ```
