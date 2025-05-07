@@ -12,6 +12,8 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.core.Authentication;
@@ -23,7 +25,10 @@ import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.security.SecureRandom;
 import java.time.Duration;
 import java.time.Instant;
@@ -140,8 +145,12 @@ public class UserServiceImp implements UserService{
     UserEntity userEntity = UserEntity.builder()
         .email(userDto.getEmail())
 //        .password(passwordEncoder.encode(userDto.getPassword()))
-        .password(passwordEncoder.encode("1234"))
+        // .password(passwordEncoder.encode("1234"))
         .name(userDto.getName())
+        .licence1('N')
+        .licence2('N')
+        .licence3('N')
+        .licence4('N')
         .build();
     userEntity.setUseYn(USEYN);
     userEntity = userRepository.save(userEntity);
@@ -263,9 +272,9 @@ public class UserServiceImp implements UserService{
     return sendMail(MailDTO.builder()
         .emailFrom(emailFrom)
         .emailTo(email)
-        .emailSubject("이메일 확인 인증코드 전송의건")
-        .emailBody(key)
-        .emailHtmlEnable(false)
+        .emailSubject("[0neteam] 이메일 확인 인증코드 전송")
+        .emailBody(generateEmailContent(key,"/mail.html"))
+        .emailHtmlEnable(true)
         .build());
   }
 
@@ -283,6 +292,25 @@ public class UserServiceImp implements UserService{
       e.printStackTrace();
     }
     return false;
+  }
+
+  // 템플릿을 이용한 이메일 내용 생성
+  public String generateEmailContent(String key, String tempatePath) {
+    String emailContent = loadEmailTemplate(tempatePath);
+    emailContent = emailContent.replace("{key}", key);
+    return emailContent;
+  }
+
+  // 리소스 디렉토리에서 이메일 템플릿을 읽어오기
+  private String loadEmailTemplate(String tempatePath) {
+    try {
+      Resource resource = new ClassPathResource(tempatePath);
+      // 파일 내용을 문자열로 읽어오기
+      return new String(Files.readAllBytes(Paths.get(resource.getURI())));
+    } catch (IOException e) {
+      e.printStackTrace();
+      return "이메일 템플릿 로드를 확인해주세요.";
+    }
   }
 
 }

@@ -4,8 +4,10 @@ import EMPTY from '@assets/item/empty_img.jpg'
 import { POST, GET } from '@utils/Network.js'
 import Release from '@components/stock/Release.jsx'
 import Pagination from '@components/commons/Pagination.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const Detail = () => {
+  const { styles } = useAuth()
   const [stock, setStock] = useState({})
   const [releases, setReleases] = useState([])
   const [pagination, setPagination] = useState([])
@@ -49,13 +51,15 @@ const Detail = () => {
     getData({page})
   }, [page])
   return (
-    <section className="container mb-2 p-3" style={{minHeight: '70vh'}}>
-      <div className="p-3">
-        <h2>재고 상세</h2>
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+          <div>
+              <h2>재고 상세</h2>
+          </div>
       </div>
       <div className="d-flex flex-column flex-md-row w-100 justify-content-center align-items-center gap-3 mb-4">
         <div className="d-flex justify-content-center align-items-center">
-          <img className="item" src={getFile(stock.fileNo)} />
+          <img className="img-thumbnail item" src={getFile(stock.fileNo)} />
         </div>
   
         <div className="item-container w-100 w-mb-50">

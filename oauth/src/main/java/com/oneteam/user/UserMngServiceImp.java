@@ -56,7 +56,6 @@ public class UserMngServiceImp implements UserMngService {
     userEntity.setLicence2("Y".equals(userMngReqDTO.getLicence2()) ? 'Y' : 'N');
     userEntity.setLicence3("Y".equals(userMngReqDTO.getLicence3()) ? 'Y' : 'N');
     userEntity.setLicence4("Y".equals(userMngReqDTO.getLicence4()) ? 'Y' : 'N');
-    userEntity.setModUserNo(Long.parseLong(authentication.getName()));
     userEntity = userRepository.save(userEntity);
     if(userEntity.getNo() > 0) {
       status = true;

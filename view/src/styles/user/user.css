@@ -20,3 +20,11 @@
   cursor: pointer;
   transform: translateX(4px);
 }
+.userAco {
+  height: 70vh;
+}
+@media (max-width: 768px) {
+  .userAco {
+    height: 100%;
+  }
+}

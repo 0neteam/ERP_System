@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import { GET, PUT } from '@utils/Network.js'
 import Pagination from '@components/commons/Pagination.jsx'
 import ItemModal from '@components/order/ItemModal.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const Create = () => {
+  const { styles } = useAuth()
   const [orders, setOrders] = useState([])
   const [allChecked, setAllChecked] = useState(false)
   const [checkedItems, setCheckedItems] = useState([])
@@ -59,15 +61,15 @@ const Create = () => {
   }
   return (
     <>
-      <section className="container">
+      <section className="container" style={styles}>
         <h2 className="mt-4 mb-4">발주 신청</h2>
-        <div className="d-flex justify-content-between mb-2">
-          <div>
+        <div className="d-flex justify-content-between mb-4">
+          {/* <div> */}
             <button type="button" className="btn btn-outline-success" onClick={handleOpen}>품목선택</button>
-          </div>
-          <div>
+          {/* </div> */}
+          {/* <div> */}
             <button type="button" className="btn btn-outline-secondary" onClick={deleteEvent}>선택삭제</button>
-          </div>
+          {/* </div> */}
         </div>
         <div className="overflow-y-auto">
           <table>

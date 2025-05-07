@@ -6,7 +6,7 @@ import { useAuth } from '@hooks/AuthProvider.jsx'
 import SignInStep1 from '@components/auth/SignInStep1.jsx'
 
 const SignIn = () => {
-  const { checkAccess } = useAuth()
+  const { checkAccess, styles } = useAuth()
   const [user, setUser] = useState({email: '', type: 0})
   const [auth, setAuth] = useState('')
   const [type, setType] = useState({state: true, msg : '인증코드 확인 완료'})
@@ -64,7 +64,7 @@ const SignIn = () => {
     }
   }
   return (
-    <section className="container" style={{minHeight: '50vh'}}>
+    <section className="container" style={styles}>
         <div className="row">
             <div className="col"></div>
             <div className="col-6" style={{minWidth: '400px'}}>

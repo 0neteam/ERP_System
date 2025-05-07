@@ -24,9 +24,11 @@ const AuthProvider = ({children}) => {
   const removeAccess = () => {
     removeCookie("auth")
   }
+
+  const styles = {minHeight: '70vh'}
   
   return (
-    <AuthContext.Provider value={{ access, isAccess, checkAccess, removeAccess }}>
+    <AuthContext.Provider value={{ access, isAccess, checkAccess, removeAccess, styles }}>
       {children}
     </AuthContext.Provider>
   )

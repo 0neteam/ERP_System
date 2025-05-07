@@ -15,7 +15,7 @@ import lombok.*;
 @NoArgsConstructor
 public class FileEntity extends BaseEntity {
 
-  @Column(name = "origin", nullable = false, length = 100)
+  @Column(name = "origin", nullable = false, length = 255)
   private String origin;
 
   @Column(name = "name", nullable = false, length = 100)

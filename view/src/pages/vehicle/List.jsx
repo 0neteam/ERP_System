@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { POST } from '@utils/Network.js'
 import Pagination from '@components/commons/Pagination.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const List = () => {
+  const { styles } = useAuth()
   const [vehicle, setVehicle] = useState([])
   const [point, setPoint] = useState(0)
   const [query, setQuery] = useState('')
@@ -77,64 +79,69 @@ const List = () => {
     getData({point})
   }, [])
   return (
-    <section className="container" style={{minHeight: '70vh'}}>
-      <div>
-        <h2 className="mb-4">차량 목록</h2>
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+          <div>
+              <h2>차량 목록</h2>
+          </div>
       </div>
+
       <div className="mb-4">
-        <form className="form" onSubmit={submitEvent}>
-          <div className="row">
-            <div className="col-12 col-md-4">
-              <select className="form-select" onChange={typeEvent}>
-                <option value="0">전체</option>
-                <option value="1">등록번호</option>
-                <option value="2">차량명</option>
-                <option value="3">차종</option>
-                <option value="4">면허</option>
-                <option value="5">상태</option>
-              </select>
-            </div>
-            {point != 0 &&
-              <div className="col-12 col-md-8">
+        <div className="row g-2">
+          <div className="col-12 col-md-4">
+            <select className="form-select" onChange={typeEvent}>
+              <option value="0">전체</option>
+              <option value="1">등록번호</option>
+              <option value="2">차량명</option>
+              <option value="3">차종</option>
+              <option value="4">면허</option>
+              <option value="5">상태</option>
+            </select>
+          </div>
+          {point != 0 &&
+            <div className="col-12 col-md-8">
+              <form className="d-flex flex-column gap-2" onSubmit={submitEvent}>
                 <div className="input-group">
-                  {point < 3 && <input type="text" className="form-control" name="query" value={query} onChange={e => setQuery(e.target.value)} />}
+                  {point < 3 && 
+                    <input type="text" className="form-control" name="query" value={query} onChange={e => setQuery(e.target.value)} />
+                  }
                   {point === 3 &&
-                  <select className="form-select" name="select1">
-                    <option value="0">차종 전체</option>
-                    <option value="1">소형화물</option>
-                    <option value="2">카고</option>
-                    <option value="3">탑차</option>
-                    <option value="4">윙바디</option>
-                    <option value="5">트레일러</option>
-                  </select>
+                    <select className="form-select" name="select1">
+                      <option value="0">차종 전체</option>
+                      <option value="1">소형화물</option>
+                      <option value="2">카고</option>
+                      <option value="3">탑차</option>
+                      <option value="4">윙바디</option>
+                      <option value="5">트레일러</option>
+                    </select>
                   }
                   {point === 4 &&
-                  <select className="form-select" name="select2">
-                    <option value="0">면허 전체</option>
-                    <option value="1">1종 특수</option>
-                    <option value="2">1종 대형</option>
-                    <option value="3">1종 보통</option>
-                    <option value="4">2종 보통</option>
-                  </select>
+                    <select className="form-select" name="select2">
+                      <option value="0">면허 전체</option>
+                      <option value="1">1종 특수</option>
+                      <option value="2">1종 대형</option>
+                      <option value="3">1종 보통</option>
+                      <option value="4">2종 보통</option>
+                    </select>
                   }
                   {point === 5 &&
-                  <select className="form-select" name="select3">
-                    <option value="0">상태 전체</option>
-                    <option value="1">대기 중</option>
-                    <option value="2">운송 중</option>
-                    <option value="3">점검 중</option>
-                  </select>
+                    <select className="form-select" name="select3">
+                      <option value="0">상태 전체</option>
+                      <option value="1">대기 중</option>
+                      <option value="2">운송 중</option>
+                      <option value="3">점검 중</option>
+                    </select>
                   }
                   <button type="submit" className="btn btn-outline-success">검색</button>
                 </div>
-              </div>
-              }
-          </div>
-        </form>
+              </form>
+            </div>
+            }
+        </div>
       </div>
 
       <div className="overflow-y-auto mb-4">
-        <table className="mt-3">
+        <table>
           <thead>
             <tr className="text-center">
               <th className="text-nowrap">차종</th>

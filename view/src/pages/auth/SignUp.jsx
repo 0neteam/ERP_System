@@ -3,8 +3,10 @@ import Logo from '@assets/user/empty_user.png'
 import Alert from '@components/commons/Alert.jsx'
 import { POST, PUT } from '@utils/Network.js'
 import SignUpStep1 from '@components/auth/SignUpStep1.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const SignUp = () => {
+  const { styles } = useAuth()
   const [user, setUser] = useState({email: '', name: '', type: 1})
   const [auth, setAuth] = useState('')
   const [show, isShow] = useState(true)
@@ -77,7 +79,7 @@ const SignUp = () => {
     }
   }
   return (
-    <section className="container" style={{minHeight: '50vh'}}>
+    <section className="container" style={styles}>
         <div className="row">
             <div className="col"></div>
             <div className="col-6" style={{minWidth: '400px'}}>

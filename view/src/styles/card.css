@@ -2,12 +2,10 @@
 img.item {
   aspect-ratio: 1/1;
   width: 300px;
-  height: 300px;
 }
 img.user {
   aspect-ratio: 1/1;
   width: 300px;
-  height: 300px;
 }
 .item-container {
   max-width: 400px;
@@ -23,9 +21,9 @@ img.user {
   margin-bottom: 0;
   background-color: #fff !important;
 }
-.list-group-item:hover {
+/* .list-group-item:hover {
   transform: translateX(0) !important;
-}
+} */
 @media (max-width: 767px) {
   .item-container {min-height: auto;}
   .item-container .btns {
@@ -48,17 +46,17 @@ img.user {
   object-fit: cover;
   vertical-align: top;
 }
-.card:hover {
+/* .card:hover {
   cursor: pointer;
   opacity: .8;
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
-}
-.modal .card:hover {
+} */
+/* .modal .card:hover {
   opacity: 1;
   -webkit-transform: none;
   transform: none;
-}
+} */
 .card .list-group-item {
   border: none;
 }
@@ -83,5 +81,11 @@ img.user {
   }
   .form .ms-auto a {
     width: auto;
+  }
+}
+@media (max-width: 576px) {
+  img.user {
+    aspect-ratio: 1/1;
+    width: 65%;
   }
 }

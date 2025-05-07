@@ -1,15 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams } from "react-router-dom"
 import { useAuth } from '@hooks/AuthProvider.jsx'
-import { GET, POST, PUT, DELETE, PATCH } from '@utils/Network.js'
-import EmptyUser from '@assets/user/empty_user.png'
+import { POST } from '@utils/Network.js'
 import Step1 from '@components/order/Step1.jsx'
 import Step2 from '@components/order/Step2.jsx'
 import Step3 from '@components/order/Step3.jsx'
 import Step4 from '@components/order/Step4.jsx'
 import Step5 from '@components/order/Step5.jsx'
-import Modal from '@components/order/Modal.jsx'
-import Pagination from '@components/commons/Pagination.jsx'
 
 const Detail = () => {
   const { id } = useParams()
@@ -20,7 +17,8 @@ const Detail = () => {
   const [licence, setLicence] = useState(0)
   const [status, setStatus] = useState(0)
   const [show, isShow] = useState(0)
-  const { isAccess } = useAuth()
+  const { isAccess, styles } = useAuth()
+  const [page, setPage] = useState(0)
   const checkRole = data => {
     let cnt = 0;
     if(isAccess().roles != null) {
@@ -55,7 +53,7 @@ const Detail = () => {
     getData()
   }
   const getData = () => {
-    POST(`/stg/order/${id}`, {}).then(res => {
+    POST(`/stg/order/${id}?page=${page}`, {}).then(res => {
       if(res.status) {
         setOrder(res.result.order)
         setStatus(res.result.order.status)
@@ -65,9 +63,9 @@ const Detail = () => {
   }
   useEffect(() => {
     getData()
-  }, [])
+  }, [page])
   return (
-    <section className="container">
+    <section className="container" style={styles}>
       <div>
         <h2 className="mt-4 mb-4">발주 상세</h2>
         <h4><span className="badge bg-warning">{changeStatus(order.status)}</span></h4>
@@ -78,7 +76,7 @@ const Detail = () => {
       </div>
 
       {/* STEP1 : 발주 품목 화면 */}
-      <Step1 items={items} status={status} id={id} show={show} outEvent={outEvent} />
+      <Step1 items={items} status={status} id={id} show={show} outEvent={outEvent} page={page} setPage={setPage} />
 
       <div className={status === 4 ? 'd-flex justify-content-end gap-2 mt-4 mb-2 p-1' : 'd-flex justify-content-center gap-2 mt-4 mb-2 p-1'}>
         {status < 3 && checkRole(['ADMIN','MFR']) &&

@@ -56,8 +56,10 @@ const List = () => {
   useEffect(() => {getData({ page })}, [page])
   return (
     <section className="container" style={{minHeight: '70vh'}}>
-      <div>
-        <h2 className="mb-4">품목 목록</h2>
+      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+        <div>
+          <h2>품목 목록</h2>
+        </div>
       </div>
       <div className="mb-4">
         <form className="form" onSubmit={submitEvent} >

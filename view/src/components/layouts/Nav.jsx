@@ -41,10 +41,10 @@ const Nav = () => {
   
   const list = [
     {type: true, name: '인사관리', roles: ['ADMIN'], list: [{url: '/user', name: '직원관리'}, {url: '/dept', name: '부서관리'}]},
-    {type: true, name: '품목관리', roles: ['ADMIN','MFR'], list: [{url: '/item', name: '품목목록'}, {url: '/item/create', name: '품목추가'}]},
+    {type: true, name: '품목관리', roles: ['ADMIN','MFR'], list: [{url: '/item', name: '품목목록'}, {url: '/item/create', name: '품목등록'}]},
     {type: false, name: '재고관리', roles: ['ADMIN','STG'], url: '/stock', list: []},
-    {type: true, name: '발주관리', roles: ['ADMIN','STG','MFR','TRS'], list: [{url: '/order', name: '발주목록'}, {url: '/order/create', name: '발주추가'}]},
-    {type: true, name: '운송관리', roles: ['ADMIN','TRS','DRI'], list: [{url: '/transp', name: '운송목록'}, {url: '/vehicle', name: '차량목록'}, {url: '/vehicle/create', name: '차량추가'}]},
+    {type: true, name: '발주관리', roles: ['ADMIN','STG','MFR','TRS'], list: [{url: '/order', name: '발주목록'}, {url: '/order/create', name: '발주신청'}]},
+    {type: true, name: '운송관리', roles: ['ADMIN','TRS','DRI'], list: [{url: '/transp', name: '운송목록'}, {url: '/vehicle', name: '차량목록'}, {url: '/vehicle/create', name: '차량등록'}]},
   ]
   return (
     <nav className="navbar navbar-expand-md bg-light">
