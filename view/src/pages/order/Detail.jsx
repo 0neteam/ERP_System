@@ -85,7 +85,7 @@ const Detail = () => {
         {status == 2 && checkRole(['ADMIN','TRS']) &&
         <button type="button" className="btn btn-outline-success w-100" onClick={() => isShow(2)}>운송관리</button>
         }
-        {(status > 1 && status < 4) && checkRole(['ADMIN','MFR','STG']) &&
+        {(status > 1 && status < 4) && checkRole(['ADMIN','MFR','STG','TRS']) &&
         <button type="button" className="btn btn-outline-success w-100" onClick={() => isShow(4)}>입출고관리</button>
         }
         <button type="button" className="btn btn-outline-success" style={{width: status === 4 ? 'auto' : '100%'}} onClick={() => document.location.href = '/order'}>발주목록</button>
@@ -98,7 +98,7 @@ const Detail = () => {
       {/* STEP4 : 운송관리 (기사 선택) */}
       {status < 4 && show == 3 && <Step4 id={id} isShow={isShow} vehicleNo={vehicleNo} licence={licence} />}
       {/* STEP5 : 입출고관리 화면 */}
-      {status < 4 && show == 4 && <Step5 id={id} checkData={checkData}/>}
+      {status < 4 && show == 4 && <Step5 id={id} checkData={checkData} checkRole={checkRole}/>}
     </section>
       
   )

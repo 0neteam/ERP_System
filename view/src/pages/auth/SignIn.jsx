@@ -4,6 +4,7 @@ import Alert from '@components/commons/Alert.jsx'
 import { POST } from '@utils/Network.js'
 import { useAuth } from '@hooks/AuthProvider.jsx'
 import SignInStep1 from '@components/auth/SignInStep1.jsx'
+import '@styles/auth.css'
 
 const SignIn = () => {
   const { checkAccess, styles } = useAuth()
@@ -22,6 +23,7 @@ const SignIn = () => {
   const emailEvent = (e) => {
     e.preventDefault();
     setStep(0)
+    setType({state:true, msg:'인증코드 확인 완료'})
     clearTimeout(timerRef3.current)
     POST('/oauth/user/email', user).then(
       (res) => {
@@ -34,6 +36,7 @@ const SignIn = () => {
             timerRef3.current = setTimeout(() => setStep(0), 5000)
           }
         }
+        console.log(res)
       }
     )
   }
@@ -65,38 +68,33 @@ const SignIn = () => {
   }
   return (
     <section className="container" style={styles}>
-        <div className="row">
-            <div className="col"></div>
-            <div className="col-6" style={{minWidth: '400px'}}>
-                <h1 className="display-6 text-nowrap text-center">SignIn</h1>
-                <a href="#!">
-                    <img className="mx-auto d-block mt-3" style={{width: '20vh'}} src={Logo} alt="logo" />
-                </a>
-                <form onSubmit={emailEvent}>
-                
-                <div className="form-floating mt-3">
-                    <input type="email" className="form-control" id="email" name="email" placeholder="Email" required value={user.email} onChange={changeEvent}/>
-                    <label htmlFor="email">Email</label>
-                </div>
-
-                {(step == 0 || step == 4) && 
-                <div className="d-flex mt-3">
-                    <button name="codeReqButton" type="submit" className="btn btn-outline-primary flex-fill">인증코드 요청</button>
-                </div>
-                }
-                </form>
-                {step == 4 && <Alert type={type} />}
-
-                {step >= 1 && step <= 2 && <SignInStep1 auth={auth} setAuth={setAuth} authEvent={authEvent} offEvent={offEvent} timerRef={timerRef1} user={user} />}
-                {step == 2 && <Alert type={type} />}
-                {step == 3 && <Alert type={type} />}
-                <div className="d-flex btn-group mt-3 mb-2">
-                    <a type="button" className="btn btn-outline-danger" href="/">취소</a>
-                </div>
+      <div className="d-flex justify-content-center mt-4 mb-4">
+        <h1>SignIn</h1>
+      </div>
+      <div className="d-flex justify-content-center mt-4 mb-4">
+        <div className='authReact'>
+          <form onSubmit={emailEvent}>
+            <div className="form-floating mt-3">
+              <input type="email" className="form-control" id="email" name="email" placeholder="Email" required value={user.email} onChange={changeEvent}/>
+              <label htmlFor="email">Email</label>
             </div>
-            <div className="col"></div>
+            {(step == 0 || step == 4) && 
+            <div className="d-flex mt-3">
+              <button name="codeReqButton" type="submit" className="btn btn-outline-primary flex-fill">인증코드 요청</button>
+            </div>
+            }
+            <div>
+              {step == 4 && <Alert type={type} />}
+              {step >= 1 && step <= 2 && <SignInStep1 auth={auth} setAuth={setAuth} authEvent={authEvent} offEvent={offEvent} timerRef={timerRef1} user={user} />}
+              {step == 2 && <Alert type={type} />}
+              {step == 3 && <Alert type={type} />}
+            </div>
+            <div className="d-flex mt-3">
+              <a type="button" className="btn btn-outline-danger flex-fill" href="/">취소</a>
+            </div>
+          </form>
         </div>
-       
+      </div>
     </section>
   )
 }

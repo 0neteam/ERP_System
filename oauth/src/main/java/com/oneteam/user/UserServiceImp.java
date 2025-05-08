@@ -218,6 +218,8 @@ public class UserServiceImp implements UserService{
         // 로그인 로직 동작
         status = setKey(userDto.getEmail());
         message = "";
+      } else {
+        message = "존재하지 않는 이메일 주소입니다.";
       }
     }
     return ResDTO.builder().status(status).message(message).build();
