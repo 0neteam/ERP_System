@@ -3,8 +3,10 @@ import Logo from '@assets/user/empty_user.png'
 import Alert from '@components/commons/Alert.jsx'
 import { POST, PUT } from '@utils/Network.js'
 import SignUpStep1 from '@components/auth/SignUpStep1.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const SignUp = () => {
+  const { styles } = useAuth()
   const [user, setUser] = useState({email: '', name: '', type: 1})
   const [auth, setAuth] = useState('')
   const [show, isShow] = useState(true)
@@ -77,45 +79,38 @@ const SignUp = () => {
     }
   }
   return (
-    <section className="container" style={{minHeight: '50vh'}}>
-        <div className="row">
-            <div className="col"></div>
-            <div className="col-6" style={{minWidth: '400px'}}>
-                <h1 className="display-6 text-nowrap text-center">SignUp</h1>
-                <a href="#!">
-                    <img className="mx-auto d-block mt-3" style={{width: '20vh'}} src={Logo} alt="logo" />
-                </a>
-                <form onSubmit={emailEvent}>
-                <div className="form-floating mt-3">
-                  <input type="text" className="form-control" id="name" name="name" placeholder="Name" required value={user.name} onChange={changeEvent} />
-                  <label htmlFor="name">Name</label>
-                </div>
-                
-                <div className="form-floating mt-3">
-                    <input type="email" className="form-control" id="email" name="email" placeholder="Email" required value={user.email} onChange={changeEvent}/>
-                    <label htmlFor="email">Email</label>
-                </div>
-
-                {(step == 0 || step == 4) && 
-                <div className="d-flex mt-3">
-                    <button name="codeReqButton" type="submit" className="btn btn-outline-primary flex-fill">Email 인증코드 전송</button>
-                </div>
-                }
-                </form>
-                {step == 4 && <Alert type={type} />}
-
-                {step >= 1 && step <= 2 && <SignUpStep1 auth={auth} setAuth={setAuth} authEvent={authEvent} offEvent={offEvent} timerRef={timerRef1} user={user} />}
-                {step == 2 && <Alert type={type} />}
-                {step == 3 && <Alert type={type} />}
-                <div className="d-flex btn-group mt-3 mb-2">
-                    <button type="button" className="btn btn-outline-primary" disabled={show} onClick={signUpEvent}>가입</button>
-                    <a type="button" className="btn btn-outline-danger" href="/">취소</a>
-                </div>
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-center mt-4 mb-4">
+        <h1>SignUp</h1>
+      </div>
+      <div className="d-flex justify-content-center mt-4 mb-4">
+        <div className='authReact'>
+          <form onSubmit={emailEvent}>
+            <div className="form-floating mt-3">
+              <input type="text" className="form-control" id="name" name="name" placeholder="Name" required value={user.name} onChange={changeEvent} />
+              <label htmlFor="name">Name</label>
             </div>
-            <div className="col"></div>
+            <div className="form-floating mt-3">
+                <input type="email" className="form-control" id="email" name="email" placeholder="Email" required value={user.email} onChange={changeEvent}/>
+                <label htmlFor="email">Email</label>
+            </div>
+            {(step == 0 || step == 4) && 
+            <div className="d-flex mt-3">
+                <button name="codeReqButton" type="submit" className="btn btn-outline-primary flex-fill">Email 인증코드 전송</button>
+            </div>
+            }
+          </form>
+        {step == 4 && <Alert type={type} />}
+        {step >= 1 && step <= 2 && <SignUpStep1 auth={auth} setAuth={setAuth} authEvent={authEvent} offEvent={offEvent} timerRef={timerRef1} user={user} />}
+        {step == 2 && <Alert type={type} />}
+        {step == 3 && <Alert type={type} />}
+        <div className="d-flex btn-group mt-3 mb-2">
+          <button type="button" className="btn btn-outline-primary" disabled={show} onClick={signUpEvent}>가입</button>
+          <a type="button" className="btn btn-outline-danger" href="/">취소</a>
         </div>
-       
-    </section>
+      </div>
+    </div>
+  </section>
   )
 }
 

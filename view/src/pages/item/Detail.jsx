@@ -2,8 +2,10 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect, useRef } from 'react'
 import EMPTY from '@assets/item/empty_img.jpg'
 import { POST, PATCH } from '@utils/Network.js'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const Detail = () => {
+  const { styles } = useAuth()
   const [item, setItem] = useState({name: '', bundle: '', price: ''})
   const [image, setImage] = useState(EMPTY);
   const [image2, setImage2] = useState(null);
@@ -67,7 +69,13 @@ const Detail = () => {
     })
   }, [])
   return (
-    <section className="container d-flex justify-content-center align-items-center" style={{minHeight: '70vh'}}>
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+        <div>
+            <h2>품목 상세</h2>
+        </div>
+      </div>  
+      <div className="d-flex justify-content-center align-items-center">
         <div className="d-flex flex-column flex-md-row w-100 justify-content-center align-items-center gap-3">
       
           <div>
@@ -106,6 +114,7 @@ const Detail = () => {
           </form>
 
         </div>
+      </div>
     </section>
   )
 }

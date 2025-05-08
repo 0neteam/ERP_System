@@ -4,8 +4,10 @@ import '@styles/card.css'
 import { GET } from '@utils/Network.js'
 import Items from '@components/stock/Items.jsx'
 import Pagination from '@components/commons/Pagination.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const List = () => {
+  const { styles } = useAuth()
   const [items, setItems] = useState([])
   const [pagination, setPagination] = useState([])
   const [page, setPage] = useState(0)
@@ -52,9 +54,11 @@ const List = () => {
   }
   useEffect(() => {getData({ page })}, [page])
   return (
-    <section className="container" style={{minHeight: '70vh'}}>
-      <div>
-        <h2 className="mb-4">재고 목록</h2>
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+        <div>
+          <h2>재고 목록</h2>
+        </div>
       </div>
       <div className="mb-4">
         <form className="form" onSubmit={submitEvent} >

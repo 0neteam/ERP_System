@@ -6,9 +6,11 @@ import { GET, POST, PUT, PATCH, DELETE } from '@utils/Network.js'
 import DeptModal from '@components/dept/DeptModal.jsx'
 import UserRegModal from '@components/dept/UserRegModal.jsx'
 import UserDelModal from '@components/dept/UserDelModal.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 
 const Dept = () => {
+  const { styles } = useAuth()
   const [selectDept, setSelectDept] = useState(null)
   const [selectedU, setselectedU] = useState([])
   const [users, setUsers] = useState([])
@@ -74,9 +76,11 @@ const Dept = () => {
   }, [])
   return (
     <>
-      <section className="container" style={{minHeight: '70vh'}}>
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2 className="mb-0">부서 관리</h2>
+      <section className="container" style={styles}>
+        <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+          <div>
+            <h2>부서 관리</h2>
+          </div>
         </div>
 
         <div className="d-flex flex-wrap align-items-center justify-content-between gap-2 p-1 mb-2">

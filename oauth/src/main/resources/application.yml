@@ -72,3 +72,4 @@ rsa:
   private-key: ${RSA_PRIVATE_KEY}
 
 logout.redirect-url: ${SWAGGER_URL}
+file.upload.path: ${FILE_UPLOAD_PATH}

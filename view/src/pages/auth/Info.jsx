@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
-import { GET, POST, PATCH } from '@utils/Network.js'
+import { GET, PATCH } from '@utils/Network.js'
 import Logo from '@assets/user/empty_user.png'
 import '@styles/img.css'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const Info = () => {
+  const { styles } = useAuth()
   const [depts, setDepts] = useState('')
   const [user, setUser] = useState({no: 0, email: '', name: ''})
   const [image, setImage] = useState(null);
@@ -101,15 +103,15 @@ const Info = () => {
     getData()
   }, [])
   return (
-    <section className="container" style={{minHeight: '50vh'}}>
+    <section className="container" style={styles}>
         <div className="row">
             <div className="col"></div>
-            <div className="col-6" style={{minWidth: '350px', maxWidth: '500px'}}>
+            <div className="col-8 authinfo">
                 {/* <h1 className="display-6 text-nowrap text-center">mypage</h1> */}
 
                 <div className="mb-2 text-center">
-                  <div className="overlayImg">
-                    <img className="d-block rounded-circle img-thumbnail mt-3" src={image} alt="logo" style={{width: '20vh'}} />
+                  <div className="d-flex justify-content-center overlayImg">
+                    <img className="d-block user rounded-circle img-thumbnail mt-3" src={image} alt="logo" />
                     
                     {show &&
                     <button className="d-block overlayButton dropdown-toggle addImgDropdown" type="button" id="addImg" data-bs-toggle="dropdown" aria-expanded="false">+</button>
@@ -123,27 +125,27 @@ const Info = () => {
                 </div>
 
                 <div className="input-group mt-3">
-                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '100px'}}>사번</span>
+                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '60px'}}>사번</span>
                     <input type="text" className="form-control" id="no" name="no" value={user.no} readOnly onChange={changeEvent} />
                 </div>
                 <div className="input-group mt-3">
-                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '100px'}}>Email</span>
+                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '60px'}}>Email</span>
                     <input type="text" className="form-control" id="email" name="email" value={user.email} readOnly onChange={changeEvent} />
                 </div>
 
                 <div className="input-group mt-3">
-                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '100px'}}>이름</span>
+                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '60px'}}>이름</span>
                     <input type="text" className="form-control" id="name" name="name" value={user.name} readOnly onChange={changeEvent} />
                 </div>
 
                 <div className="input-group mt-3">
-                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '100px'}}>부서</span>
+                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '60px'}}>부서</span>
                     <input type="text" className="form-control" placeholder="" disabled value={depts} onChange={changeDept} />
                 </div>
 
                 {dri && <>
                 <div className="input-group mt-3">
-                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '100px'}}>면허</span>
+                    <span className="input-group-text d-flex justify-content-center text-nowrap" style={{width: '60px'}}>면허</span>
                     <input type="text" className="form-control" placeholder="" disabled value={licences} onChange={changeLicence}/>
                 </div>
                 

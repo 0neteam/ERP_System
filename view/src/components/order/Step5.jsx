@@ -4,7 +4,7 @@ import EmptyUser from '@assets/user/empty_user.png'
 import Modal from '@components/order/Modal.jsx'
 import Pagination from '@components/commons/Pagination.jsx'
 
-const Step5 = ({id, checkData}) => {
+const Step5 = ({id, checkData, checkRole}) => {
   const [releases, setResleases] = useState([])
   const [pagination, setPagination] = useState([])
   const [page, setPage] = useState(0)
@@ -74,7 +74,7 @@ const Step5 = ({id, checkData}) => {
       </div>
       {/* 페이징 자리 */}
       <Pagination pagination={pagination} clickEvent={clickEvent} page={page} total={total} />
-      {showModal && <Modal handleClose={handleClose} transp={transp} />}
+      {showModal && <Modal handleClose={handleClose} transp={transp} checkRole={checkRole} />}
     </>
   )
 }

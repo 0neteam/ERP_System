@@ -39,9 +39,16 @@ public class FileServiceImp implements FileService {
   @Value("${swagger.api-gateway-url}")
   private String uri;
 
+  @Value("${file.upload.path}")
+  private String uploadPath;
+
 //  private String baseUrl = uri + "/file";
-  private String getRootPath() {return new File("").getAbsolutePath();}
-  private String lastPath = "/upload";
+  private String getRootPath() {
+    // return new File("").getAbsolutePath();
+    return uploadPath;
+  }
+  // private String lastPath = "/upload";
+  private String lastPath = "";
   private String getCurrnetDatePath() {return "/".concat(new SimpleDateFormat("yyyyMMdd").format(new Date()));}
   private String getName(MultipartFile file) {return file.getOriginalFilename();}
   private String setName() {return Long.toString(System.nanoTime());}

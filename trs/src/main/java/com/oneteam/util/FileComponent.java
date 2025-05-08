@@ -4,6 +4,8 @@ import com.oneteam.domain.file.FileEntity;
 import com.oneteam.domain.file.FileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,8 +25,16 @@ public class FileComponent {
 
     private final FileRepository fileRepository;
 
-    private String getRootPath() {return new File("").getAbsolutePath();}
-    private String lastPath = "/upload";
+    @Value("${file.upload.path}")
+    private String uploadPath;
+
+    //  private String baseUrl = uri + "/file";
+    private String getRootPath() {
+        // return new File("").getAbsolutePath();
+        return uploadPath;
+    }
+    // private String lastPath = "/upload";
+    private String lastPath = "";
     private String getCurrnetDatePath() {return "/".concat(new SimpleDateFormat("yyyyMMdd").format(new Date()));}
     private String getName(MultipartFile file) {return file.getOriginalFilename();}
     private String setName() {return Long.toString(System.nanoTime());}

@@ -41,6 +41,7 @@ const UserRegModal = ({handleClose, dept}) => {
     getUser({name: e.target.name.value})
   }
   const getUser = param => {
+    param.size=1000
     GET(`/oauth/dept/user/${dept}`, param).then(res => {
       if(res.status) {
         setTargetUsers(res.result.list)
@@ -53,7 +54,7 @@ const UserRegModal = ({handleClose, dept}) => {
   }, [])
   return (
     <div className="modal show d-block" tabIndex="-1" role="dialog">
-      <div className="modal-dialog modal-dialog-centered modal-xl .modal-fullscreen-xl-down">
+      <div className="modal-dialog modal-dialog-centered modal-xl .modal-fullscreen-xl-down modal-dialog-scrollable">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title">직원 등록</h5>
@@ -113,7 +114,6 @@ const UserRegModal = ({handleClose, dept}) => {
                       </div>
                     )}
                   )}
-
                 </div>
               </div>
             </div>

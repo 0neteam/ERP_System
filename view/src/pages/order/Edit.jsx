@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom"
 import { GET, POST, PUT, PATCH } from '@utils/Network.js'
 import Pagination from '@components/commons/Pagination.jsx'
 import ItemModal from '@components/order/ItemModal.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const Edit = () => {
+  const { styles } = useAuth()
   const { id } = useParams()
   const [orders, setOrders] = useState([])
   const [allChecked, setAllChecked] = useState(false)
@@ -71,7 +73,7 @@ const Edit = () => {
   }, [])
   return (
     <>
-      <section className="container">
+      <section className="container" style={styles}>
         <h2 className="mt-4 mb-4">발주 수정</h2>
         <div className="d-flex justify-content-between mb-2">
           <div>

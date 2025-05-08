@@ -4,8 +4,10 @@ import '@styles/user/user.css'
 import '@styles/card.css'
 import { GET, PATCH, DELETE } from '@utils/Network.js'
 import Pagination from '@components/commons/Pagination.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const User = () => {
+  const { styles } = useAuth()
   const [depts, setDepts] = useState(null)
   const [licences, setLicences] = useState(null)
   const [user, setUser] = useState({})
@@ -104,9 +106,14 @@ const User = () => {
     getUser({page})
   }, [page])
   return (
-    <section className="container" style={{minHeight: '70vh'}}>
-      <h2 className="mb-4">직원 관리</h2>
-      <div className="row mb-2">
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+        <div>
+          <h2>직원 관리</h2>
+        </div>
+      </div>
+
+      <div className="row mb-2 userAco">
         <div className="col-12 col-md-5 col-lg-4 mb-2">
           <div className="section-box d-flex flex-column justify-content-between h-100">
             <div>

@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { POST } from '@utils/Network.js'
 import Pagination from '@components/commons/Pagination.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const List = () => {
+  const { styles } = useAuth()
   const [transps, setTransps] = useState([])
   const [type, setType] = useState(0)
   const [startDate, setStartDate] = useState('')
@@ -62,38 +64,43 @@ const List = () => {
     getData()
   }, [page])
   return (
-    <section className="container" style={{minHeight: '60vh'}}>
-      <div>
-        <div className="row">
-          <div className="col-12">
-            <h2 className="mb-4">운송 목록</h2>
-          </div>
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+        <div>
+            <h2>운송 목록</h2>
         </div>
-        <form className="row g-2 align-items-center" onSubmit={submitEvent} >
-          <div className="col-12 col-md-2">
+      </div>
+
+      <div className="mb-4">
+        <div className="row g-2">
+          <div className="col-12 col-md-4">
             <select className="form-select" onChange={typeEvent}>
               <option value="0">전체</option>
               <option value="1">출발</option>
               <option value="2">도착</option>
             </select>
           </div>
-          {type != 0 &&
-          <div className="col-12 col-md">
-            <div className="input-group">
-              <input type="date" className="form-control dateInput" placeholder="시작일" value={startDate} onChange={e => {
-                    setStartDate(e.target.value)
-                    setEndDate(formattedDate())
-                    }} max={endDate == '' ? formattedDate() : endDate}/>
-              <span className="input-group-text">~</span>
-              <input type="date" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)} min={startDate}/>
-              <button type="submit" className="btn btn-outline-success">검색</button>
-            </div>
+          <div className="col-12 col-md-8">
+            <form className="d-flex flex-column gap-2" onSubmit={submitEvent} >
+              <div className="input-group">
+                {type != 0 && <>
+                  <input type="date" className="form-control dateInput" placeholder="시작일" value={startDate} onChange={e => {
+                        setStartDate(e.target.value)
+                        setEndDate(formattedDate())
+                        }} max={endDate == '' ? formattedDate() : endDate}/>
+                  <span className="input-group-text">~</span>
+                  <input type="date" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)} min={startDate == '' ? formattedDate() : startDate}/>
+                  <button type="submit" className="btn btn-outline-success">검색</button>
+                </>
+                }
+              </div>
+            </form>
           </div>
-          }
-        </form>
+        </div>
       </div>
+      
       <div className="overflow-y-auto">
-        <table className="mt-3">
+        <table>
           <thead>
           <tr className="text-center">
             <th className="text-nowrap">운송번호</th>

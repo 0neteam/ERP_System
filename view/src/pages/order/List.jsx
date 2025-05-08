@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { POST } from '@utils/Network.js'
 import Pagination from '@components/commons/Pagination.jsx'
+import { useAuth } from '@hooks/AuthProvider.jsx'
 
 const List = () => {
+  const { styles } = useAuth()
   const [orders, setOrders] = useState([])
   const [type, setType] = useState(0)
   const [query, setQuery] = useState('')
@@ -91,8 +93,8 @@ const List = () => {
     getData()
   }, [page, type])
   return (
-    <section className="container">
-      <div className="d-flex justify-content-between mb-2 mt-4 mb-4">
+    <section className="container" style={styles}>
+      <div className="d-flex justify-content-between mt-4 mb-4">
           <div>
               <h2>발주 목록</h2>
           </div>
@@ -133,7 +135,7 @@ const List = () => {
                     setEndDate(formattedDate())
                     }} max={endDate == '' ? formattedDate() : endDate}/>
                   <span className="input-group-text">~</span>
-                  <input type="date" id="endDate" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)} min={startDate}/>
+                  <input type="date" id="endDate" className="form-control dateInput" placeholder="종료일" value={endDate} onChange={e => setEndDate(e.target.value)} min={startDate == '' ? formattedDate() : startDate}/>
                 </>
                 }
                 <button type="submit" className="btn btn-outline-success">검색</button>

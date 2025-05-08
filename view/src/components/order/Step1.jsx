@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import { GET, PUT, DELETE } from '@utils/Network.js'
 import Pagination from '@components/commons/Pagination.jsx'
 
-const Step1 = ({id, items, status, show, outEvent}) => {
+const Step1 = ({id, items, status, show, outEvent, page, setPage}) => {
   const [orderItems, setOrderItems] = useState([])
   const [pagination, setPagination] = useState([])
-  const [page, setPage] = useState(0)
+  
   const [total, setTotal] = useState(4)
   const clickEvent = i => {
     setPage(i)
@@ -72,6 +72,7 @@ const Step1 = ({id, items, status, show, outEvent}) => {
           </tbody>
         </table>
       </div>
+      
 
       {status == 1 &&
       <div className="d-flex justify-content-end gap-2 mt-2">
@@ -79,8 +80,9 @@ const Step1 = ({id, items, status, show, outEvent}) => {
         <button type="button" className="btn btn-outline-secondary" onClick={deleteEvent}>발주취소</button>
       </div>
       }
-      {/* 페이징 자리 */}
+      {orderItems?.length > 0 && (
       <Pagination pagination={pagination} clickEvent={clickEvent} page={page} total={total} />
+      )}
     </>
   )
 }
