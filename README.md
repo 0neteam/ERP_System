@@ -1,6 +1,6 @@
 <div align="center">
 
-[<img src="UI/logo_black.png" width="100"/>](https://github.com/0neteam/ERP_System)
+[<img src="https://github.com/user-attachments/assets/e7acea0a-15c1-487a-bd10-9294dcc7d587" width="100"/>](https://github.com/0neteam/ERP_System)
 
 ### ERP_System
 [<img src="https://img.shields.io/badge/프로젝트 기간-2025.03.07~2025.05.16-green?style=flat&logo=&logoColor=white" />](https://github.com/0neteam/ERP_System)
@@ -72,15 +72,21 @@
 
 ## 📁 저장소 구조
 ```
-/ERP_System
-├── .idea                 # IntelliJ 설정 파일
-├── UI                    # 공통 UI 컴포넌트 및 정적 리소스
-├── gateway               # API Gateway 서비스 (Spring Cloud Gateway)
-├── mfr                   # 제조사(Manufacturer) 서비스 모듈
-├── oauth                 # 인증 서버 (Spring Authorization Server, JWT)
-├── stg                   # 창고(Storage) 서비스 모듈
-├── trs                   # 운송(Transportation) 서비스 모듈
-└── view                  # Front-end 애플리케이션 (React, Vite)
+
+ERP_System/
+├── .mariadb/           # MariaDB 초기화 스크립트 및 설정
+├── spring/             # 백엔드 서비스 모듈 (제조, 창고, 운송, 게이트웨이, 인증)
+│   ├── gateway/        # API Gateway 서비스 (Spring Cloud Gateway)
+│   ├── mfr/            # 제조사(Manufacturer) 서비스 모듈
+│   ├── auth/           # 인증 서버 (Spring Authorization Server, JWT)
+│   ├── stg/            # 창고(Storage) 서비스 모듈
+│   └── trs/            # 운송(Transportation) 서비스 모듈
+├── www/                # 프론트엔드 애플리케이션 (React 기반)
+│   ├── conf/           # 환경설정 파일 및 설정 관련 코드
+│   └── view/           # Front-end 애플리케이션 (React, Vite)
+├── .gitignore          # Git에서 제외할 파일 목록
+└── README.md           # 프로젝트 설명 파일
+
 ```
 
 <br />
