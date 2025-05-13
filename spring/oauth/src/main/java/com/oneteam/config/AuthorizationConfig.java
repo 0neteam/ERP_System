@@ -51,7 +51,6 @@ public class AuthorizationConfig {
     private final OAuthClientService oAuthClientService;
     private final RsaKeyProperties rsaKeys;
 
-//CORS를 커스터마이징하여 관리하도록 설정
     @Bean
     @Order(1)
     SecurityFilterChain authorizationFilterChain(HttpSecurity http) throws Exception {
@@ -70,7 +69,6 @@ public class AuthorizationConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable);
         http.cors(Customizer.withDefaults());
-        //  GET방식 요청을 처리해 쿠키를 삭제 후 지정된 URL로 리다이렉트하여 로그아웃
         http.logout(logout -> {
             logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"));
             logout.invalidateHttpSession(true);
@@ -95,40 +93,31 @@ public class AuthorizationConfig {
             r.requestMatchers("/docs","/v3/**","/swagger-ui/**").permitAll();
             r.anyRequest().authenticated();
         });
-//        JWT 토큰을 기반으로 인증하는 커스텀 필터를 설정
         http.addFilterBefore(new JwtAuthenticationFilter(rsaKeys), UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 
-//    CORS 커스터마이징이 설정
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-//        설정된 redirectUrl로 CORS를 동적으로 관리
         List<String> originUris = List.of(redirectUrl);
-//        특정 출처(origin)에 대한 요청을 허용
         originUris.forEach(config::addAllowedOrigin);
         config.addAllowedOriginPattern("*");
         config.addAllowedHeader("*");
-//        HTTP 메서드 허용 설정
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
-//        자격 증명 설정
         config.setAllowCredentials(true);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
         return source;
     }
 
-//    패스워드 인코더
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-//    클라이언트 등록 정보를 조회하는 커스텀 구현체
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
-//        DB에서 클라이언트 ID 또는 ID로 조회하여 인증처리
         return new RegisteredClientRepository() {
             @Override
             public void save(RegisteredClient registeredClient) {}
@@ -143,7 +132,6 @@ public class AuthorizationConfig {
         };
     }
 
-//    JWT 서명 검증을 위한 공개키를 외부에  제공
     @Bean
     public JWKSet jwkSet() {
         RSAKey.Builder builder = new RSAKey.Builder(rsaKeys.publicKey())
@@ -153,7 +141,6 @@ public class AuthorizationConfig {
         return new JWKSet(builder.build());
     }
 
-//    JWT를 만들고 서명하는 데 사용
     @Bean
     public JwtEncoder jwtEncoder() {
         JWK jwk = new RSAKey.Builder(rsaKeys.publicKey()).privateKey(rsaKeys.privateKey()).build();
@@ -161,7 +148,6 @@ public class AuthorizationConfig {
         return new NimbusJwtEncoder(jwks);
     }
 
-//    JWT 액세스 토큰을 커스터마이징
     @Bean
     public OAuth2TokenCustomizer<JwtEncodingContext> tokenCustomizer() {
         return (context -> {
