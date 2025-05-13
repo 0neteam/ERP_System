@@ -1,0 +1,52 @@
+server.port: 8003
+
+spring:
+  application.name: trs
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: ${DB_DRIVER}
+    url: ${DB_JDBC}
+    username: ${DB_USER}
+    password: ${DB_PWD}
+  jpa:
+    hibernate.ddl-auto: none
+    properties.hibernate:
+      show_sql: true
+      format_sql: true
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+management:
+  info:
+    git:
+      mode: full
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+
+springdoc:
+  swagger-ui:
+    path: /docs
+    operationsSorter: method
+
+swagger:
+  api-gateway-url: ${SWAGGER_URL}/${spring.application.name}
+
+logging.level.org:
+  springframework.security: trace
+  hibernate.sql: debug
+
+jwt:
+  keys-uri: ${JWT_KEY_URL}
+  file.upload.path: ${FILE_UPLOAD_PATH}

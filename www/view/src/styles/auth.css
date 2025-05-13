@@ -1,0 +1,7 @@
+.authReact {width: 50%;}
+@media (max-width: 768px) {
+    .authReact {width: 80%;}
+  }
+@media (max-width: 576px) {
+  .authReact {width: 100%;}
+}
