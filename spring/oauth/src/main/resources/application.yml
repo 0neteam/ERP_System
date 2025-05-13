@@ -1,4 +1,3 @@
-#서버의 포트설정, 세션타임 설정
 server:
   port: 9000
   servlet:
@@ -6,18 +5,14 @@ server:
       timeout: 24h
 
 spring:
-  #서버의 이름 설정
   application.name: oauth
-  #env파일 설정
   config:
     import: optional:file:.env[.properties]
-  #데이터베이스 연결 설정
   datasource:
     driver-class-name: ${DB_DRIVER}
     url: ${DB_JDBC}
     username: ${DB_USER}
     password: ${DB_PWD}
-  #JPA설정
   jpa:
     hibernate.ddl-auto: none
     properties.hibernate:
@@ -27,12 +22,10 @@ spring:
       naming:
         implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-  #파일 업로드 설정
   servlet:
     multipart:
       maxFileSize: 100MB
       maxRequestSize: 100MB
-  #이메일 설정
   mail:
     host: ${EMAIL_HOST}
     port: ${EMAIL_PORT}
@@ -45,7 +38,6 @@ spring:
           timeout: ${EMAIL_SMTP_TIMEOUT}
           starttls:
             enable: ${EMAIL_SMTP_ENABLE}
-#액추에이터  설정
 management:
   info:
     git:
@@ -61,7 +53,6 @@ management:
     enabled: false
     sampling:
       probability: 1.0
-#스웨거 설정
 springdoc:
   swagger-ui:
     path: /docs
@@ -73,7 +64,6 @@ swagger:
 logging.level.org:
   springframework.security: trace
   hibernate.sql: debug
-#RSA키 설정
 rsa:
   public-key: ${RSA_PUBLIC_KEY}
   private-key: ${RSA_PRIVATE_KEY}
