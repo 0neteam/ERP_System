@@ -13,7 +13,7 @@ spring:
           '[/**]':
             allowedOrigins:
               - ${CORS_ORIGIN1}
-              # - ${CORS_ORIGIN2}
+              - ${CORS_ORIGIN2}
             allow-credentials: true
             allowedHeaders: '*'
             allowedMethods:

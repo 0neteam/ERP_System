@@ -49,4 +49,4 @@ logging.level.org:
 
 jwt:
   keys-uri: ${JWT_KEY_URL}
-file.upload.path: ${FILE_UPLOAD_PATH}
+  file.upload.path: ${FILE_UPLOAD_PATH}
