@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/order")
 public interface OrderControllerDocs {
 
-    @Operation(summary = "전체 발주 목록 조회 (페이징)",
-            description = "페이징 처리된 전체 발주 목록을 조회합니다.")
+    @Operation(summary = "전체 발주 목록 조회",
+            description = "전체 발주 목록을 조회합니다.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "조회 성공",
                     content = @Content(
@@ -45,8 +45,8 @@ public interface OrderControllerDocs {
             @PageableDefault(size = 5, sort = "no", direction = Sort.Direction.DESC) Pageable pageable
     );
 
-    @Operation(summary = "조건별 발주 목록 조회 (페이징)",
-            description = "조건에 따라 페이징 처리된 발주 목록을 조회합니다.")
+    @Operation(summary = "조건별 발주 목록 조회",
+            description = "조건에 따라 맞는 발주 목록을 조회합니다.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "조회 성공",
                     content = @Content(
@@ -75,8 +75,8 @@ public interface OrderControllerDocs {
             @Valid OrderSearchReqDTO orderSearchReqDTO
     );
 
-    @Operation(summary = "특정 발주 상세 조회 (페이징된 품목 포함)",
-            description = "발주 번호(no)에 해당하는 발주 상세 정보와 해당 발주에 포함된 품목 목록을 조회합니다 (페이징 처리).")
+    @Operation(summary = "특정 발주 상세 조회",
+            description = "발주 번호(no)에 해당하는 발주 상세 정보와 해당 발주에 포함된 품목 목록을 조회합니다.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "조회 성공",
                     content = @Content(
@@ -99,7 +99,7 @@ public interface OrderControllerDocs {
             @PageableDefault(size = 5, sort = "no", direction = Sort.Direction.DESC) Pageable pageable
     );
 
-    @Operation(summary = "특정 발주 수정 화면 조회 (품목 목록)",
+    @Operation(summary = "특정 발주 수정 화면 조회",
             description = "발주 번호(no)에 해당하는 발주에 포함된 품목 목록을 조회합니다.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "조회 성공",
@@ -171,7 +171,7 @@ public interface OrderControllerDocs {
     ResDTO modify(
             @Parameter(in = ParameterIn.PATH, description = "수정할 발주 번호", example = "1")
             @PathVariable("no") Long no,
-            @RequestBody(description = "수정할 발주 정보 (상태 및 품목 목록)", required = true,
+            @RequestBody(description = "수정할 발주 정보", required = true,
                     content = @Content(
                             mediaType = "application/json",
                             schema = @Schema(implementation = OrderReqDTO.class),
@@ -184,8 +184,8 @@ public interface OrderControllerDocs {
             @Parameter(hidden = true) Authentication authentication
     );
 
-    @Operation(summary = "특정 발주 삭제 (상태 변경)",
-            description = "발주 번호(no)에 해당하는 발주를 삭제합니다 (useYn 플래그를 'N'으로 변경하고 취소일자를 기록합니다).")
+    @Operation(summary = "특정 발주 삭제",
+            description = "발주 번호(no)에 해당하는 발주를 삭제합니다.")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "삭제 성공",
                     content = @Content(
