@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
 public interface ItemControllerDocs {
 
     @Operation(summary = "품목 목록 조회",
-            description = "no와 name 파라미터로 품목 목록을 조회합니다.")
+            description = "no와 name 파라미터로 품목 목록을 조회합니다. ")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "조회 성공",
                     content = @Content(
