@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/order/item")
 @RequiredArgsConstructor
-public class OrderItemController {
+public class OrderItemController implements OrderItemControllerDocs {
 
   private final OrderItemService orderItemService;
 
