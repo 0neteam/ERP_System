@@ -42,7 +42,7 @@ public interface TranspControllerDocs {
     );
 
     @Operation(
-            summary     = "운송 목록 조회 (POST)",
+            summary     = "운송 목록 조회",
             description = "검색 조건과 페이지 정보로 운송 목록을 조회합니다."
     )
     @ApiResponses({
