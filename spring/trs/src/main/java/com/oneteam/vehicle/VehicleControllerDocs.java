@@ -54,7 +54,7 @@ public interface VehicleControllerDocs {
     );
 
     @Operation(
-            summary     = "차량 목록 조회 (POST)",
+            summary     = "차량 목록 조회",
             description = "페이지 정보와 검색 조건을 이용해 차량 목록을 조회합니다.",
             responses   = {
                     @ApiResponse(responseCode = "200", description = "조회 성공",
