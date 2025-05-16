@@ -287,9 +287,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- 테이블 데이터 edu.user:~3 rows (대략적) 내보내기
 DELETE FROM `user`;
 INSERT INTO `user` (`no`, `email`, `password`, `name`, `fileNo`, `licence1`, `licence2`, `licence3`, `licence4`, `useYn`, `regDate`, `regUserNo`, `modDate`, `modUserNo`) VALUES
-	(1, 'test@test', '$2a$10$tP7bmermcHRLp/PWT1LereVPn4qmJinID3dPL79NPH7R4I2K/ijf6', '테스트', 1, 'N', 'N', 'N', 'N', 'Y', '2025-04-01 17:25:41', 1, '2025-04-14 10:29:09', NULL),
-	(2, 'img@img', '$2a$10$BGF6/cidiI3xrX.GuANjEO3HPUfvnOBfbX0y8bh4BmLmDf7Y63hWu', '임진', NULL, 'N', 'N', 'N', 'N', 'Y', '2025-04-02 16:47:26', 2, '2025-04-02 16:47:26', NULL),
-	(3, 'admin@admin', '$2a$10$QSQYzDTh9FFn7moaJzlaU.eWRf5ATinmP44uvW0cQCF5LuWqvvMEK', '어드민', NULL, 'N', 'N', 'N', 'N', 'Y', '2025-04-03 09:18:11', 3, '2025-04-22 23:38:03', 3);
+	(1, 'test@test', NULL, '테스트', 1, 'N', 'N', 'N', 'N', 'Y', '2025-04-01 17:25:41', 1, '2025-04-14 10:29:09', NULL),
+	(2, 'img@img', NULL, '임진', NULL, 'N', 'N', 'N', 'N', 'Y', '2025-04-02 16:47:26', 2, '2025-04-02 16:47:26', NULL),
+	(3, 'admin@admin', NULL, '어드민', NULL, 'N', 'N', 'N', 'N', 'Y', '2025-04-03 09:18:11', 3, '2025-04-22 23:38:03', 3);
 
 -- 테이블 edu.vehicle 구조 내보내기
 DROP TABLE IF EXISTS `vehicle`;

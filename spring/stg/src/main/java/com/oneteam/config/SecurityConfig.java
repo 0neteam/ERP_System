@@ -53,7 +53,7 @@ public class SecurityConfig {
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration config = new CorsConfiguration();
-    List<String> originUris = List.of("http://127.0.0.1:8000", "http://localhost:8000");
+    List<String> originUris = List.of("http://127.0.0.1:8000", "http://localhost:8000", "http://49.167.206.154:11198");
     originUris.forEach(config::addAllowedOrigin);
     config.addAllowedOriginPattern("*");
     config.addAllowedHeader("*");
